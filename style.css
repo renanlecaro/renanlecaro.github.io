@@ -1,4 +1,32 @@
-h3,h2 {
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    color: #333;
+    font-size: 1.5rem;
+    line-height: 1.5;
 }
+
+h1 {
+    margin: 20px 0;
+    padding: 0;
+    font-size: 2.5em;
+}
+
+ul {
+    list-style: square;
+}
+
+a {
+    color: #333;
+}
+
+a:visited {
+    color: #666;
+}
+
+a:hover, a:focus, h1 strong, h2 strong {
+    color: #d60000;
+}
+

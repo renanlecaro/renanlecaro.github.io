@@ -3,12 +3,42 @@
     <title>Renan LE CARO</title>
     <link href="https://renanlecaro.github.io/feed.xml" rel="self" />
     <link href="https://renanlecaro.github.io" />
-    <updated>2020-05-27T22:58:09+10:00</updated>
+    <updated>2020-05-27T23:26:13+10:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://renanlecaro.github.io</id>
 
+    <entry>
+        <title>The FEFU Campus</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://renanlecaro.github.io/the-fefu-campus.html"/>
+        <id>https://renanlecaro.github.io/the-fefu-campus.html</id>
+            <category term="Photography"/>
+
+        <updated>2020-05-27T23:22:01+10:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://renanlecaro.github.io/media/posts/5/DSC_3024.jpg" alt="" />
+                    This is really just an excuse to try displaying a few photos in Publii
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://renanlecaro.github.io/media/posts/5/DSC_3024.jpg" alt="" />
+                <p>This is really just an excuse to try displaying a few photos in Publii</p>
+<div class="gallery gallery-wrapper--wide"   >
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg" alt="The bridge to the island" width="720" height="478"></a></figure>
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg" alt="Reflections of the campus in the sea" width="720" height="720"></a></figure>
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048-thumbnail.jpg" alt="Campus building, they were lit by two different light sources, but I accentuated that quite a bit" width="720" height="478"></a></figure>
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042-thumbnail.jpg" alt="Construction site for the new university buildings" width="720" height="720"></a></figure>
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024-thumbnail.jpg" alt="Another view of the bridge" width="720" height="720"></a></figure>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Giving Publii a try </title>
         <author>
@@ -16,21 +46,23 @@
         </author>
         <link href="https://renanlecaro.github.io/giving-publii-a-try.html"/>
         <id>https://renanlecaro.github.io/giving-publii-a-try.html</id>
-            <category term="Blog"/>
+            <category term="Programming"/>
 
-        <updated>2020-05-27T22:49:46+10:00</updated>
+        <updated>2020-05-27T23:22:06+10:00</updated>
             <summary>
                 <![CDATA[
+                        <img src="https://renanlecaro.github.io/media/posts/4/logopublii.svg" alt="Publii&#x27;s logo" />
                     I've always thought that WordPress was using a tank to kill a fly. The surface area for attacks was too large, the admin could barely run most of the time, and the large amount of plugins was mostly a way to keep the marketing guys&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <img src="https://renanlecaro.github.io/media/posts/4/logopublii.svg" alt="Publii&#x27;s logo" />
                 <p>I've always thought that WordPress was using a tank to kill a fly.</p>
 <p>The surface area for attacks was too large, the admin could barely run most of the time, and the large amount of plugins was mostly a way to keep the marketing guys happy, and not a way to just make a more user friendly website.</p>
 <p>As a dev, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content.</p>
 <p>I personally used a custom made static site, with or without automatic generation, for my personal project's presentation pages. But I didn't see myself explaining the details of git push, markdown and CLI use to my parents. </p>
-<p>Today i discovered Publii and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savy friends in the future. </p>
+<p>Today i discovered <a href="https://getpublii.com/" target="_blank" rel="noopener noreferrer">Publii</a> and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savy friends in the future. </p>
             ]]>
         </content>
     </entry>
@@ -41,20 +73,18 @@
         </author>
         <link href="https://renanlecaro.github.io/minimage-minimal-image-editor.html"/>
         <id>https://renanlecaro.github.io/minimage-minimal-image-editor.html</id>
-            <category term="Webpack"/>
-            <category term="Project"/>
-            <category term="Open source"/>
-            <category term="JS"/>
-            <category term="Canvas"/>
+            <category term="Programming"/>
 
-        <updated>2020-05-27T22:42:26+10:00</updated>
+        <updated>2020-05-27T23:22:11+10:00</updated>
             <summary>
                 <![CDATA[
+                        <img src="https://renanlecaro.github.io/media/posts/3/minimage.png" alt="Screenshot of minimage" />
                     This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be. The main problem I was trying to&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <img src="https://renanlecaro.github.io/media/posts/3/minimage.png" alt="Screenshot of minimage" />
                 <p>This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be.</p>
 <p>The main problem I was trying to solve was a personal one : I wanted to annotate a screenshot of an app to a friend before sending it to him. All i needed was to draw an arrow on a small picture. I couldn't find an app that would only do that, so I created one using the technology I knew best : front end javascript.</p>
 <p>The app is far from optimized, but it runs quite smoothly on a variety of platforms.  </p>

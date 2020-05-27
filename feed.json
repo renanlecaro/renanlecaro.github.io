@@ -1,0 +1,47 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Renan LE CARO",
+    "description": "",
+    "home_page_url": "https://renanlecaro.github.io",
+    "feed_url": "https://renanlecaro.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Renan LE CARO"
+    },
+    "items": [
+        {
+            "id": "https://renanlecaro.github.io/giving-publii-a-try.html",
+            "url": "https://renanlecaro.github.io/giving-publii-a-try.html",
+            "title": "Giving Publii a try ",
+            "summary": "I've always thought that WordPress was using a tank to kill a fly. The surface area for attacks was too large, the admin could barely run most of the time, and the large amount of plugins was mostly a way to keep the marketing guys&hellip;",
+            "content_html": "<p>I've always thought that WordPress was using a tank to kill a fly.</p>\n<p>The surface area for attacks was too large, the admin could barely run most of the time, and the large amount of plugins was mostly a way to keep the marketing guys happy, and not a way to just make a more user friendly website.</p>\n<p>As a dev, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content.</p>\n<p>I personally used a custom made static site, with or without automatic generation, for my personal project's presentation pages. But I didn't see myself explaining the details of git push, markdown and CLI use to my parents. </p>\n<p>Today i discovered Publii and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savy friends in the future. </p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+                   "Blog"
+            ],
+            "date_published": "2020-05-27T22:49:46+10:00",
+            "date_modified": "2020-05-27T22:49:46+10:00"
+        },
+        {
+            "id": "https://renanlecaro.github.io/minimage-minimal-image-editor.html",
+            "url": "https://renanlecaro.github.io/minimage-minimal-image-editor.html",
+            "title": "Minimage : minimal image editor",
+            "summary": "This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be. The main problem I was trying to&hellip;",
+            "content_html": "<p>This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be.</p>\n<p>The main problem I was trying to solve was a personal one : I wanted to annotate a screenshot of an app to a friend before sending it to him. All i needed was to draw an arrow on a small picture. I couldn't find an app that would only do that, so I created one using the technology I knew best : front end javascript.</p>\n<p>The app is far from optimized, but it runs quite smoothly on a variety of platforms.  </p>\n<p>The app is freely accessible and open source but I haven't really worked on promoting it. Since then i've bought a new phone and don't really need as much to save space on the internal memory. I rarely make use of minimage but keep it online, just in case it might be useful one day.  </p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+                   "Webpack",
+                   "Project",
+                   "Open source",
+                   "JS",
+                   "Canvas"
+            ],
+            "date_published": "2020-05-27T22:42:26+10:00",
+            "date_modified": "2020-05-27T22:42:26+10:00"
+        }
+    ]
+}

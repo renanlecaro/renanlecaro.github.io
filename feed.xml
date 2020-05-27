@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Renan LE CARO</title>
+    <link href="https://renanlecaro.github.io/feed.xml" rel="self" />
+    <link href="https://renanlecaro.github.io" />
+    <updated>2020-05-27T22:58:09+10:00</updated>
+    <author>
+        <name>Renan LE CARO</name>
+    </author>
+    <id>https://renanlecaro.github.io</id>
+
+    <entry>
+        <title>Giving Publii a try </title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://renanlecaro.github.io/giving-publii-a-try.html"/>
+        <id>https://renanlecaro.github.io/giving-publii-a-try.html</id>
+            <category term="Blog"/>
+
+        <updated>2020-05-27T22:49:46+10:00</updated>
+            <summary>
+                <![CDATA[
+                    I've always thought that WordPress was using a tank to kill a fly. The surface area for attacks was too large, the admin could barely run most of the time, and the large amount of plugins was mostly a way to keep the marketing guys&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I've always thought that WordPress was using a tank to kill a fly.</p>
+<p>The surface area for attacks was too large, the admin could barely run most of the time, and the large amount of plugins was mostly a way to keep the marketing guys happy, and not a way to just make a more user friendly website.</p>
+<p>As a dev, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content.</p>
+<p>I personally used a custom made static site, with or without automatic generation, for my personal project's presentation pages. But I didn't see myself explaining the details of git push, markdown and CLI use to my parents. </p>
+<p>Today i discovered Publii and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savy friends in the future. </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Minimage : minimal image editor</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://renanlecaro.github.io/minimage-minimal-image-editor.html"/>
+        <id>https://renanlecaro.github.io/minimage-minimal-image-editor.html</id>
+            <category term="Webpack"/>
+            <category term="Project"/>
+            <category term="Open source"/>
+            <category term="JS"/>
+            <category term="Canvas"/>
+
+        <updated>2020-05-27T22:42:26+10:00</updated>
+            <summary>
+                <![CDATA[
+                    This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be. The main problem I was trying to&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be.</p>
+<p>The main problem I was trying to solve was a personal one : I wanted to annotate a screenshot of an app to a friend before sending it to him. All i needed was to draw an arrow on a small picture. I couldn't find an app that would only do that, so I created one using the technology I knew best : front end javascript.</p>
+<p>The app is far from optimized, but it runs quite smoothly on a variety of platforms.  </p>
+<p>The app is freely accessible and open source but I haven't really worked on promoting it. Since then i've bought a new phone and don't really need as much to save space on the internal memory. I rarely make use of minimage but keep it online, just in case it might be useful one day.  </p>
+            ]]>
+        </content>
+    </entry>
+</feed>

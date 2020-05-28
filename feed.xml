@@ -3,7 +3,7 @@
     <title>Renan LE CARO</title>
     <link href="https://renanlecaro.github.io/feed.xml" rel="self" />
     <link href="https://renanlecaro.github.io" />
-    <updated>2020-05-27T23:35:55+10:00</updated>
+    <updated>2020-05-28T10:51:32+10:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
@@ -46,19 +46,22 @@
         <id>https://renanlecaro.github.io/giving-publii-a-try.html</id>
             <category term="Programming"/>
 
-        <updated>2020-05-27T23:35:23+10:00</updated>
+        <updated>2020-05-28T10:51:29+10:00</updated>
             <summary>
                 <![CDATA[
-                    I've always thought that WordPress was using a tank to kill a fly. The surface area for attacks was too large, the admin could barely run most of the time, and the large amount of plugins was mostly a way to keep the marketing guys&hellip;
+                    As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content. But hosting a wordpress&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>I've always thought that WordPress was using a tank to kill a fly.</p>
-<p>The surface area for attacks was too large, the admin could barely run most of the time, and the large amount of plugins was mostly a way to keep the marketing guys happy, and not a way to just make a more user friendly website.</p>
-<p>As a dev, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content.</p>
-<p>I personally used a custom made static site, with or without automatic generation, for my personal project's presentation pages. But I didn't see myself explaining the details of git push, markdown and CLI use to my parents. </p>
-<p>Today i discovered <a href="https://getpublii.com/" target="_blank" rel="noopener noreferrer">Publii</a> and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savy friends in the future. </p>
+                <p>As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content.</p>
+<p>But hosting a wordpress website is always a trade-off between reliability and costs. On one side you have free hosts giving you a terrible VM that can barely handle the administration side, on the other overpriced plans for what's really a tiny website with usually almost no traffic. </p>
+<blockquote>
+<p>I've always thought that WordPress was using a tank to kill a fly.</p>
+</blockquote>
+<p>So until now, for non technical business owners, I've set up a free host and the administration of the website was usually quite slow and unreliable. If the client wanted something more reliable, I'd get a paid hosting plan, but that would include some overhead for me. </p>
+<p>For my personal projects I personally used custom made static websites, with or without automatic generation. But I didn't see myself explaining the details of git push, markdown and CLI use to my parents. I thought I should work on an ideal, user friendly static website editor one of those days.  </p>
+<p>Today i discovered <a href="https://getpublii.com/" target="_blank" rel="noopener noreferrer">Publii</a> and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savvy friends in the future. Until now I've been pleasantly surprised. </p>
             ]]>
         </content>
     </entry>

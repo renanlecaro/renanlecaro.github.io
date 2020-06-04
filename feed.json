@@ -10,6 +10,21 @@
     },
     "items": [
         {
+            "id": "https://renanlecaro.github.io/mermaid-gdocs.html",
+            "url": "https://renanlecaro.github.io/mermaid-gdocs.html",
+            "title": "Mermaid Gdocs",
+            "summary": "Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;",
+            "content_html": "<p>Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. </p>\n<p>To avoid such disappointing outcome, I tried to make more design docs. A design doc is roughly said a document that will detail all the possible solutions to a problem, and serve as a support for debate, ideas and discussions. After a design doc is accepted by the team, you can go ahead with the development with less risk of requirements being inadequate. </p>\n<p>Most features would include some back end and front end elements, and some user flows. Trying to make the documents more readable, I added as many sequence diagrams as possible. Sequence diagrams are excellent at communicating a process. Their layout forces you to be succinct  as there's not much space for walls of texts and unnecessary details.</p>\n<p>I first edited the diagrams in the excellent <a href=\"https://www.websequencediagrams.com/\">websequencediagrams.com</a> and pasted a screenshot in the google documents, but that was a bit of a pain to maintain. This tool keeps a copy of the source code, so i'd just need to edit it and update the resulting picture in the google document, but no one else had access to said source code. I thought i could just save the source code in the image description field in google docs, to make it easier to update the diagram for anyone in the team.</p>\n<p>This is when I realized i could use this \"trick\" to create a <a href=\"https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en\">google docs add-on</a>. In a classic case of \"putting off writing documentation by focusing on the tools used in documenting\", I followed the (super confusing) tutorials on the google documentation website for G Suite add-ons. </p>\n<figure class=\"post__image post__image--center\" ><img src=\"https://renanlecaro.github.io/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png\" alt=\"Screenshot of the mermaid add-on in the g-suite marketplace\" width=\"989\" height=\"731\">\n<figcaption >The mermaid add-on listed in the g-suite marketplace </figcaption>\n</figure>\n<p> </p>\n<p>The project has evolved a bit with time but stays relatively simple in terms of code. It has gathered quite a lot of users (10K) despite me not putting any efforts in marketing it. I guess we have a product-market fit here, but no business plan at all. This is really just a few lines of JavaScript to make the power of the mermaid JS library available in google docs. I don't think it makes sense to charge for it, and it costs nothing to keep it running. </p>\n<p>I've made it open source, with the code hosted on github, feel free to have a look there : <a href=\"https://github.com/renanlecaro/mermaid-gdocs\">https://github.com/renanlecaro/mermaid-gdocs</a></p>\n<p><a href=\"https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en\"> The mermaid add-on listed in the g-suite marketplace </a></p>\n<p> </p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+                   "Code"
+            ],
+            "date_published": "2020-06-05T08:55:23+10:00",
+            "date_modified": "2020-06-05T08:55:28+10:00"
+        },
+        {
             "id": "https://renanlecaro.github.io/documenting-systems.html",
             "url": "https://renanlecaro.github.io/documenting-systems.html",
             "title": "Documenting systems",
@@ -19,7 +34,7 @@
                 "name": "Renan LE CARO"
             },
             "tags": [
-                   "Programming"
+                   "Code"
             ],
             "date_published": "2020-05-30T11:00:03+10:00",
             "date_modified": "2020-05-30T11:00:13+10:00"
@@ -34,7 +49,7 @@
                 "name": "Renan LE CARO"
             },
             "tags": [
-                   "Programming"
+                   "Code"
             ],
             "date_published": "2020-05-28T11:26:10+10:00",
             "date_modified": "2020-05-30T10:34:03+10:00"
@@ -49,7 +64,7 @@
                 "name": "Renan LE CARO"
             },
             "tags": [
-                   "Photography"
+                   "Life"
             ],
             "date_published": "2020-05-27T23:12:18+10:00",
             "date_modified": "2020-05-27T23:35:29+10:00"
@@ -64,7 +79,7 @@
                 "name": "Renan LE CARO"
             },
             "tags": [
-                   "Programming"
+                   "Code"
             ],
             "date_published": "2020-05-27T22:49:46+10:00",
             "date_modified": "2020-05-28T10:51:29+10:00"
@@ -79,7 +94,7 @@
                 "name": "Renan LE CARO"
             },
             "tags": [
-                   "Programming"
+                   "Code"
             ],
             "date_published": "2020-05-27T22:42:26+10:00",
             "date_modified": "2020-05-27T23:35:16+10:00"

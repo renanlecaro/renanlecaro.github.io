@@ -3,7 +3,7 @@
     <title>Renan LE CARO</title>
     <link href="https://renanlecaro.github.io/feed.xml" rel="self" />
     <link href="https://renanlecaro.github.io" />
-    <updated>2020-08-04T11:21:07+10:00</updated>
+    <updated>2020-08-04T11:24:54+10:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
@@ -18,7 +18,7 @@
         <id>https://renanlecaro.github.io/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
             <category term="Code"/>
 
-        <updated>2020-08-04T11:21:03+10:00</updated>
+        <updated>2020-08-04T11:24:50+10:00</updated>
             <summary>
                 <![CDATA[
                     DO + MUP = 💙I've migrated my main project, https://ciboulette.net, from Heroku to digital ocean, with the help of the awesome meteor up tool that's still actively maintained. I wanted a way to automate the backups of production to my own computer. In meteor, the&hellip;
@@ -27,7 +27,7 @@
         <content type="html">
             <![CDATA[
                 <h2>DO + MUP = 💙</h2>
-<p>I've migrated my main project, <a href="#INTERNAL_LINK#/post/null">https://ciboulette.net</a>, from Heroku to <a href="https://www.digitalocean.com/">digital ocean</a>, with the help of the awesome <a href="https://meteor-up.com/">meteor up</a> tool that's still actively maintained.</p>
+<p>I've migrated my main project, <a href="https://www.digitalocean.com/">https://ciboulette.net</a>, from Heroku to <a href="https://www.digitalocean.com/">digital ocean</a>, with the help of the awesome <a href="https://meteor-up.com/">meteor up</a> tool that's still actively maintained.</p>
 <p>I wanted a way to automate the backups of production to my own computer. In meteor, the only thing really worth backing up is the content of the mongoDB.</p>
 <p><strong>We need two things : a script</strong> that does the backup, <strong>and a cron job</strong> to run regularly</p>
 <h2>Backup script</h2>

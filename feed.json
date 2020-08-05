@@ -10,6 +10,21 @@
     },
     "items": [
         {
+            "id": "https://renanlecaro.github.io/customizing-the-look-of-publii.html",
+            "url": "https://renanlecaro.github.io/customizing-the-look-of-publii.html",
+            "title": "Customizing the look of Publii",
+            "summary": "I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp;&hellip;",
+            "content_html": "<p>I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp; life). </p>\n<p>So I started looking for a different theme but I couldn't find what I was looking for, that is, a minimalist theme. I resolved to just strip things away from the default theme to make it lighter and JS free. </p>\n<p>Opening the default theme gave me the same feeling that I got when trying to customize the code of a 40$ admin panel. Lots of code, neatly organized, most of it unused.</p>\n<blockquote>\n<p>What is all this code, what is it for ? Oh, i can get rid of it.  </p>\n</blockquote>\n<p>I managed to strip down the source by removing the parts I wasn't interested in. I think now the design looks clean, and I got rid of most useless css and js I could find. I'm not sure that this is the right approach, as those changes definitely won't survive a theme update (but why would I want to update it ?) and are a bit hacky. I'm pretty sure those changes are only stored on my machine, so if I try to edit the website from somewhere else it will revert back to it's default look. </p>\n<p>However, i'm not too worried about this. This personal website is a playground for experimentation after all.</p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+                   "Code"
+            ],
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
+        },
+        {
             "id": "https://renanlecaro.github.io/life-in-vladivostok.html",
             "url": "https://renanlecaro.github.io/life-in-vladivostok.html",
             "title": "Life in Владивосток",
@@ -21,8 +36,8 @@
             "tags": [
                    "Life"
             ],
-            "date_published": "2020-08-04T12:27:56+10:00",
-            "date_modified": "2020-08-04T12:28:04+10:00"
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
         },
         {
             "id": "https://renanlecaro.github.io/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html",
@@ -36,23 +51,23 @@
             "tags": [
                    "Code"
             ],
-            "date_published": "2020-08-04T10:50:09+10:00",
-            "date_modified": "2020-08-04T11:58:07+10:00"
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
         },
         {
             "id": "https://renanlecaro.github.io/mermaid-gdocs.html",
             "url": "https://renanlecaro.github.io/mermaid-gdocs.html",
             "title": "Mermaid Gdocs",
             "summary": "Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;",
-            "content_html": "<p>Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. </p>\n<p>To avoid such disappointing outcome, I tried to make more design docs. A design doc is roughly said a document that will detail all the possible solutions to a problem, and serve as a support for debate, ideas and discussions. After a design doc is accepted by the team, you can go ahead with the development with less risk of requirements being inadequate. </p>\n<p>Most features would include some back end and front end elements, and some user flows. Trying to make the documents more readable, I added as many sequence diagrams as possible. Sequence diagrams are excellent at communicating a process. Their layout forces you to be succinct  as there's not much space for walls of texts and unnecessary details.</p>\n<p>I first edited the diagrams in the excellent <a href=\"https://www.websequencediagrams.com/\">websequencediagrams.com</a> and pasted a screenshot in the google documents, but that was a bit of a pain to maintain. This tool keeps a copy of the source code, so i'd just need to edit it and update the resulting picture in the google document, but no one else had access to said source code. I thought i could just save the source code in the image description field in google docs, to make it easier to update the diagram for anyone in the team.</p>\n<p>This is when I realized i could use this \"trick\" to create a <a href=\"https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en\">google docs add-on</a>. In a classic case of \"putting off writing documentation by focusing on the tools used in documenting\", I followed the (super confusing) tutorials on the google documentation website for G Suite add-ons. </p>\n<figure class=\"post__image post__image--center\" ><img src=\"https://renanlecaro.github.io/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png\" alt=\"Screenshot of the mermaid add-on in the g-suite marketplace\" width=\"989\" height=\"731\">\n<figcaption >The mermaid add-on listed in the g-suite marketplace </figcaption>\n</figure>\n<p> </p>\n<p>The project has evolved a bit with time but stays relatively simple in terms of code. It has gathered quite a lot of users (10K) despite me not putting any efforts in marketing it. I guess we have a product-market fit here, but no business plan at all. This is really just a few lines of JavaScript to make the power of the mermaid JS library available in google docs. I don't think it makes sense to charge for it, and it costs nothing to keep it running. </p>\n<p>I've made it open source, with the code hosted on github, feel free to have a look there : <a href=\"https://github.com/renanlecaro/mermaid-gdocs\">https://github.com/renanlecaro/mermaid-gdocs</a></p>\n<p><a href=\"https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en\"> The mermaid add-on listed in the g-suite marketplace </a></p>\n<p> </p>",
+            "content_html": "<p>Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. </p>\n<p>To avoid such disappointing outcome, I tried to make more design docs. A design doc is roughly said a document that will detail all the possible solutions to a problem, and serve as a support for debate, ideas and discussions. After a design doc is accepted by the team, you can go ahead with the development with less risk of requirements being inadequate. </p>\n<p>Most features would include some back end and front end elements, and some user flows. Trying to make the documents more readable, I added as many sequence diagrams as possible. Sequence diagrams are excellent at communicating a process. Their layout forces you to be succinct  as there's not much space for walls of texts and unnecessary details.</p>\n<p>I first edited the diagrams in the excellent <a href=\"https://www.websequencediagrams.com/\">websequencediagrams.com</a> and pasted a screenshot in the google documents, but that was a bit of a pain to maintain. This tool keeps a copy of the source code, so i'd just need to edit it and update the resulting picture in the google document, but no one else had access to said source code. I thought i could just save the source code in the image description field in google docs, to make it easier to update the diagram for anyone in the team.</p>\n<p>This is when I realized i could use this \"trick\" to create a <a href=\"https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en\">google docs add-on</a>. In a classic case of \"putting off writing documentation by focusing on the tools used in documenting\", I followed the (super confusing) tutorials on the google documentation website for G Suite add-ons. </p>\n<figure class=\"post__image post__image--center\" ><img loading=\"lazy\" src=\"https://renanlecaro.github.io/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xs.png 300w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-sm.png 480w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-md.png 768w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-lg.png 1024w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xl.png 1360w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-2xl.png 1600w\"  alt=\"Screenshot of the mermaid add-on in the g-suite marketplace\" width=\"989\" height=\"731\">\n<figcaption >The mermaid add-on listed in the g-suite marketplace </figcaption>\n</figure>\n<p> </p>\n<p>The project has evolved a bit with time but stays relatively simple in terms of code. It has gathered quite a lot of users (10K) despite me not putting any efforts in marketing it. I guess we have a product-market fit here, but no business plan at all. This is really just a few lines of JavaScript to make the power of the mermaid JS library available in google docs. I don't think it makes sense to charge for it, and it costs nothing to keep it running. </p>\n<p>I've made it open source, with the code hosted on github, feel free to have a look there : <a href=\"https://github.com/renanlecaro/mermaid-gdocs\">https://github.com/renanlecaro/mermaid-gdocs</a></p>\n<p><a href=\"https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en\"> The mermaid add-on listed in the g-suite marketplace </a></p>\n<p> </p>",
             "author": {
                 "name": "Renan LE CARO"
             },
             "tags": [
                    "Code"
             ],
-            "date_published": "2020-06-05T08:55:23+10:00",
-            "date_modified": "2020-06-05T08:55:28+10:00"
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
         },
         {
             "id": "https://renanlecaro.github.io/documenting-systems.html",
@@ -66,8 +81,8 @@
             "tags": [
                    "Code"
             ],
-            "date_published": "2020-05-30T11:00:03+10:00",
-            "date_modified": "2020-05-30T11:00:13+10:00"
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
         },
         {
             "id": "https://renanlecaro.github.io/ciboulettenet-a-web-platform-for-vegetable-farmers.html",
@@ -81,23 +96,23 @@
             "tags": [
                    "Code"
             ],
-            "date_published": "2020-05-28T11:26:10+10:00",
-            "date_modified": "2020-05-30T10:34:03+10:00"
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
         },
         {
             "id": "https://renanlecaro.github.io/the-fefu-campus.html",
             "url": "https://renanlecaro.github.io/the-fefu-campus.html",
             "title": "The FEFU Campus",
             "summary": "This is really just an excuse to try displaying a few photos in Publii",
-            "content_html": "<p>This is really just an excuse to try displaying a few photos in Publii</p>\n<div class=\"gallery gallery-wrapper--wide\"   >\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1.jpg\" ><img src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg\" alt=\"The bridge to the island\" width=\"720\" height=\"478\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1.jpg\" ><img src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg\" alt=\"Reflections of the campus in the sea\" width=\"720\" height=\"720\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048.jpg\" ><img src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048-thumbnail.jpg\" alt=\"Campus building, they were lit by two different light sources, but I accentuated that quite a bit\" width=\"720\" height=\"478\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042.jpg\" ><img src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042-thumbnail.jpg\" alt=\"Construction site for the new university buildings\" width=\"720\" height=\"720\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024.jpg\" ><img src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024-thumbnail.jpg\" alt=\"Another view of the bridge\" width=\"720\" height=\"720\"></a></figure>\n</div>",
+            "content_html": "<p>This is really just an excuse to try displaying a few photos in Publii</p>\n<div class=\"gallery-wrapper gallery-wrapper--wide\"><div class=\"gallery\"  data-is-empty=\"false\" data-columns=\"4\">\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1.jpg\" data-size=\"4276x2836\"><img loading=\"lazy\" src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg\" alt=\"The bridge to the island\" width=\"720\" height=\"478\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1.jpg\" data-size=\"2836x2836\"><img loading=\"lazy\" src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg\" alt=\"Reflections of the campus in the sea\" width=\"720\" height=\"720\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048.jpg\" data-size=\"4276x2836\"><img loading=\"lazy\" src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048-thumbnail.jpg\" alt=\"Campus building, they were lit by two different light sources, but I accentuated that quite a bit\" width=\"720\" height=\"478\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042.jpg\" data-size=\"2836x2836\"><img loading=\"lazy\" src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042-thumbnail.jpg\" alt=\"Construction site for the new university buildings\" width=\"720\" height=\"720\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024.jpg\" data-size=\"2836x2836\"><img loading=\"lazy\" src=\"https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024-thumbnail.jpg\" alt=\"Another view of the bridge\" width=\"720\" height=\"720\"></a></figure>\n</div></div>",
             "author": {
                 "name": "Renan LE CARO"
             },
             "tags": [
                    "Life"
             ],
-            "date_published": "2020-05-27T23:12:18+10:00",
-            "date_modified": "2020-05-27T23:35:29+10:00"
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
         },
         {
             "id": "https://renanlecaro.github.io/giving-publii-a-try.html",
@@ -111,23 +126,23 @@
             "tags": [
                    "Code"
             ],
-            "date_published": "2020-05-27T22:49:46+10:00",
-            "date_modified": "2020-05-28T10:51:29+10:00"
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
         },
         {
             "id": "https://renanlecaro.github.io/minimage-minimal-image-editor.html",
             "url": "https://renanlecaro.github.io/minimage-minimal-image-editor.html",
             "title": "Minimage : minimal image editor",
             "summary": "This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be. The main problem I was trying to&hellip;",
-            "content_html": "<p>This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be.</p>\n<p>The main problem I was trying to solve was a personal one : I wanted to annotate a screenshot of an app to a friend before sending it to him. All i needed was to draw an arrow on a small picture. I couldn't find an app that would only do that, so I created one using the technology I knew best : front end javascript.</p>\n<p><a href=\"https://renanlecaro.github.io/minimage/\">The app</a> is far from perfect, but it runs quite smoothly on a variety of platforms.  </p>\n<p>The app is freely accessible and open source but I haven't really worked on promoting it. Since then i've bought a new phone and don't really need as much to save space on the internal memory. I rarely make use of minimage but keep it online, just in case it might be useful one day.  </p>\n<p> </p>\n<p><img class=\"post__image align-center\" src=\"https://renanlecaro.github.io/media/posts/3/minimage-2.png\" alt=\"Screenshot of minimage\" width=\"565\" height=\"321\"></p>",
+            "content_html": "<p>This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be.</p>\n<p>The main problem I was trying to solve was a personal one : I wanted to annotate a screenshot of an app to a friend before sending it to him. All i needed was to draw an arrow on a small picture. I couldn't find an app that would only do that, so I created one using the technology I knew best : front end javascript.</p>\n<p><a href=\"https://renanlecaro.github.io/minimage/\">The app</a> is far from perfect, but it runs quite smoothly on a variety of platforms.  </p>\n<p>The app is freely accessible and open source but I haven't really worked on promoting it. Since then i've bought a new phone and don't really need as much to save space on the internal memory. I rarely make use of minimage but keep it online, just in case it might be useful one day.  </p>\n<p> </p>\n<figure class=\"post__image align-center\"><img loading=\"lazy\"  src=\"https://renanlecaro.github.io/media/posts/3/minimage-2.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-xs.png 300w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-sm.png 480w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-md.png 768w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-lg.png 1024w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-xl.png 1360w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-2xl.png 1600w\"  alt=\"Screenshot of minimage\" width=\"565\" height=\"321\"></figure>",
             "author": {
                 "name": "Renan LE CARO"
             },
             "tags": [
                    "Code"
             ],
-            "date_published": "2020-05-27T22:42:26+10:00",
-            "date_modified": "2020-05-27T23:35:16+10:00"
+            "date_published": "2020-08-05T13:37:50+10:00",
+            "date_modified": "2020-08-05T13:37:50+10:00"
         }
     ]
 }

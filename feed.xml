@@ -3,12 +3,40 @@
     <title>Renan LE CARO</title>
     <link href="https://renanlecaro.github.io/feed.xml" rel="self" />
     <link href="https://renanlecaro.github.io" />
-    <updated>2020-08-05T13:26:05+10:00</updated>
+    <updated>1970-01-01T10:00:00+10:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://renanlecaro.github.io</id>
 
+    <entry>
+        <title>Customizing the look of Publii</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://renanlecaro.github.io/customizing-the-look-of-publii.html"/>
+        <id>https://renanlecaro.github.io/customizing-the-look-of-publii.html</id>
+            <category term="Code"/>
+
+        <updated>2020-08-05T13:37:50+10:00</updated>
+            <summary>
+                <![CDATA[
+                    I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp;&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp; life). </p>
+<p>So I started looking for a different theme but I couldn't find what I was looking for, that is, a minimalist theme. I resolved to just strip things away from the default theme to make it lighter and JS free. </p>
+<p>Opening the default theme gave me the same feeling that I got when trying to customize the code of a 40$ admin panel. Lots of code, neatly organized, most of it unused.</p>
+<blockquote>
+<p>What is all this code, what is it for ? Oh, i can get rid of it.  </p>
+</blockquote>
+<p>I managed to strip down the source by removing the parts I wasn't interested in. I think now the design looks clean, and I got rid of most useless css and js I could find. I'm not sure that this is the right approach, as those changes definitely won't survive a theme update (but why would I want to update it ?) and are a bit hacky. I'm pretty sure those changes are only stored on my machine, so if I try to edit the website from somewhere else it will revert back to it's default look. </p>
+<p>However, i'm not too worried about this. This personal website is a playground for experimentation after all.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Life in Владивосток</title>
         <author>
@@ -18,7 +46,7 @@
         <id>https://renanlecaro.github.io/life-in-vladivostok.html</id>
             <category term="Life"/>
 
-        <updated>2020-08-04T12:28:04+10:00</updated>
+        <updated>2020-08-05T13:37:50+10:00</updated>
             <summary>
                 <![CDATA[
                     I've been living in Vladivostok, Russia, since the end of February 2020. I'm a student here, learning the Russian language. I'm a bit older than the average student but my life is still very student-like anyway. I really enjoy the energy of younger friends and&hellip;
@@ -53,7 +81,7 @@
         <id>https://renanlecaro.github.io/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
             <category term="Code"/>
 
-        <updated>2020-08-04T11:58:07+10:00</updated>
+        <updated>2020-08-05T13:37:50+10:00</updated>
             <summary>
                 <![CDATA[
                     DO + MUP = 💙I've migrated my main project, https://ciboulette.net, from Heroku to digital ocean, with the help of the awesome meteor up tool that's still actively maintained. I wanted a way to automate the backups of production to my own computer. In meteor, the&hellip;
@@ -92,7 +120,7 @@
         <id>https://renanlecaro.github.io/mermaid-gdocs.html</id>
             <category term="Code"/>
 
-        <updated>2020-06-05T08:55:28+10:00</updated>
+        <updated>2020-08-05T13:37:50+10:00</updated>
             <summary>
                 <![CDATA[
                     Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;
@@ -105,7 +133,7 @@
 <p>Most features would include some back end and front end elements, and some user flows. Trying to make the documents more readable, I added as many sequence diagrams as possible. Sequence diagrams are excellent at communicating a process. Their layout forces you to be succinct  as there's not much space for walls of texts and unnecessary details.</p>
 <p>I first edited the diagrams in the excellent <a href="https://www.websequencediagrams.com/">websequencediagrams.com</a> and pasted a screenshot in the google documents, but that was a bit of a pain to maintain. This tool keeps a copy of the source code, so i'd just need to edit it and update the resulting picture in the google document, but no one else had access to said source code. I thought i could just save the source code in the image description field in google docs, to make it easier to update the diagram for anyone in the team.</p>
 <p>This is when I realized i could use this "trick" to create a <a href="https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en">google docs add-on</a>. In a classic case of "putting off writing documentation by focusing on the tools used in documenting", I followed the (super confusing) tutorials on the google documentation website for G Suite add-ons. </p>
-<figure class="post__image post__image--center" ><img src="https://renanlecaro.github.io/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png" alt="Screenshot of the mermaid add-on in the g-suite marketplace" width="989" height="731">
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://renanlecaro.github.io/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xs.png 300w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-sm.png 480w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-md.png 768w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-lg.png 1024w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xl.png 1360w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-2xl.png 1600w"  alt="Screenshot of the mermaid add-on in the g-suite marketplace" width="989" height="731">
 <figcaption >The mermaid add-on listed in the g-suite marketplace </figcaption>
 </figure>
 <p> </p>
@@ -125,7 +153,7 @@
         <id>https://renanlecaro.github.io/documenting-systems.html</id>
             <category term="Code"/>
 
-        <updated>2020-05-30T11:00:13+10:00</updated>
+        <updated>2020-08-05T13:37:50+10:00</updated>
             <summary>
                 <![CDATA[
                     Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But documenting a system can be a very interesting task. I also had to explain our systems to new&hellip;
@@ -156,7 +184,7 @@
         <id>https://renanlecaro.github.io/ciboulettenet-a-web-platform-for-vegetable-farmers.html</id>
             <category term="Code"/>
 
-        <updated>2020-05-30T10:34:03+10:00</updated>
+        <updated>2020-08-05T13:37:50+10:00</updated>
             <summary>
                 <![CDATA[
                     It all started about 7 years ago. My mother got laid off and had to find a job. She already had a large garden and decided to make a living selling vegetables. She invested little capital as the activity was supposed to last only a&hellip;
@@ -193,7 +221,7 @@
         <id>https://renanlecaro.github.io/the-fefu-campus.html</id>
             <category term="Life"/>
 
-        <updated>2020-05-27T23:35:29+10:00</updated>
+        <updated>2020-08-05T13:37:50+10:00</updated>
             <summary>
                 <![CDATA[
                     This is really just an excuse to try displaying a few photos in Publii
@@ -202,13 +230,13 @@
         <content type="html">
             <![CDATA[
                 <p>This is really just an excuse to try displaying a few photos in Publii</p>
-<div class="gallery gallery-wrapper--wide"   >
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg" alt="The bridge to the island" width="720" height="478"></a></figure>
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg" alt="Reflections of the campus in the sea" width="720" height="720"></a></figure>
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048-thumbnail.jpg" alt="Campus building, they were lit by two different light sources, but I accentuated that quite a bit" width="720" height="478"></a></figure>
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042-thumbnail.jpg" alt="Construction site for the new university buildings" width="720" height="720"></a></figure>
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024.jpg" ><img src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024-thumbnail.jpg" alt="Another view of the bridge" width="720" height="720"></a></figure>
-</div>
+<div class="gallery-wrapper gallery-wrapper--wide"><div class="gallery"  data-is-empty="false" data-columns="4">
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1.jpg" data-size="4276x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg" alt="The bridge to the island" width="720" height="478"></a></figure>
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1.jpg" data-size="2836x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg" alt="Reflections of the campus in the sea" width="720" height="720"></a></figure>
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048.jpg" data-size="4276x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048-thumbnail.jpg" alt="Campus building, they were lit by two different light sources, but I accentuated that quite a bit" width="720" height="478"></a></figure>
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042.jpg" data-size="2836x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042-thumbnail.jpg" alt="Construction site for the new university buildings" width="720" height="720"></a></figure>
+<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024.jpg" data-size="2836x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024-thumbnail.jpg" alt="Another view of the bridge" width="720" height="720"></a></figure>
+</div></div>
             ]]>
         </content>
     </entry>
@@ -221,7 +249,7 @@
         <id>https://renanlecaro.github.io/giving-publii-a-try.html</id>
             <category term="Code"/>
 
-        <updated>2020-05-28T10:51:29+10:00</updated>
+        <updated>2020-08-05T13:37:50+10:00</updated>
             <summary>
                 <![CDATA[
                     As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content. But hosting a wordpress&hellip;
@@ -249,7 +277,7 @@
         <id>https://renanlecaro.github.io/minimage-minimal-image-editor.html</id>
             <category term="Code"/>
 
-        <updated>2020-05-27T23:35:16+10:00</updated>
+        <updated>2020-08-05T13:37:50+10:00</updated>
             <summary>
                 <![CDATA[
                     This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be. The main problem I was trying to&hellip;
@@ -262,7 +290,7 @@
 <p><a href="https://renanlecaro.github.io/minimage/">The app</a> is far from perfect, but it runs quite smoothly on a variety of platforms.  </p>
 <p>The app is freely accessible and open source but I haven't really worked on promoting it. Since then i've bought a new phone and don't really need as much to save space on the internal memory. I rarely make use of minimage but keep it online, just in case it might be useful one day.  </p>
 <p> </p>
-<p><img class="post__image align-center" src="https://renanlecaro.github.io/media/posts/3/minimage-2.png" alt="Screenshot of minimage" width="565" height="321"></p>
+<figure class="post__image align-center"><img loading="lazy"  src="https://renanlecaro.github.io/media/posts/3/minimage-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-xs.png 300w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-sm.png 480w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-md.png 768w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-lg.png 1024w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-xl.png 1360w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-2xl.png 1600w"  alt="Screenshot of minimage" width="565" height="321"></figure>
             ]]>
         </content>
     </entry>

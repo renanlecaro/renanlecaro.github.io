@@ -3,7 +3,7 @@
     <title>Renan LE CARO</title>
     <link href="https://renanlecaro.github.io/feed.xml" rel="self" />
     <link href="https://renanlecaro.github.io" />
-    <updated>1970-01-01T10:00:00+10:00</updated>
+    <updated>1970-01-01T01:00:00+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
@@ -18,7 +18,7 @@
         <id>https://renanlecaro.github.io/customizing-the-look-of-publii.html</id>
             <category term="Code"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp;&hellip;
@@ -46,7 +46,7 @@
         <id>https://renanlecaro.github.io/life-in-vladivostok.html</id>
             <category term="Life"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     I've been living in Vladivostok, Russia, since the end of February 2020. I'm a student here, learning the Russian language. I'm a bit older than the average student but my life is still very student-like anyway. I really enjoy the energy of younger friends and&hellip;
@@ -81,7 +81,7 @@
         <id>https://renanlecaro.github.io/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
             <category term="Code"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     DO + MUP = 💙I've migrated my main project, https://ciboulette.net, from Heroku to digital ocean, with the help of the awesome meteor up tool that's still actively maintained. I wanted a way to automate the backups of production to my own computer. In meteor, the&hellip;
@@ -120,7 +120,7 @@
         <id>https://renanlecaro.github.io/mermaid-gdocs.html</id>
             <category term="Code"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;
@@ -153,7 +153,7 @@
         <id>https://renanlecaro.github.io/documenting-systems.html</id>
             <category term="Code"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But documenting a system can be a very interesting task. I also had to explain our systems to new&hellip;
@@ -184,7 +184,7 @@
         <id>https://renanlecaro.github.io/ciboulettenet-a-web-platform-for-vegetable-farmers.html</id>
             <category term="Code"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     It all started about 7 years ago. My mother got laid off and had to find a job. She already had a large garden and decided to make a living selling vegetables. She invested little capital as the activity was supposed to last only a&hellip;
@@ -221,7 +221,7 @@
         <id>https://renanlecaro.github.io/the-fefu-campus.html</id>
             <category term="Life"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     This is really just an excuse to try displaying a few photos in Publii
@@ -249,7 +249,7 @@
         <id>https://renanlecaro.github.io/giving-publii-a-try.html</id>
             <category term="Code"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content. But hosting a wordpress&hellip;
@@ -277,7 +277,7 @@
         <id>https://renanlecaro.github.io/minimage-minimal-image-editor.html</id>
             <category term="Code"/>
 
-        <updated>2020-09-17T00:12:36+10:00</updated>
+        <updated>2021-01-19T15:43:40+01:00</updated>
             <summary>
                 <![CDATA[
                     This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be. The main problem I was trying to&hellip;

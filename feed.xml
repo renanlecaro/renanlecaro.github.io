@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Renan LE CARO</title>
-    <link href="https://renanlecaro.github.io/feed.xml" rel="self" />
-    <link href="https://renanlecaro.github.io" />
+    <link href="https://lecaro.me/feed.xml" rel="self" />
+    <link href="https://lecaro.me" />
     <updated>1970-01-01T01:00:00+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
-    <id>https://renanlecaro.github.io</id>
+    <id>https://lecaro.me</id>
 
     <entry>
         <title>Customizing the look of Publii</title>
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/customizing-the-look-of-publii.html"/>
-        <id>https://renanlecaro.github.io/customizing-the-look-of-publii.html</id>
+        <link href="https://lecaro.me/customizing-the-look-of-publii.html"/>
+        <id>https://lecaro.me/customizing-the-look-of-publii.html</id>
             <category term="Code"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp;&hellip;
@@ -42,11 +42,11 @@
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/life-in-vladivostok.html"/>
-        <id>https://renanlecaro.github.io/life-in-vladivostok.html</id>
+        <link href="https://lecaro.me/life-in-vladivostok.html"/>
+        <id>https://lecaro.me/life-in-vladivostok.html</id>
             <category term="Life"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     I've been living in Vladivostok, Russia, since the end of February 2020. I'm a student here, learning the Russian language. I'm a bit older than the average student but my life is still very student-like anyway. I really enjoy the energy of younger friends and&hellip;
@@ -77,11 +77,11 @@
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html"/>
-        <id>https://renanlecaro.github.io/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
+        <link href="https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html"/>
+        <id>https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
             <category term="Code"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     DO + MUP = 💙I've migrated my main project, https://ciboulette.net, from Heroku to digital ocean, with the help of the awesome meteor up tool that's still actively maintained. I wanted a way to automate the backups of production to my own computer. In meteor, the&hellip;
@@ -116,11 +116,11 @@
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/mermaid-gdocs.html"/>
-        <id>https://renanlecaro.github.io/mermaid-gdocs.html</id>
+        <link href="https://lecaro.me/mermaid-gdocs.html"/>
+        <id>https://lecaro.me/mermaid-gdocs.html</id>
             <category term="Code"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;
@@ -133,7 +133,7 @@
 <p>Most features would include some back end and front end elements, and some user flows. Trying to make the documents more readable, I added as many sequence diagrams as possible. Sequence diagrams are excellent at communicating a process. Their layout forces you to be succinct  as there's not much space for walls of texts and unnecessary details.</p>
 <p>I first edited the diagrams in the excellent <a href="https://www.websequencediagrams.com/">websequencediagrams.com</a> and pasted a screenshot in the google documents, but that was a bit of a pain to maintain. This tool keeps a copy of the source code, so i'd just need to edit it and update the resulting picture in the google document, but no one else had access to said source code. I thought i could just save the source code in the image description field in google docs, to make it easier to update the diagram for anyone in the team.</p>
 <p>This is when I realized i could use this "trick" to create a <a href="https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en">google docs add-on</a>. In a classic case of "putting off writing documentation by focusing on the tools used in documenting", I followed the (super confusing) tutorials on the google documentation website for G Suite add-ons. </p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://renanlecaro.github.io/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xs.png 300w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-sm.png 480w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-md.png 768w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-lg.png 1024w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xl.png 1360w ,https://renanlecaro.github.io/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-2xl.png 1600w"  alt="Screenshot of the mermaid add-on in the g-suite marketplace" width="989" height="731">
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://lecaro.me/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xs.png 300w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-sm.png 480w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-md.png 768w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-lg.png 1024w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xl.png 1360w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-2xl.png 1600w"  alt="Screenshot of the mermaid add-on in the g-suite marketplace" width="989" height="731">
 <figcaption >The mermaid add-on listed in the g-suite marketplace </figcaption>
 </figure>
 <p> </p>
@@ -149,11 +149,11 @@
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/documenting-systems.html"/>
-        <id>https://renanlecaro.github.io/documenting-systems.html</id>
+        <link href="https://lecaro.me/documenting-systems.html"/>
+        <id>https://lecaro.me/documenting-systems.html</id>
             <category term="Code"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But documenting a system can be a very interesting task. I also had to explain our systems to new&hellip;
@@ -180,11 +180,11 @@
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/ciboulettenet-a-web-platform-for-vegetable-farmers.html"/>
-        <id>https://renanlecaro.github.io/ciboulettenet-a-web-platform-for-vegetable-farmers.html</id>
+        <link href="https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html"/>
+        <id>https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html</id>
             <category term="Code"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     It all started about 7 years ago. My mother got laid off and had to find a job. She already had a large garden and decided to make a living selling vegetables. She invested little capital as the activity was supposed to last only a&hellip;
@@ -217,11 +217,11 @@
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/the-fefu-campus.html"/>
-        <id>https://renanlecaro.github.io/the-fefu-campus.html</id>
+        <link href="https://lecaro.me/the-fefu-campus.html"/>
+        <id>https://lecaro.me/the-fefu-campus.html</id>
             <category term="Life"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     This is really just an excuse to try displaying a few photos in Publii
@@ -231,11 +231,11 @@
             <![CDATA[
                 <p>This is really just an excuse to try displaying a few photos in Publii</p>
 <div class="gallery-wrapper gallery-wrapper--wide"><div class="gallery"  data-is-empty="false" data-columns="4">
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1.jpg" data-size="4276x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg" alt="The bridge to the island" width="720" height="478"></a></figure>
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1.jpg" data-size="2836x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg" alt="Reflections of the campus in the sea" width="720" height="720"></a></figure>
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048.jpg" data-size="4276x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3048-thumbnail.jpg" alt="Campus building, they were lit by two different light sources, but I accentuated that quite a bit" width="720" height="478"></a></figure>
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042.jpg" data-size="2836x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3042-thumbnail.jpg" alt="Construction site for the new university buildings" width="720" height="720"></a></figure>
-<figure class="gallery__item"><a href="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024.jpg" data-size="2836x2836"><img loading="lazy" src="https://renanlecaro.github.io/media/posts/5/gallery/DSC_3024-thumbnail.jpg" alt="Another view of the bridge" width="720" height="720"></a></figure>
+<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3034-1.jpg" data-size="4276x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg" alt="The bridge to the island" width="720" height="478"></a></figure>
+<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3026-1.jpg" data-size="2836x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg" alt="Reflections of the campus in the sea" width="720" height="720"></a></figure>
+<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3048.jpg" data-size="4276x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3048-thumbnail.jpg" alt="Campus building, they were lit by two different light sources, but I accentuated that quite a bit" width="720" height="478"></a></figure>
+<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3042.jpg" data-size="2836x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3042-thumbnail.jpg" alt="Construction site for the new university buildings" width="720" height="720"></a></figure>
+<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3024.jpg" data-size="2836x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3024-thumbnail.jpg" alt="Another view of the bridge" width="720" height="720"></a></figure>
 </div></div>
             ]]>
         </content>
@@ -245,11 +245,11 @@
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/giving-publii-a-try.html"/>
-        <id>https://renanlecaro.github.io/giving-publii-a-try.html</id>
+        <link href="https://lecaro.me/giving-publii-a-try.html"/>
+        <id>https://lecaro.me/giving-publii-a-try.html</id>
             <category term="Code"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content. But hosting a wordpress&hellip;
@@ -273,11 +273,11 @@
         <author>
             <name>Renan LE CARO</name>
         </author>
-        <link href="https://renanlecaro.github.io/minimage-minimal-image-editor.html"/>
-        <id>https://renanlecaro.github.io/minimage-minimal-image-editor.html</id>
+        <link href="https://lecaro.me/minimage-minimal-image-editor.html"/>
+        <id>https://lecaro.me/minimage-minimal-image-editor.html</id>
             <category term="Code"/>
 
-        <updated>2021-02-13T13:02:24+01:00</updated>
+        <updated>2021-02-21T18:35:48+01:00</updated>
             <summary>
                 <![CDATA[
                     This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be. The main problem I was trying to&hellip;
@@ -290,7 +290,7 @@
 <p><a href="https://renanlecaro.github.io/minimage/">The app</a> is far from perfect, but it runs quite smoothly on a variety of platforms.  </p>
 <p>The app is freely accessible and open source but I haven't really worked on promoting it. Since then i've bought a new phone and don't really need as much to save space on the internal memory. I rarely make use of minimage but keep it online, just in case it might be useful one day.  </p>
 <p> </p>
-<figure class="post__image align-center"><img loading="lazy"  src="https://renanlecaro.github.io/media/posts/3/minimage-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-xs.png 300w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-sm.png 480w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-md.png 768w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-lg.png 1024w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-xl.png 1360w ,https://renanlecaro.github.io/media/posts/3/responsive/minimage-2-2xl.png 1600w"  alt="Screenshot of minimage" width="565" height="321"></figure>
+<figure class="post__image align-center"><img loading="lazy"  src="https://lecaro.me/media/posts/3/minimage-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/3/responsive/minimage-2-xs.png 300w ,https://lecaro.me/media/posts/3/responsive/minimage-2-sm.png 480w ,https://lecaro.me/media/posts/3/responsive/minimage-2-md.png 768w ,https://lecaro.me/media/posts/3/responsive/minimage-2-lg.png 1024w ,https://lecaro.me/media/posts/3/responsive/minimage-2-xl.png 1360w ,https://lecaro.me/media/posts/3/responsive/minimage-2-2xl.png 1600w"  alt="Screenshot of minimage" width="565" height="321"></figure>
             ]]>
         </content>
     </entry>

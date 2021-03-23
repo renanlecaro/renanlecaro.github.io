@@ -10,15 +10,93 @@
     <id>https://lecaro.me</id>
 
     <entry>
+        <title>Oh, the joy of Meteor e2e testing !</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/oh-the-joy-of-e2e-testing.html"/>
+        <id>https://lecaro.me/oh-the-joy-of-e2e-testing.html</id>
+            <category term="Blog post"/>
+
+        <updated>2021-03-23T15:07:42+01:00</updated>
+            <summary>
+                <![CDATA[
+                    I'm setting up e2e testing on my Meteor app, ciboulette.net. I had done it in the past but after large UI changes i just removed the tests as they were completely stale and generally painful to work with : I'm trying again, this time using&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I'm setting up e2e testing on my Meteor app, ciboulette.net.</p>
+<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">I had done it in the past but after large UI changes i just removed the tests as they were completely stale and generally painful to work with : </span></p>
+<ul>
+<li>they were <strong>brittle and/or slow</strong></li>
+<li>they were a <strong>pain to edit</strong>. </li>
+<li>they didn't run in <strong>CI</strong></li>
+</ul>
+<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">I'm trying again, this time using <strong>playwright.</strong></span></p>
+<p>To <strong>make the tests less brittle</strong>, i <span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">had to disable some of the "smarts" of the app to make the tests work at high speed  : </span></p>
+<ul>
+<li><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">Instead of deferring heavy workloads, I run them synchronously before returning from a method.</span></li>
+<li><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">My modal windows wait for the method result to come back from the server (no optimistic UI magic)</span></li>
+<li><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">I had some logic to ignore double clicks that I had to disable in e2e mode</span></li>
+<li>I completely mocked external services (google maps, google image, emails, sms, etc..)</li>
+</ul>
+<p>To <strong>make editing easier</strong>, I had to fix a few things :</p>
+<ul>
+<li>I start the e2e server with a different meteor local file, on a different port, with dedicated settings</li>
+<li><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">I don't use the headful mode because it always start in the wrong place.</span></li>
+<li>I take screenshots at every step, outputting the screenshot to one file that refreshes automatically when viewed with eog (eye of gnome) </li>
+<li>I use nodemon to restart the tests when i change them (but not when I change any other file) </li>
+<li>I start both my headless tests and eog with <strong><strong>npm-run-all</strong></strong></li>
+</ul>
+<p>Running the tests in <strong>github ci</strong></p>
+<ul>
+<li>The CI scrip uses <strong>start-server-and-test</strong> to start the meteor server in e2e mode and run the headless tests against it</li>
+<li>The e2e Ci script runs<strong> npm install</strong>, but all other scripts run <strong>npm install --production</strong>. Playwright is heavy and is not required to build the app so i've added it as a devDependency. The unit tests are lightweight so i've added jest as a normal dependency.</li>
+</ul>
+<p>The <strong>remaining challenge</strong> I have is to create snapshots at different stages of the test (page url, db content, cookies) so that i can skip most of the e2e tests suite when editing a small part of it. It's tricky, involves hardcoded mongo urls, some mongorestore and mongodump run with execSync .. and not working yet. </p>
+<p> </p>
+<p>Extract of my package.json scripts :</p>
+<pre>"e2e:server": "METEOR_LOCAL_DIR=.meteor/e2e  meteor --port 4000 --settings settings.e2e.json",<br>"e2e:cli:showImages": "eog tests/e2e/last-test-state.png",<br>"e2e:cli:nodemon": "SNAPALL=true nodemon  --watch tests/e2e/01_signup.js tests/e2e/01_signup.js",<br>"e2e:cli": "run-p e2e:cli:* ",<br>"e2e:ci:node": "node tests/e2e/01_signup.js ",<br>"e2e:ci": "start-server-and-test e2e:server http://localhost:4000 e2e:ci:node"</pre>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>My 3 favorite playlists : house, trance and funk</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/my-3-favorite-playlists.html"/>
+        <id>https://lecaro.me/my-3-favorite-playlists.html</id>
+            <category term="Blog post"/>
+
+        <updated>2021-03-23T15:07:42+01:00</updated>
+            <summary>
+                <![CDATA[
+                    I have 3 playlists on Spotify I always come back to , thought i'd share them hereDeep house as a background music for lightweight tasks, and as a loud playlist for festive events.Psychedelic trance when I need a motivation surge for a tough bit of&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I have 3 playlists on Spotify I always come back to , thought i'd share them here</p>
+<ul>
+<li><a href="https://open.spotify.com/playlist/4U1xZfxO1AsNbqWYKbfUnM?si=dTcARomPSLqMRaNHPvoWRw">Deep house</a> as a background music for lightweight tasks, and as a loud playlist for festive events.</li>
+<li><a href="https://open.spotify.com/playlist/69gyd1SXiVhvfsyYS078f0?si=MnvGO1LTRhOy11neMwBHaQ">Psychedelic trance</a> when I need a motivation surge for a tough bit of code. It can get tiring after a few hours</li>
+<li><a href="https://open.spotify.com/playlist/2BAkAh0GWqDwuSFEJsH1wJ?si=2y98meZORqaFBCfni2iwng">Low volume funk</a> for events which involve people I don't know the music taste of, and music is not the focus of  the event. It's selected so that the tracks don't overpower the soundscape and sound good even at a low volume. </li>
+</ul>
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>Customizing the look of Publii</title>
         <author>
             <name>Renan LE CARO</name>
         </author>
         <link href="https://lecaro.me/customizing-the-look-of-publii.html"/>
         <id>https://lecaro.me/customizing-the-look-of-publii.html</id>
-            <category term="Code"/>
+            <category term="Blog post"/>
 
-        <updated>2021-02-22T15:05:44+01:00</updated>
+        <updated>2021-03-23T15:07:42+01:00</updated>
             <summary>
                 <![CDATA[
                     I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp;&hellip;
@@ -44,9 +122,9 @@
         </author>
         <link href="https://lecaro.me/life-in-vladivostok.html"/>
         <id>https://lecaro.me/life-in-vladivostok.html</id>
-            <category term="Life"/>
+            <category term="Blog post"/>
 
-        <updated>2021-02-22T15:05:44+01:00</updated>
+        <updated>2021-03-23T15:07:42+01:00</updated>
             <summary>
                 <![CDATA[
                     I've been living in Vladivostok, Russia, since the end of February 2020. I'm a student here, learning the Russian language. I'm a bit older than the average student but my life is still very student-like anyway. I really enjoy the energy of younger friends and&hellip;
@@ -79,9 +157,9 @@
         </author>
         <link href="https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html"/>
         <id>https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
-            <category term="Code"/>
+            <category term="Blog post"/>
 
-        <updated>2021-02-22T15:05:44+01:00</updated>
+        <updated>2021-03-23T15:07:42+01:00</updated>
             <summary>
                 <![CDATA[
                     DO + MUP = 💙I've migrated my main project, https://ciboulette.net, from Heroku to digital ocean, with the help of the awesome meteor up tool that's still actively maintained. I wanted a way to automate the backups of production to my own computer. In meteor, the&hellip;
@@ -118,9 +196,9 @@
         </author>
         <link href="https://lecaro.me/mermaid-gdocs.html"/>
         <id>https://lecaro.me/mermaid-gdocs.html</id>
-            <category term="Code"/>
+            <category term="Blog post"/>
 
-        <updated>2021-02-22T15:05:44+01:00</updated>
+        <updated>2021-03-23T15:07:42+01:00</updated>
             <summary>
                 <![CDATA[
                     Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;
@@ -151,9 +229,9 @@
         </author>
         <link href="https://lecaro.me/documenting-systems.html"/>
         <id>https://lecaro.me/documenting-systems.html</id>
-            <category term="Code"/>
+            <category term="Blog post"/>
 
-        <updated>2021-02-22T15:05:44+01:00</updated>
+        <updated>2021-03-23T15:07:42+01:00</updated>
             <summary>
                 <![CDATA[
                     Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But documenting a system can be a very interesting task. I also had to explain our systems to new&hellip;
@@ -182,9 +260,9 @@
         </author>
         <link href="https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html"/>
         <id>https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html</id>
-            <category term="Code"/>
+            <category term="Blog post"/>
 
-        <updated>2021-02-22T15:05:44+01:00</updated>
+        <updated>2021-03-23T15:07:42+01:00</updated>
             <summary>
                 <![CDATA[
                     It all started about 7 years ago. My mother got laid off and had to find a job. She already had a large garden and decided to make a living selling vegetables. She invested little capital as the activity was supposed to last only a&hellip;
@@ -219,9 +297,9 @@
         </author>
         <link href="https://lecaro.me/the-fefu-campus.html"/>
         <id>https://lecaro.me/the-fefu-campus.html</id>
-            <category term="Life"/>
+            <category term="Blog post"/>
 
-        <updated>2021-02-22T15:05:44+01:00</updated>
+        <updated>2021-03-23T15:07:42+01:00</updated>
             <summary>
                 <![CDATA[
                     This is really just an excuse to try displaying a few photos in Publii
@@ -247,9 +325,9 @@
         </author>
         <link href="https://lecaro.me/giving-publii-a-try.html"/>
         <id>https://lecaro.me/giving-publii-a-try.html</id>
-            <category term="Code"/>
+            <category term="Blog post"/>
 
-        <updated>2021-02-22T15:05:44+01:00</updated>
+        <updated>2021-03-23T15:07:42+01:00</updated>
             <summary>
                 <![CDATA[
                     As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content. But hosting a wordpress&hellip;
@@ -265,32 +343,6 @@
 <p>So until now, for non technical business owners, I've set up a free host and the administration of the website was usually quite slow and unreliable. If the client wanted something more reliable, I'd get a paid hosting plan, but that would include some overhead for me. </p>
 <p>For my personal projects I personally used custom made static websites, with or without automatic generation. But I didn't see myself explaining the details of git push, markdown and CLI use to my parents. I thought I should work on an ideal, user friendly static website editor one of those days.  </p>
 <p>Today i discovered <a href="https://getpublii.com/" target="_blank" rel="noopener noreferrer">Publii</a> and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savvy friends in the future. Until now I've been pleasantly surprised. </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Minimage : minimal image editor</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/minimage-minimal-image-editor.html"/>
-        <id>https://lecaro.me/minimage-minimal-image-editor.html</id>
-            <category term="Code"/>
-
-        <updated>2021-02-22T15:05:44+01:00</updated>
-            <summary>
-                <![CDATA[
-                    This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be. The main problem I was trying to&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>This was one of my first project with the main focus on page size and bundle size. After learning a bit more about Webpack at virtualQ, i wanted to see how small a modern we app could be.</p>
-<p>The main problem I was trying to solve was a personal one : I wanted to annotate a screenshot of an app to a friend before sending it to him. All i needed was to draw an arrow on a small picture. I couldn't find an app that would only do that, so I created one using the technology I knew best : front end javascript.</p>
-<p><a href="https://renanlecaro.github.io/minimage/">The app</a> is far from perfect, but it runs quite smoothly on a variety of platforms.  </p>
-<p>The app is freely accessible and open source but I haven't really worked on promoting it. Since then i've bought a new phone and don't really need as much to save space on the internal memory. I rarely make use of minimage but keep it online, just in case it might be useful one day.  </p>
-<p> </p>
-<figure class="post__image align-center"><img loading="lazy"  src="https://lecaro.me/media/posts/3/minimage-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/3/responsive/minimage-2-xs.png 300w ,https://lecaro.me/media/posts/3/responsive/minimage-2-sm.png 480w ,https://lecaro.me/media/posts/3/responsive/minimage-2-md.png 768w ,https://lecaro.me/media/posts/3/responsive/minimage-2-lg.png 1024w ,https://lecaro.me/media/posts/3/responsive/minimage-2-xl.png 1360w ,https://lecaro.me/media/posts/3/responsive/minimage-2-2xl.png 1600w"  alt="Screenshot of minimage" width="565" height="321"></figure>
             ]]>
         </content>
     </entry>

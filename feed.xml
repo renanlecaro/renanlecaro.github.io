@@ -10,6 +10,36 @@
     <id>https://lecaro.me</id>
 
     <entry>
+        <title>Javascript minification with sed</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/javascript-minification-with-sed.html"/>
+        <id>https://lecaro.me/javascript-minification-with-sed.html</id>
+
+        <updated>2021-03-24T22:41:38+01:00</updated>
+            <summary>
+                <![CDATA[
+                    I added a few of my projects to those "Pages under 1MB" websites. I'm not sure what for, but eh, it's free link estate ! Anyway, while most of those lists are comprised of boring, barely formatted text pages, i stumbled upon a nice one,&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I added a few of my projects to those "<a href="https://1mb.club/">Pages under 1MB</a>" websites. I'm not sure what for, but eh, it's free link estate !</p>
+<p>Anyway, while most of those lists are comprised of <a href="https://jakob.kaivo.net/">boring</a>, barely formatted text pages,  i stumbled upon a nice one, this <a href="https://tutor.0b.ee/">touch type trainer</a> in 2 KB of js. The best thing about it  is not really the tool (it's limited, obviously) but the absurd way the author got down to that 2kb size, in particular this little gem. </p>
+<p><a href="https://github.com/KaarelP2rtel/keyboard-tutor/blob/master/minify.sh">minify.sh</a> </p>
+<pre>sed -i 's/tutor-window/tw/g' "$target"<br>sed -i 's/tutor-container/tc/g' "$target"<br>sed -i 's/tutor-completed/tm/g' "$target"<br>sed -i 's/tutor-cursor/tr/g' "$target"<br>sed -i 's/tutor-uncompleted/tu/g' "$target"<br>sed -i 's/tutor-result/te/g' "$target"<br>sed -i 's/tutor-status/ts/g' "$target"<br>sed -i 's/current-layout/cl/g' "$target"</pre>
+<p>I have no words, it's beautiful :) </p>
+<p>I remember going to similar extremes on <a href="https://github.com/renanlecaro/importabular/blob/master/src/index.js#L50">importabular</a>. </p>
+<p>All the private methods had names prefixed by an underscore, and then i had some instructions for the minifying tool to not keep names with that prefix. </p>
+<p>It shaved a few kilobytes from the already tiny lib, but i reverted it after to make it easier to subclass the Importabular class. </p>
+<p> That period with the lower bars on <a href="https://bundlephobia.com/result?p=importabular@0.2.9">bundlephobia</a> is where this behavior was installed</p>
+<p>Anyway, gzipped code golf is always a lot of fun. </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title> Be careful what you ping for</title>
         <author>
             <name>Renan LE CARO</name>
@@ -17,7 +47,7 @@
         <link href="https://lecaro.me/be-careful-what-you-ping-for.html"/>
         <id>https://lecaro.me/be-careful-what-you-ping-for.html</id>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     I have a setup to know when my main app, ciboulette.net, is down. It's based on statuscake, which pings my marketing site every 5 minutes, and also my main app. It used to ping a third endpoint, which was an order form deep inside my&hellip;
@@ -67,7 +97,7 @@
         <id>https://lecaro.me/oh-the-joy-of-e2e-testing.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     I'm setting up e2e testing on my Meteor app, ciboulette.net. I had done it in the past but after large UI changes i just removed the tests as they were completely stale and generally painful to work with : I'm trying again, this time using&hellip;
@@ -119,7 +149,7 @@
         <id>https://lecaro.me/my-3-favorite-playlists.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     I have 3 playlists on Spotify I always come back to , thought i'd share them hereDeep house as a background music for lightweight tasks, and as a loud playlist for festive events.Psychedelic trance when I need a motivation surge for a tough bit of&hellip;
@@ -145,7 +175,7 @@
         <id>https://lecaro.me/customizing-the-look-of-publii.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp;&hellip;
@@ -173,7 +203,7 @@
         <id>https://lecaro.me/life-in-vladivostok.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     I've been living in Vladivostok, Russia, since the end of February 2020. I'm a student here, learning the Russian language. I'm a bit older than the average student but my life is still very student-like anyway. I really enjoy the energy of younger friends and&hellip;
@@ -208,7 +238,7 @@
         <id>https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     DO + MUP = 💙I've migrated my main project, https://ciboulette.net, from Heroku to digital ocean, with the help of the awesome meteor up tool that's still actively maintained. I wanted a way to automate the backups of production to my own computer. In meteor, the&hellip;
@@ -247,7 +277,7 @@
         <id>https://lecaro.me/mermaid-gdocs.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;
@@ -280,7 +310,7 @@
         <id>https://lecaro.me/documenting-systems.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But documenting a system can be a very interesting task. I also had to explain our systems to new&hellip;
@@ -311,7 +341,7 @@
         <id>https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-24T15:49:42+01:00</updated>
+        <updated>2021-03-24T22:41:38+01:00</updated>
             <summary>
                 <![CDATA[
                     It all started about 7 years ago. My mother got laid off and had to find a job. She already had a large garden and decided to make a living selling vegetables. She invested little capital as the activity was supposed to last only a&hellip;
@@ -336,34 +366,6 @@
 <p>I'm still interested in the SAAS model, but I now keep in mind that <strong>being on call 24/7 limits you freedom</strong>. I live in Russia now, and would love to spend two weeks in the Trans-Siberian. But that's mean spending two weeks doing support from a train in the middle of nowhere. That's a no-go.   </p>
 <p>So, next time, I'll think a bit more before creating a product people will rely on. </p>
 <p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>The FEFU Campus</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/the-fefu-campus.html"/>
-        <id>https://lecaro.me/the-fefu-campus.html</id>
-            <category term="Blog post"/>
-
-        <updated>2021-03-24T15:49:42+01:00</updated>
-            <summary>
-                <![CDATA[
-                    This is really just an excuse to try displaying a few photos in Publii
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>This is really just an excuse to try displaying a few photos in Publii</p>
-<div class="gallery-wrapper gallery-wrapper--wide"><div class="gallery"  data-is-empty="false" data-columns="4">
-<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3034-1.jpg" data-size="4276x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg" alt="The bridge to the island" width="720" height="478"></a></figure>
-<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3026-1.jpg" data-size="2836x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg" alt="Reflections of the campus in the sea" width="720" height="720"></a></figure>
-<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3048.jpg" data-size="4276x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3048-thumbnail.jpg" alt="Campus building, they were lit by two different light sources, but I accentuated that quite a bit" width="720" height="478"></a></figure>
-<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3042.jpg" data-size="2836x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3042-thumbnail.jpg" alt="Construction site for the new university buildings" width="720" height="720"></a></figure>
-<figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3024.jpg" data-size="2836x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3024-thumbnail.jpg" alt="Another view of the bridge" width="720" height="720"></a></figure>
-</div></div>
             ]]>
         </content>
     </entry>

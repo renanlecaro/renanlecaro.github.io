@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://lecaro.me/javascript-minification-with-sed.html",
+            "url": "https://lecaro.me/javascript-minification-with-sed.html",
+            "title": "Javascript minification with sed",
+            "summary": "I added a few of my projects to those \"Pages under 1MB\" websites. I'm not sure what for, but eh, it's free link estate ! Anyway, while most of those lists are comprised of boring, barely formatted text pages, i stumbled upon a nice one,&hellip;",
+            "content_html": "<p>I added a few of my projects to those \"<a href=\"https://1mb.club/\">Pages under 1MB</a>\" websites. I'm not sure what for, but eh, it's free link estate !</p>\n<p>Anyway, while most of those lists are comprised of <a href=\"https://jakob.kaivo.net/\">boring</a>, barely formatted text pages,  i stumbled upon a nice one, this <a href=\"https://tutor.0b.ee/\">touch type trainer</a> in 2 KB of js. The best thing about it  is not really the tool (it's limited, obviously) but the absurd way the author got down to that 2kb size, in particular this little gem. </p>\n<p><a href=\"https://github.com/KaarelP2rtel/keyboard-tutor/blob/master/minify.sh\">minify.sh</a> </p>\n<pre>sed -i 's/tutor-window/tw/g' \"$target\"<br>sed -i 's/tutor-container/tc/g' \"$target\"<br>sed -i 's/tutor-completed/tm/g' \"$target\"<br>sed -i 's/tutor-cursor/tr/g' \"$target\"<br>sed -i 's/tutor-uncompleted/tu/g' \"$target\"<br>sed -i 's/tutor-result/te/g' \"$target\"<br>sed -i 's/tutor-status/ts/g' \"$target\"<br>sed -i 's/current-layout/cl/g' \"$target\"</pre>\n<p>I have no words, it's beautiful :) </p>\n<p>I remember going to similar extremes on <a href=\"https://github.com/renanlecaro/importabular/blob/master/src/index.js#L50\">importabular</a>. </p>\n<p>All the private methods had names prefixed by an underscore, and then i had some instructions for the minifying tool to not keep names with that prefix. </p>\n<p>It shaved a few kilobytes from the already tiny lib, but i reverted it after to make it easier to subclass the Importabular class. </p>\n<p> That period with the lower bars on <a href=\"https://bundlephobia.com/result?p=importabular@0.2.9\">bundlephobia</a> is where this behavior was installed</p>\n<p>Anyway, gzipped code golf is always a lot of fun. </p>\n<p> </p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+            ],
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
+        },
+        {
             "id": "https://lecaro.me/be-careful-what-you-ping-for.html",
             "url": "https://lecaro.me/be-careful-what-you-ping-for.html",
             "title": " Be careful what you ping for",
@@ -20,8 +34,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         },
         {
             "id": "https://lecaro.me/oh-the-joy-of-e2e-testing.html",
@@ -35,8 +49,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         },
         {
             "id": "https://lecaro.me/my-3-favorite-playlists.html",
@@ -50,8 +64,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         },
         {
             "id": "https://lecaro.me/customizing-the-look-of-publii.html",
@@ -65,8 +79,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         },
         {
             "id": "https://lecaro.me/life-in-vladivostok.html",
@@ -80,8 +94,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         },
         {
             "id": "https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html",
@@ -95,8 +109,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         },
         {
             "id": "https://lecaro.me/mermaid-gdocs.html",
@@ -110,8 +124,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         },
         {
             "id": "https://lecaro.me/documenting-systems.html",
@@ -125,8 +139,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         },
         {
             "id": "https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html",
@@ -140,23 +154,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
-        },
-        {
-            "id": "https://lecaro.me/the-fefu-campus.html",
-            "url": "https://lecaro.me/the-fefu-campus.html",
-            "title": "The FEFU Campus",
-            "summary": "This is really just an excuse to try displaying a few photos in Publii",
-            "content_html": "<p>This is really just an excuse to try displaying a few photos in Publii</p>\n<div class=\"gallery-wrapper gallery-wrapper--wide\"><div class=\"gallery\"  data-is-empty=\"false\" data-columns=\"4\">\n<figure class=\"gallery__item\"><a href=\"https://lecaro.me/media/posts/5/gallery/DSC_3034-1.jpg\" data-size=\"4276x2836\"><img loading=\"lazy\" src=\"https://lecaro.me/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg\" alt=\"The bridge to the island\" width=\"720\" height=\"478\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://lecaro.me/media/posts/5/gallery/DSC_3026-1.jpg\" data-size=\"2836x2836\"><img loading=\"lazy\" src=\"https://lecaro.me/media/posts/5/gallery/DSC_3026-1-thumbnail.jpg\" alt=\"Reflections of the campus in the sea\" width=\"720\" height=\"720\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://lecaro.me/media/posts/5/gallery/DSC_3048.jpg\" data-size=\"4276x2836\"><img loading=\"lazy\" src=\"https://lecaro.me/media/posts/5/gallery/DSC_3048-thumbnail.jpg\" alt=\"Campus building, they were lit by two different light sources, but I accentuated that quite a bit\" width=\"720\" height=\"478\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://lecaro.me/media/posts/5/gallery/DSC_3042.jpg\" data-size=\"2836x2836\"><img loading=\"lazy\" src=\"https://lecaro.me/media/posts/5/gallery/DSC_3042-thumbnail.jpg\" alt=\"Construction site for the new university buildings\" width=\"720\" height=\"720\"></a></figure>\n<figure class=\"gallery__item\"><a href=\"https://lecaro.me/media/posts/5/gallery/DSC_3024.jpg\" data-size=\"2836x2836\"><img loading=\"lazy\" src=\"https://lecaro.me/media/posts/5/gallery/DSC_3024-thumbnail.jpg\" alt=\"Another view of the bridge\" width=\"720\" height=\"720\"></a></figure>\n</div></div>",
-            "author": {
-                "name": "Renan LE CARO"
-            },
-            "tags": [
-                   "Blog post"
-            ],
-            "date_published": "2021-03-24T15:49:42+01:00",
-            "date_modified": "2021-03-24T15:49:42+01:00"
+            "date_published": "2021-03-24T22:41:38+01:00",
+            "date_modified": "2021-03-24T22:41:38+01:00"
         }
     ]
 }

@@ -10,6 +10,55 @@
     <id>https://lecaro.me</id>
 
     <entry>
+        <title> Be careful what you ping for</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/be-careful-what-you-ping-for.html"/>
+        <id>https://lecaro.me/be-careful-what-you-ping-for.html</id>
+
+        <updated>2021-03-24T15:49:42+01:00</updated>
+            <summary>
+                <![CDATA[
+                    I have a setup to know when my main app, ciboulette.net, is down. It's based on statuscake, which pings my marketing site every 5 minutes, and also my main app. It used to ping a third endpoint, which was an order form deep inside my&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I have a setup to know when my main app, ciboulette.net, is down.</p>
+<p>It's based on <a href="https://www.statuscake.com/">statuscake</a>, which pings my marketing site every 5 minutes, and also my main app. </p>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/14/Screenshot-from-2021-03-24-15-23-56.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-xs.png 300w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-sm.png 480w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-md.png 768w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-lg.png 1024w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-xl.png 1360w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-2xl.png 1600w"  alt="Screenshot of statuscake" width="649" height="271"></figure>
+<p>It used to ping a third endpoint, which was an order form deep inside my app. </p>
+<p>The idea was to check the the clients of my clients should be able to order veggies, so pinging a specific, real page would make sense.</p>
+<p>I also used to log every action that would happen on such an order, directly in an array within the "order" document.</p>
+<p>It means that every 5 minute, the document was getting a tiny bit bigger. </p>
+<p>Today, i tried to mongorestore a production dump on my local dev environment to get fresh data. It's very useful to see how the real data would look like in the new version, and lets me see missuses and bugs that i would miss otherwise. </p>
+<p>So i tried to import my production dump (the db needs renaming from "ciboulette" to "meteor" to work locally) </p>
+<pre>renan@renan-hp:~/cl/app$ cat dump/daily_21-03-24.backup.gzip | mongorestore --archive --gzip  --nsFrom='ciboulette.*' --nsTo='meteor.*' --uri=mongodb://127.0.0.1:3001/<br>2021-03-24T15:31:06.076+0100 preparing collections to restore from<br>2021-03-24T15:31:06.083+0100 reading metadata for meteor.shortUrls from archive on stdin<br>2021-03-24T15:31:06.102+0100 restoring meteor.shortUrls from archive on stdin<br>2021-03-24T15:31:06.263+0100 reading metadata for meteor.opens from archive on stdin<br>2021-03-24T15:31:06.278+0100 restoring meteor.opens from archive on stdin<br>2021-03-24T15:31:06.753+0100 reading metadata for meteor.Orders from archive on stdin<br>2021-03-24T15:31:06.767+0100 restoring meteor.Orders from archive on stdin<br>2021-03-24T15:31:07.308+0100 reading metadata for meteor.logs from archive on stdin<br>2021-03-24T15:31:07.318+0100 restoring meteor.logs from archive on stdin<br>2021-03-24T15:31:07.827+0100 no indexes to restore<br>2021-03-24T15:31:07.827+0100 finished restoring meteor.shortUrls (8224 documents, 0 failures)<br>2021-03-24T15:31:08.269+0100 no indexes to restore<br>2021-03-24T15:31:08.269+0100 finished restoring meteor.opens (21263 documents, 0 failures)<br>2021-03-24T15:31:08.503+0100 finished restoring meteor.Orders (32999 documents, 1 failure)<br>2021-03-24T15:31:08.503+0100 Failed: <strong>meteor.Orders: error restoring from archive</strong> on stdin: bulk write error: [{[{<strong>write to oplog failed: BadValue: object to insert exceeds cappedMaxSize</strong>}]}, {&lt;nil&gt;}]<br>2021-03-24T15:31:08.503+0100 32999 document(s) restored successfully. 1 document(s) failed to restore.</pre>
+<p>It took me quite a while to pinpoint the problem. </p>
+<p>Luckily, the same dump would import fine in a real mongod instance, the problem seemed to be only with the meteor provided development mongo instance. </p>
+<p>The problem seemed to be be with some order documents. </p>
+<p>So, first i wiped the local "meteor" db in mongod</p>
+<pre>mongo mongodb://127.0.0.1:27017/meteor --eval "db.dropDatabase()"</pre>
+<p>Then i imported the dump there</p>
+<pre>cat dump/daily_21-03-24.backup.gzip | mongorestore --archive --gzip  --nsFrom='ciboulette.*' --nsTo='meteor.*'</pre>
+<p>I tried removing all documents from db.Orders, dumping, and then importing that to meteor, it worked. But i was missing my main collection.</p>
+<p>I then used this script to find the biggest document and its _id within my mongo collection</p>
+<pre> mongo  mongodb://127.0.0.1:27017/meteor --eval "(()=&gt;{var max=0,maxId=null; <strong>db.Orders</strong>.find().forEach(o=&gt;{var s=<strong>Object.bsonsize</strong>(o);if(s&gt;max){max=s;maxId=o._id}}); return {max,maxId}})()"<br><br>MongoDB server version: 4.4.4<br>{ <strong>"max" : 14199831</strong>, "maxId" : "GBeerkZ46dcjAgLtu" }</pre>
+<p>14 199 831 bytes, holly molly ! About 14 megabytes of text in one document.</p>
+<p>A findOne query allowed me to see that it was the "Order.logs" field that was so full.</p>
+<p>So i cleaned up this field in  all documents :</p>
+<pre>renan@renan-hp:~/cl/app$ mongo mongodb://127.0.0.1:27017/meteor --eval 'db.Orders.update({logs:{ $exists:true}},<strong>{$unset:{logs:""}},{multi:true}</strong>);'<br>MongoDB shell version v4.4.4<br>connecting to: mongodb://127.0.0.1:27017/meteor?compressors=disabled&amp;gssapiServiceName=mongodb<br>Implicit session: session { "id" : UUID("bb02fe49-5241-4beb-82ea-fbdc4c325998") }<br>MongoDB server version: 4.4.4<br>WriteResult({ "nMatched" : 180383, "nUpserted" : 0, <strong>"nModified" : 180383</strong> })</pre>
+<p> And re-run the maximum size check </p>
+<pre>mongo mongodb://127.0.0.1:27017/meteor --eval "(()=&gt;{var max=0,maxId=null; db.Orders.find().forEach(o=&gt;{var s=Object.bsonsize(o);if(s&gt;max){max=s;maxId=o._id}}); return {max,maxId}})()"<br>{ "max" : <strong>7578</strong>, "maxId" : "eYdGxbBKDNfKZYZw8" }</pre>
+<p>Much, much better :)</p>
+<p>So, all that was left was to dump that data, load the dump in meteor and all was fine.</p>
+<p>I added a migration to clean that field in production too.  It will run on the next deploy. </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>Oh, the joy of Meteor e2e testing !</title>
         <author>
             <name>Renan LE CARO</name>
@@ -18,7 +67,7 @@
         <id>https://lecaro.me/oh-the-joy-of-e2e-testing.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     I'm setting up e2e testing on my Meteor app, ciboulette.net. I had done it in the past but after large UI changes i just removed the tests as they were completely stale and generally painful to work with : I'm trying again, this time using&hellip;
@@ -70,7 +119,7 @@
         <id>https://lecaro.me/my-3-favorite-playlists.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     I have 3 playlists on Spotify I always come back to , thought i'd share them hereDeep house as a background music for lightweight tasks, and as a loud playlist for festive events.Psychedelic trance when I need a motivation surge for a tough bit of&hellip;
@@ -96,7 +145,7 @@
         <id>https://lecaro.me/customizing-the-look-of-publii.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp;&hellip;
@@ -124,7 +173,7 @@
         <id>https://lecaro.me/life-in-vladivostok.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     I've been living in Vladivostok, Russia, since the end of February 2020. I'm a student here, learning the Russian language. I'm a bit older than the average student but my life is still very student-like anyway. I really enjoy the energy of younger friends and&hellip;
@@ -159,7 +208,7 @@
         <id>https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     DO + MUP = 💙I've migrated my main project, https://ciboulette.net, from Heroku to digital ocean, with the help of the awesome meteor up tool that's still actively maintained. I wanted a way to automate the backups of production to my own computer. In meteor, the&hellip;
@@ -198,7 +247,7 @@
         <id>https://lecaro.me/mermaid-gdocs.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;
@@ -231,7 +280,7 @@
         <id>https://lecaro.me/documenting-systems.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But documenting a system can be a very interesting task. I also had to explain our systems to new&hellip;
@@ -262,7 +311,7 @@
         <id>https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     It all started about 7 years ago. My mother got laid off and had to find a job. She already had a large garden and decided to make a living selling vegetables. She invested little capital as the activity was supposed to last only a&hellip;
@@ -299,7 +348,7 @@
         <id>https://lecaro.me/the-fefu-campus.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-03-23T15:07:42+01:00</updated>
+        <updated>2021-03-24T15:49:42+01:00</updated>
             <summary>
                 <![CDATA[
                     This is really just an excuse to try displaying a few photos in Publii
@@ -315,34 +364,6 @@
 <figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3042.jpg" data-size="2836x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3042-thumbnail.jpg" alt="Construction site for the new university buildings" width="720" height="720"></a></figure>
 <figure class="gallery__item"><a href="https://lecaro.me/media/posts/5/gallery/DSC_3024.jpg" data-size="2836x2836"><img loading="lazy" src="https://lecaro.me/media/posts/5/gallery/DSC_3024-thumbnail.jpg" alt="Another view of the bridge" width="720" height="720"></a></figure>
 </div></div>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Giving Publii a try </title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/giving-publii-a-try.html"/>
-        <id>https://lecaro.me/giving-publii-a-try.html</id>
-            <category term="Blog post"/>
-
-        <updated>2021-03-23T15:07:42+01:00</updated>
-            <summary>
-                <![CDATA[
-                    As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content. But hosting a wordpress&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content.</p>
-<p>But hosting a wordpress website is always a trade-off between reliability and costs. On one side you have free hosts giving you a terrible VM that can barely handle the administration side, on the other overpriced plans for what's really a tiny website with usually almost no traffic. </p>
-<blockquote>
-<p>I've always thought that WordPress was using a tank to kill a fly.</p>
-</blockquote>
-<p>So until now, for non technical business owners, I've set up a free host and the administration of the website was usually quite slow and unreliable. If the client wanted something more reliable, I'd get a paid hosting plan, but that would include some overhead for me. </p>
-<p>For my personal projects I personally used custom made static websites, with or without automatic generation. But I didn't see myself explaining the details of git push, markdown and CLI use to my parents. I thought I should work on an ideal, user friendly static website editor one of those days.  </p>
-<p>Today i discovered <a href="https://getpublii.com/" target="_blank" rel="noopener noreferrer">Publii</a> and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savvy friends in the future. Until now I've been pleasantly surprised. </p>
             ]]>
         </content>
     </entry>

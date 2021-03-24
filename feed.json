@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://lecaro.me/be-careful-what-you-ping-for.html",
+            "url": "https://lecaro.me/be-careful-what-you-ping-for.html",
+            "title": " Be careful what you ping for",
+            "summary": "I have a setup to know when my main app, ciboulette.net, is down. It's based on statuscake, which pings my marketing site every 5 minutes, and also my main app. It used to ping a third endpoint, which was an order form deep inside my&hellip;",
+            "content_html": "<p>I have a setup to know when my main app, ciboulette.net, is down.</p>\n<p>It's based on <a href=\"https://www.statuscake.com/\">statuscake</a>, which pings my marketing site every 5 minutes, and also my main app. </p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://lecaro.me/media/posts/14/Screenshot-from-2021-03-24-15-23-56.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-xs.png 300w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-sm.png 480w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-md.png 768w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-lg.png 1024w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-xl.png 1360w ,https://lecaro.me/media/posts/14/responsive/Screenshot-from-2021-03-24-15-23-56-2xl.png 1600w\"  alt=\"Screenshot of statuscake\" width=\"649\" height=\"271\"></figure>\n<p>It used to ping a third endpoint, which was an order form deep inside my app. </p>\n<p>The idea was to check the the clients of my clients should be able to order veggies, so pinging a specific, real page would make sense.</p>\n<p>I also used to log every action that would happen on such an order, directly in an array within the \"order\" document.</p>\n<p>It means that every 5 minute, the document was getting a tiny bit bigger. </p>\n<p>Today, i tried to mongorestore a production dump on my local dev environment to get fresh data. It's very useful to see how the real data would look like in the new version, and lets me see missuses and bugs that i would miss otherwise. </p>\n<p>So i tried to import my production dump (the db needs renaming from \"ciboulette\" to \"meteor\" to work locally) </p>\n<pre>renan@renan-hp:~/cl/app$ cat dump/daily_21-03-24.backup.gzip | mongorestore --archive --gzip  --nsFrom='ciboulette.*' --nsTo='meteor.*' --uri=mongodb://127.0.0.1:3001/<br>2021-03-24T15:31:06.076+0100 preparing collections to restore from<br>2021-03-24T15:31:06.083+0100 reading metadata for meteor.shortUrls from archive on stdin<br>2021-03-24T15:31:06.102+0100 restoring meteor.shortUrls from archive on stdin<br>2021-03-24T15:31:06.263+0100 reading metadata for meteor.opens from archive on stdin<br>2021-03-24T15:31:06.278+0100 restoring meteor.opens from archive on stdin<br>2021-03-24T15:31:06.753+0100 reading metadata for meteor.Orders from archive on stdin<br>2021-03-24T15:31:06.767+0100 restoring meteor.Orders from archive on stdin<br>2021-03-24T15:31:07.308+0100 reading metadata for meteor.logs from archive on stdin<br>2021-03-24T15:31:07.318+0100 restoring meteor.logs from archive on stdin<br>2021-03-24T15:31:07.827+0100 no indexes to restore<br>2021-03-24T15:31:07.827+0100 finished restoring meteor.shortUrls (8224 documents, 0 failures)<br>2021-03-24T15:31:08.269+0100 no indexes to restore<br>2021-03-24T15:31:08.269+0100 finished restoring meteor.opens (21263 documents, 0 failures)<br>2021-03-24T15:31:08.503+0100 finished restoring meteor.Orders (32999 documents, 1 failure)<br>2021-03-24T15:31:08.503+0100 Failed: <strong>meteor.Orders: error restoring from archive</strong> on stdin: bulk write error: [{[{<strong>write to oplog failed: BadValue: object to insert exceeds cappedMaxSize</strong>}]}, {&lt;nil&gt;}]<br>2021-03-24T15:31:08.503+0100 32999 document(s) restored successfully. 1 document(s) failed to restore.</pre>\n<p>It took me quite a while to pinpoint the problem. </p>\n<p>Luckily, the same dump would import fine in a real mongod instance, the problem seemed to be only with the meteor provided development mongo instance. </p>\n<p>The problem seemed to be be with some order documents. </p>\n<p>So, first i wiped the local \"meteor\" db in mongod</p>\n<pre>mongo mongodb://127.0.0.1:27017/meteor --eval \"db.dropDatabase()\"</pre>\n<p>Then i imported the dump there</p>\n<pre>cat dump/daily_21-03-24.backup.gzip | mongorestore --archive --gzip  --nsFrom='ciboulette.*' --nsTo='meteor.*'</pre>\n<p>I tried removing all documents from db.Orders, dumping, and then importing that to meteor, it worked. But i was missing my main collection.</p>\n<p>I then used this script to find the biggest document and its _id within my mongo collection</p>\n<pre> mongo  mongodb://127.0.0.1:27017/meteor --eval \"(()=&gt;{var max=0,maxId=null; <strong>db.Orders</strong>.find().forEach(o=&gt;{var s=<strong>Object.bsonsize</strong>(o);if(s&gt;max){max=s;maxId=o._id}}); return {max,maxId}})()\"<br><br>MongoDB server version: 4.4.4<br>{ <strong>\"max\" : 14199831</strong>, \"maxId\" : \"GBeerkZ46dcjAgLtu\" }</pre>\n<p>14 199 831 bytes, holly molly ! About 14 megabytes of text in one document.</p>\n<p>A findOne query allowed me to see that it was the \"Order.logs\" field that was so full.</p>\n<p>So i cleaned up this field in  all documents :</p>\n<pre>renan@renan-hp:~/cl/app$ mongo mongodb://127.0.0.1:27017/meteor --eval 'db.Orders.update({logs:{ $exists:true}},<strong>{$unset:{logs:\"\"}},{multi:true}</strong>);'<br>MongoDB shell version v4.4.4<br>connecting to: mongodb://127.0.0.1:27017/meteor?compressors=disabled&amp;gssapiServiceName=mongodb<br>Implicit session: session { \"id\" : UUID(\"bb02fe49-5241-4beb-82ea-fbdc4c325998\") }<br>MongoDB server version: 4.4.4<br>WriteResult({ \"nMatched\" : 180383, \"nUpserted\" : 0, <strong>\"nModified\" : 180383</strong> })</pre>\n<p> And re-run the maximum size check </p>\n<pre>mongo mongodb://127.0.0.1:27017/meteor --eval \"(()=&gt;{var max=0,maxId=null; db.Orders.find().forEach(o=&gt;{var s=Object.bsonsize(o);if(s&gt;max){max=s;maxId=o._id}}); return {max,maxId}})()\"<br>{ \"max\" : <strong>7578</strong>, \"maxId\" : \"eYdGxbBKDNfKZYZw8\" }</pre>\n<p>Much, much better :)</p>\n<p>So, all that was left was to dump that data, load the dump in meteor and all was fine.</p>\n<p>I added a migration to clean that field in production too.  It will run on the next deploy. </p>\n<p> </p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+            ],
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
+        },
+        {
             "id": "https://lecaro.me/oh-the-joy-of-e2e-testing.html",
             "url": "https://lecaro.me/oh-the-joy-of-e2e-testing.html",
             "title": "Oh, the joy of Meteor e2e testing !",
@@ -21,8 +35,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         },
         {
             "id": "https://lecaro.me/my-3-favorite-playlists.html",
@@ -36,8 +50,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         },
         {
             "id": "https://lecaro.me/customizing-the-look-of-publii.html",
@@ -51,8 +65,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         },
         {
             "id": "https://lecaro.me/life-in-vladivostok.html",
@@ -66,8 +80,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         },
         {
             "id": "https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html",
@@ -81,8 +95,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         },
         {
             "id": "https://lecaro.me/mermaid-gdocs.html",
@@ -96,8 +110,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         },
         {
             "id": "https://lecaro.me/documenting-systems.html",
@@ -111,8 +125,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         },
         {
             "id": "https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html",
@@ -126,8 +140,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         },
         {
             "id": "https://lecaro.me/the-fefu-campus.html",
@@ -141,23 +155,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
-        },
-        {
-            "id": "https://lecaro.me/giving-publii-a-try.html",
-            "url": "https://lecaro.me/giving-publii-a-try.html",
-            "title": "Giving Publii a try ",
-            "summary": "As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content. But hosting a wordpress&hellip;",
-            "content_html": "<p>As a web developer, I've created some websites for family and friends. My default tool for that was WordPress, because you could easily set them up, pick a theme, mess with the CSS a bit and let them write the content.</p>\n<p>But hosting a wordpress website is always a trade-off between reliability and costs. On one side you have free hosts giving you a terrible VM that can barely handle the administration side, on the other overpriced plans for what's really a tiny website with usually almost no traffic. </p>\n<blockquote>\n<p>I've always thought that WordPress was using a tank to kill a fly.</p>\n</blockquote>\n<p>So until now, for non technical business owners, I've set up a free host and the administration of the website was usually quite slow and unreliable. If the client wanted something more reliable, I'd get a paid hosting plan, but that would include some overhead for me. </p>\n<p>For my personal projects I personally used custom made static websites, with or without automatic generation. But I didn't see myself explaining the details of git push, markdown and CLI use to my parents. I thought I should work on an ideal, user friendly static website editor one of those days.  </p>\n<p>Today i discovered <a href=\"https://getpublii.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Publii</a> and thought i'd give it a try for my blog. If it's satisfactory, I might recommend it to my less tech-savvy friends in the future. Until now I've been pleasantly surprised. </p>",
-            "author": {
-                "name": "Renan LE CARO"
-            },
-            "tags": [
-                   "Blog post"
-            ],
-            "date_published": "2021-03-23T15:07:42+01:00",
-            "date_modified": "2021-03-23T15:07:42+01:00"
+            "date_published": "2021-03-24T15:49:42+01:00",
+            "date_modified": "2021-03-24T15:49:42+01:00"
         }
     ]
 }

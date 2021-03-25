@@ -3,21 +3,63 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-03-25T00:45:38+01:00</updated>
+    <updated>2021-03-25T10:21:45+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
     <entry>
-        <title>3 video games I&#x27;ve spend 100+ hours on</title>
+        <title>Basic i3blocks controls for ubuntu rhythmbox</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html"/>
+        <id>https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html</id>
+
+        <updated>2021-03-25T10:21:45+01:00</updated>
+            <summary>
+                <![CDATA[
+                    I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists. I'm back to the good old "music" folder with files of long forgotten origins. The default ubuntu music player, rhythmbox, seems&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists.</p>
+<p>I'm back to the good old "music" folder with files of long forgotten origins.  </p>
+<p>The default ubuntu music player, rhythmbox,  seems not too bad, i don't need it to do much anyway. </p>
+<p>I just had to port my i3 bar script to : </p>
+<ul>
+<li>show the track currently playing</li>
+<li>go to next track on right click</li>
+<li>play/pause on left click<br><br></li>
+</ul>
+<p> </p>
+<figure class="post__image align-center"><img loading="lazy"  src="https://lecaro.me/media/posts/17/i3script" alt="" width="478" height="53"></figure>
+<p>The look of the "widget", pretty basic. </p>
+<p>I wanted to add a play/pause icon but </p>
+<ul>
+<li>i didn't find a way to ask rhythmbox-client if the  music is played or paused</li>
+<li>my ears are usually enough to know if anything i s playing </li>
+</ul>
+<p>I also added a little regexp to remove anything in parenthesis in the track name, to remove "(Original mix)" mentions and such. </p>
+<p>.config/i3/i3blocks.conf :</p>
+<pre>[music]<br>command=node ~/.config/i3/rhythmbox.js $button<br>interval=5</pre>
+<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">The actual node script (I suck at bash, that's why i'm using node for this)</span></p>
+<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">~/.config/i3/rhythmbox.js</span></p>
+<pre><br>const {execSync}=require('child_process')<br><br>// apply click actions<br>switch(process.env.BLOCK_BUTTON){<br>  case  '1': execSync('rhythmbox-client --play-pause');<br>    break; <br>  case  '3': execSync('rhythmbox-client --next');<br>    break;<br>}<br><br>// get track name<br>const playing=(execSync('rhythmbox-client --print-playing').toString())||'';<br><br>// clean track name<br>const formatted=playing.replace(/\([^\)]+\)/gi,'')<br><br>// output it<br>console.log(formatted);</pre>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>3 video games I&#x27;ve spent 100+ hours on</title>
         <author>
             <name>Renan LE CARO</name>
         </author>
         <link href="https://lecaro.me/3-video-games-ive-spend-100-hours-on.html"/>
         <id>https://lecaro.me/3-video-games-ive-spend-100-hours-on.html</id>
 
-        <updated>2021-03-25T00:45:38+01:00</updated>
+        <updated>2021-03-25T10:06:17+01:00</updated>
             <summary>
                 <![CDATA[
                     I don't really play much those days, but I've had some great gaming experiences I felt like sharing today. This strategy game is free, ad free, and has an amazing replay-ability thanks to the user generated levels. It's easy to learn, and not too hard&hellip;
@@ -345,37 +387,6 @@
 <p>The project has evolved a bit with time but stays relatively simple in terms of code. It has gathered quite a lot of users (10K) despite me not putting any efforts in marketing it. I guess we have a product-market fit here, but no business plan at all. This is really just a few lines of JavaScript to make the power of the mermaid JS library available in google docs. I don't think it makes sense to charge for it, and it costs nothing to keep it running. </p>
 <p>I've made it open source, with the code hosted on github, feel free to have a look there : <a href="https://github.com/renanlecaro/mermaid-gdocs">https://github.com/renanlecaro/mermaid-gdocs</a></p>
 <p><a href="https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en"> The mermaid add-on listed in the g-suite marketplace </a></p>
-<p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Documenting systems</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/documenting-systems.html"/>
-        <id>https://lecaro.me/documenting-systems.html</id>
-            <category term="Blog post"/>
-
-        <updated>2021-03-23T14:18:11+01:00</updated>
-            <summary>
-                <![CDATA[
-                    Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But documenting a system can be a very interesting task. I also had to explain our systems to new&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But <strong>documenting a system can be a very interesting task</strong>. I also had to explain our systems to new hires after we raised some funds and quickly grew the team. </p>
-<p>We had a <strong>documentation website for our API</strong>, based on markdown. It was very technical, with manually copy pasted sample API responses. It wasn't very visual. It had endpoints documented publicly while they were only for internal use. It had a lot of outdated content, and felt more like a patchwork of data bits than a comprehensible thing.</p>
-<p>My fist step was to <strong>remove the documentation off irrelevant endpoints</strong>. The docs were kind of an hybrid between a public api documentation and some internal guide for new hires. I made dedicated to customers trying to use our api only.</p>
-<p>It still had a<strong> "wall of text" feeling though</strong>. To make it more palatable, I tried to add visuals. Integrating <a href="https://mermaidjs.github.io/">mermaid</a> to the docs was quite easy, I styled it roughly with some css rules. <strong>Sequence diagrams are awesome</strong>. I used them to communicate the different workflow we had and some typical scenarios the clients would like to use our API for. </p>
-<p>We had a <strong>complex state machine</strong> that tracks the state of a caller through our system. I tried to <strong>represent it as a graph</strong>, but that was a bit too cluttered, so i split it in two graphs and removed some of the transitions that were not normally happening. </p>
-<p>Finally, I wanted to fix our <strong>outdated sample API requests and responses</strong>. Our API was evolving rapidly and having outdated samples was more confusing than helpful. I created a <strong>tiny script that curl commands and update the API answer samples</strong> with them. I had to do some dirty grepping on the answers to replace dates, ids, etc .. to avoid polluting the git log with meaningless edits every time we'd refresh the samples.</p>
-<p>We deployed the new version of the documentation. Some of our new hires still had some use for the old version (that documented more endpoints) so we added a link to it. <strong>We don't have any tracking on the docs website</strong>, so I have no idea what the readership is, but it was great as a learning experience.</p>
-<p>It made me love mermaidJS so much, that I eventually ended up building a <a href="https://renanlecaro.github.io/mermaid-gdocs/">google docs addon</a> for it. </p>
-<p>I like the idea of <strong>writing tutorials as markdown, with E2E test instructions mixed in</strong>, and outputting the result (text, screenshots, response samples) as a document. It would guarantee that the tutorials stay in sync with the product and don't become outdated, with always fresh screenshots. It would make the task of writing E2E tests for some web app a dual purpose task, where you'd <strong>generate both a helpful document and some smoke tests</strong> in one go. </p>
-<p> </p>
 <p> </p>
             ]]>
         </content>

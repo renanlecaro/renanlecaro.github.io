@@ -10,9 +10,23 @@
     },
     "items": [
         {
+            "id": "https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html",
+            "url": "https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html",
+            "title": "Basic i3blocks controls for ubuntu rhythmbox",
+            "summary": "I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists. I'm back to the good old \"music\" folder with files of long forgotten origins. The default ubuntu music player, rhythmbox, seems&hellip;",
+            "content_html": "<p>I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists.</p>\n<p>I'm back to the good old \"music\" folder with files of long forgotten origins.  </p>\n<p>The default ubuntu music player, rhythmbox,  seems not too bad, i don't need it to do much anyway. </p>\n<p>I just had to port my i3 bar script to : </p>\n<ul>\n<li>show the track currently playing</li>\n<li>go to next track on right click</li>\n<li>play/pause on left click<br><br></li>\n</ul>\n<p> </p>\n<figure class=\"post__image align-center\"><img loading=\"lazy\"  src=\"https://lecaro.me/media/posts/17/i3script\" alt=\"\" width=\"478\" height=\"53\"></figure>\n<p>The look of the \"widget\", pretty basic. </p>\n<p>I wanted to add a play/pause icon but </p>\n<ul>\n<li>i didn't find a way to ask rhythmbox-client if the  music is played or paused</li>\n<li>my ears are usually enough to know if anything i s playing </li>\n</ul>\n<p>I also added a little regexp to remove anything in parenthesis in the track name, to remove \"(Original mix)\" mentions and such. </p>\n<p>.config/i3/i3blocks.conf :</p>\n<pre>[music]<br>command=node ~/.config/i3/rhythmbox.js $button<br>interval=5</pre>\n<p><span style=\"color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);\">The actual node script (I suck at bash, that's why i'm using node for this)</span></p>\n<p><span style=\"color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);\">~/.config/i3/rhythmbox.js</span></p>\n<pre><br>const {execSync}=require('child_process')<br><br>// apply click actions<br>switch(process.env.BLOCK_BUTTON){<br>  case  '1': execSync('rhythmbox-client --play-pause');<br>    break; <br>  case  '3': execSync('rhythmbox-client --next');<br>    break;<br>}<br><br>// get track name<br>const playing=(execSync('rhythmbox-client --print-playing').toString())||'';<br><br>// clean track name<br>const formatted=playing.replace(/\\([^\\)]+\\)/gi,'')<br><br>// output it<br>console.log(formatted);</pre>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+            ],
+            "date_published": "2021-03-25T10:21:45+01:00",
+            "date_modified": "2021-03-25T10:21:45+01:00"
+        },
+        {
             "id": "https://lecaro.me/3-video-games-ive-spend-100-hours-on.html",
             "url": "https://lecaro.me/3-video-games-ive-spend-100-hours-on.html",
-            "title": "3 video games I&#x27;ve spend 100+ hours on",
+            "title": "3 video games I&#x27;ve spent 100+ hours on",
             "summary": "I don't really play much those days, but I've had some great gaming experiences I felt like sharing today. This strategy game is free, ad free, and has an amazing replay-ability thanks to the user generated levels. It's easy to learn, and not too hard&hellip;",
             "content_html": "<p>I don't really play much those days, but I've had some great gaming experiences I felt like sharing today.</p>\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td style=\"width: 50%;\"><figure class=\"post__image align-center\"><img loading=\"lazy\"  src=\"https://lecaro.me/media/posts/16/antiyoy.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://lecaro.me/media/posts/16/responsive/antiyoy-xs.png 300w ,https://lecaro.me/media/posts/16/responsive/antiyoy-sm.png 480w ,https://lecaro.me/media/posts/16/responsive/antiyoy-md.png 768w ,https://lecaro.me/media/posts/16/responsive/antiyoy-lg.png 1024w ,https://lecaro.me/media/posts/16/responsive/antiyoy-xl.png 1360w ,https://lecaro.me/media/posts/16/responsive/antiyoy-2xl.png 1600w\"  alt=\"\" width=\"240\" height=\"400\"></figure></td>\n<td style=\"width: 50%;\">\n<h2>Antiyoy - Android</h2>\n<p> This <strong>strategy</strong> game is free, ad free, and has an amazing replay-ability thanks to the user generated levels.  </p>\n<p>It's <strong>easy to learn</strong>, and not too hard to master, after a while most levels are trivial. </p>\n<p>Some get tough though, and I had to look at the solutions from random Russian Youtube videos at times. </p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 50%;\"><figure class=\"n3VNCb\"><img loading=\"lazy\"  src=\"https://i.ytimg.com/vi/J8SBp4SyvLc/maxresdefault.jpg\" data-is-external-image=\"true\"  alt=\"Factorio - Trailer 2020 - YouTube\" data-noaft=\"1\"></figure></td>\n<td style=\"width: 50%;\">\n<h2>Factorio - Linux</h2>\n<p>It's one of those game that's programmer's heaven. Or hell. It's very similar to <strong>programming</strong> (design, debugging, automating, constantly learning) <strong>but with guns</strong>.</p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 50%;\"><figure class=\"n3VNCb\"><img loading=\"lazy\"  src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Nuclear_Throne_screenshot_10.png/1200px-Nuclear_Throne_screenshot_10.png\" data-is-external-image=\"true\"  alt=\"Nuclear Throne — Wikipédia\" data-noaft=\"1\"></figure></td>\n<td style=\"width: 50%;\">\n<h2>Nuclear throne - Linux</h2>\n<p>This is one of the <strong>roguelikes</strong> I sicked to, and after a while i got pretty good at it. <strong>Runs are short</strong>, so it's perfect to spend a few minutes before starting a complicated topic. It's frustrating enough that you don't end up playing 2 hours without realising it.  </p>\n</td>\n</tr>\n</tbody>\n</table>\n<p> </p>",
             "author": {
@@ -21,7 +35,7 @@
             "tags": [
             ],
             "date_published": "2021-03-25T00:45:38+01:00",
-            "date_modified": "2021-03-25T00:45:38+01:00"
+            "date_modified": "2021-03-25T10:06:17+01:00"
         },
         {
             "id": "https://lecaro.me/javascript-minification-with-sed.html",
@@ -140,21 +154,6 @@
             ],
             "date_published": "2020-06-05T00:55:23+02:00",
             "date_modified": "2021-03-23T14:18:05+01:00"
-        },
-        {
-            "id": "https://lecaro.me/documenting-systems.html",
-            "url": "https://lecaro.me/documenting-systems.html",
-            "title": "Documenting systems",
-            "summary": "Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But documenting a system can be a very interesting task. I also had to explain our systems to new&hellip;",
-            "content_html": "<p>Back when I was working at virtualQ, I had to do some documentation. At first I didn't quite enjoy it, feeling like this was a chore. But <strong>documenting a system can be a very interesting task</strong>. I also had to explain our systems to new hires after we raised some funds and quickly grew the team. </p>\n<p>We had a <strong>documentation website for our API</strong>, based on markdown. It was very technical, with manually copy pasted sample API responses. It wasn't very visual. It had endpoints documented publicly while they were only for internal use. It had a lot of outdated content, and felt more like a patchwork of data bits than a comprehensible thing.</p>\n<p>My fist step was to <strong>remove the documentation off irrelevant endpoints</strong>. The docs were kind of an hybrid between a public api documentation and some internal guide for new hires. I made dedicated to customers trying to use our api only.</p>\n<p>It still had a<strong> \"wall of text\" feeling though</strong>. To make it more palatable, I tried to add visuals. Integrating <a href=\"https://mermaidjs.github.io/\">mermaid</a> to the docs was quite easy, I styled it roughly with some css rules. <strong>Sequence diagrams are awesome</strong>. I used them to communicate the different workflow we had and some typical scenarios the clients would like to use our API for. </p>\n<p>We had a <strong>complex state machine</strong> that tracks the state of a caller through our system. I tried to <strong>represent it as a graph</strong>, but that was a bit too cluttered, so i split it in two graphs and removed some of the transitions that were not normally happening. </p>\n<p>Finally, I wanted to fix our <strong>outdated sample API requests and responses</strong>. Our API was evolving rapidly and having outdated samples was more confusing than helpful. I created a <strong>tiny script that curl commands and update the API answer samples</strong> with them. I had to do some dirty grepping on the answers to replace dates, ids, etc .. to avoid polluting the git log with meaningless edits every time we'd refresh the samples.</p>\n<p>We deployed the new version of the documentation. Some of our new hires still had some use for the old version (that documented more endpoints) so we added a link to it. <strong>We don't have any tracking on the docs website</strong>, so I have no idea what the readership is, but it was great as a learning experience.</p>\n<p>It made me love mermaidJS so much, that I eventually ended up building a <a href=\"https://renanlecaro.github.io/mermaid-gdocs/\">google docs addon</a> for it. </p>\n<p>I like the idea of <strong>writing tutorials as markdown, with E2E test instructions mixed in</strong>, and outputting the result (text, screenshots, response samples) as a document. It would guarantee that the tutorials stay in sync with the product and don't become outdated, with always fresh screenshots. It would make the task of writing E2E tests for some web app a dual purpose task, where you'd <strong>generate both a helpful document and some smoke tests</strong> in one go. </p>\n<p> </p>\n<p> </p>",
-            "author": {
-                "name": "Renan LE CARO"
-            },
-            "tags": [
-                   "Blog post"
-            ],
-            "date_published": "2020-05-30T03:00:03+02:00",
-            "date_modified": "2021-03-23T14:18:11+01:00"
         }
     ]
 }

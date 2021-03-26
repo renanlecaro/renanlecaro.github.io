@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html",
+            "url": "https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html",
+            "title": "Meteor lags ? Aggregates to the rescue !",
+            "summary": "My app has 4 main collections in mongo : - A user has many weeks and clients - Each week has many orders, one per client, where the order content is stored (can be empty if the client didn't order that week). Initially, my documents&hellip;",
+            "content_html": "<p>My app has 4 main collections in mongo : </p>\n<p>- A <strong>user </strong>has many <strong>weeks </strong>and <strong>clients</strong></p>\n<p>- Each week has many <strong>orders</strong>, one per client, where the order content is stored (can be empty if the client didn't order that week). </p>\n<p>Initially, my documents were quite dry, I was doing the \"joins\" work on the client. It got laggy though, so I moved the joins logic to the meteor server, with <strong>hooks</strong> (<strong>matb33:collection-hooks) </strong>in every directions to keep denormalized fields in sync. </p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://trello-attachments.s3.amazonaws.com/605b848835c8f765d6d4626e/1025x564/5235adb0e560fb8de807e8488b2e67ec/image.png\" data-is-external-image=\"true\"  alt=\"My mess of hooks, simplified, visualized\" width=\"718\" height=\"395\"></figure>\n<p>It was a pain though, really hard to follow what was going on and to debug. </p>\n<p>There's also potential for chain reactions and never ending hooks loops. </p>\n<p>But mostly, it was <strong>buggy in edge cases</strong>. </p>\n<p>So I'm migrating away from those hooks, and creating an aggregation pipeline per collection (week, client, order) that computes all the dynamic fields for some given ids, and returns the documents where the value is different, plus some additional ids to check in the next pass. </p>\n<p>It's not yet in production, but after this rewrite, my e2e tests are passing. </p>\n<p>Meteor uses mongodb 4.2 in development server. I didn't feel like forcing an update to 4.4, which brings in two very useful features for my use case (the<a href=\"https://docs.mongodb.com/manual/reference/operator/aggregation/function/\"> $function</a> operator and the ability to <a href=\"https://docs.mongodb.com/manual/reference/operator/aggregation/merge/#output-to-the-same-collection-that-is-being-aggregated\">$merge</a> to the collection that you are aggregating on).</p>\n<p>So I've been $writing:{ $some: {$nested: {$queries:'It's a pain''}}} . I'm back to junior level of mastery in this new paradigm, where \"It works\" comes as a surprise. I'm sure i'll rewrite those ugly aggregations at some point, but for now they seem to do the job. </p>\n<p>One nice approach to using aggregation pipelines in meteor is to declare them in a separate js file, and then have a simple, non-meteor script that runs the aggregation and logs the results. </p>\n<p>I use nodemon to watch the files, and get a very fast feedback loop, without the need to wait for the meteor server to recompile. Great when you're learning as you go. </p>\n<p>I start the script like this (-r esm allows me to use modern imports) </p>\n<pre>nodemon -e js  -r esm tests/scripts/mongofun.js</pre>\n<p> And the script itself is very simple. It just runs the query </p>\n<p>tests/scripts/mongofun.js :</p>\n<pre>const mongoUrl='mongodb://127.0.0.1:3001/meteor'<br><br>async function actual_aggregation(db) {<br>  const result = await db<br>    .collection('Orders')<br>    .aggregate([<br>      {<br>        $match: {_id:'&lt;some test id&gt;'}<br>      }, <br>      ...the_pipeline_imported_from_the_meteor_source<br>    ])<br>    .toArray();<br>  console.log(result);<br>}<br><br>const mongodb = require('mongodb');<br>const client = new mongodb.MongoClient(mongoUrl, {<br>  useUnifiedTopology: true<br>});<br><br>client.connect().then(<br>  async () =&gt; {<br>    const start = Date.now();<br>    await author_aggregation(client.db());<br>    console.log('took ' + (Date.now() - start) + ' ms');<br>  },<br>  e =&gt; console.error(e)<br>);</pre>\n<p>Anyway, that's all for today :)</p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+            ],
+            "date_published": "2021-03-26T22:16:01+01:00",
+            "date_modified": "2021-03-26T22:21:33+01:00"
+        },
+        {
             "id": "https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html",
             "url": "https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html",
             "title": "Basic i3blocks controls for ubuntu rhythmbox",
@@ -21,7 +35,7 @@
             "tags": [
             ],
             "date_published": "2021-03-25T10:21:45+01:00",
-            "date_modified": "2021-03-25T10:21:45+01:00"
+            "date_modified": "2021-03-26T21:57:05+01:00"
         },
         {
             "id": "https://lecaro.me/3-video-games-ive-spend-100-hours-on.html",
@@ -139,21 +153,6 @@
             ],
             "date_published": "2020-08-04T02:50:09+02:00",
             "date_modified": "2021-03-23T14:17:58+01:00"
-        },
-        {
-            "id": "https://lecaro.me/mermaid-gdocs.html",
-            "url": "https://lecaro.me/mermaid-gdocs.html",
-            "title": "Mermaid Gdocs",
-            "summary": "Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;",
-            "content_html": "<p>Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. </p>\n<p>To avoid such disappointing outcome, I tried to make more design docs. A design doc is roughly said a document that will detail all the possible solutions to a problem, and serve as a support for debate, ideas and discussions. After a design doc is accepted by the team, you can go ahead with the development with less risk of requirements being inadequate. </p>\n<p>Most features would include some back end and front end elements, and some user flows. Trying to make the documents more readable, I added as many sequence diagrams as possible. Sequence diagrams are excellent at communicating a process. Their layout forces you to be succinct  as there's not much space for walls of texts and unnecessary details.</p>\n<p>I first edited the diagrams in the excellent <a href=\"https://www.websequencediagrams.com/\">websequencediagrams.com</a> and pasted a screenshot in the google documents, but that was a bit of a pain to maintain. This tool keeps a copy of the source code, so i'd just need to edit it and update the resulting picture in the google document, but no one else had access to said source code. I thought i could just save the source code in the image description field in google docs, to make it easier to update the diagram for anyone in the team.</p>\n<p>This is when I realized i could use this \"trick\" to create a <a href=\"https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en\">google docs add-on</a>. In a classic case of \"putting off writing documentation by focusing on the tools used in documenting\", I followed the (super confusing) tutorials on the google documentation website for G Suite add-ons. </p>\n<figure class=\"post__image post__image--center\" ><img loading=\"lazy\" src=\"https://lecaro.me/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xs.png 300w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-sm.png 480w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-md.png 768w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-lg.png 1024w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xl.png 1360w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-2xl.png 1600w\"  alt=\"Screenshot of the mermaid add-on in the g-suite marketplace\" width=\"989\" height=\"731\">\n<figcaption >The mermaid add-on listed in the g-suite marketplace </figcaption>\n</figure>\n<p> </p>\n<p>The project has evolved a bit with time but stays relatively simple in terms of code. It has gathered quite a lot of users (10K) despite me not putting any efforts in marketing it. I guess we have a product-market fit here, but no business plan at all. This is really just a few lines of JavaScript to make the power of the mermaid JS library available in google docs. I don't think it makes sense to charge for it, and it costs nothing to keep it running. </p>\n<p>I've made it open source, with the code hosted on github, feel free to have a look there : <a href=\"https://github.com/renanlecaro/mermaid-gdocs\">https://github.com/renanlecaro/mermaid-gdocs</a></p>\n<p><a href=\"https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en\"> The mermaid add-on listed in the g-suite marketplace </a></p>\n<p> </p>",
-            "author": {
-                "name": "Renan LE CARO"
-            },
-            "tags": [
-                   "Blog post"
-            ],
-            "date_published": "2020-06-05T00:55:23+02:00",
-            "date_modified": "2021-03-23T14:18:05+01:00"
         }
     ]
 }

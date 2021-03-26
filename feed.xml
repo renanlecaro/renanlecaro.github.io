@@ -3,12 +3,51 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-03-25T10:21:45+01:00</updated>
+    <updated>2021-03-26T22:21:33+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>Meteor lags ? Aggregates to the rescue !</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html"/>
+        <id>https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html</id>
+
+        <updated>2021-03-26T22:21:33+01:00</updated>
+            <summary>
+                <![CDATA[
+                    My app has 4 main collections in mongo : - A user has many weeks and clients - Each week has many orders, one per client, where the order content is stored (can be empty if the client didn't order that week). Initially, my documents&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>My app has 4 main collections in mongo : </p>
+<p>- A <strong>user </strong>has many <strong>weeks </strong>and <strong>clients</strong></p>
+<p>- Each week has many <strong>orders</strong>, one per client, where the order content is stored (can be empty if the client didn't order that week). </p>
+<p>Initially, my documents were quite dry, I was doing the "joins" work on the client. It got laggy though, so I moved the joins logic to the meteor server, with <strong>hooks</strong> (<strong>matb33:collection-hooks) </strong>in every directions to keep denormalized fields in sync. </p>
+<figure class="post__image"><img loading="lazy"  src="https://trello-attachments.s3.amazonaws.com/605b848835c8f765d6d4626e/1025x564/5235adb0e560fb8de807e8488b2e67ec/image.png" data-is-external-image="true"  alt="My mess of hooks, simplified, visualized" width="718" height="395"></figure>
+<p>It was a pain though, really hard to follow what was going on and to debug. </p>
+<p>There's also potential for chain reactions and never ending hooks loops. </p>
+<p>But mostly, it was <strong>buggy in edge cases</strong>. </p>
+<p>So I'm migrating away from those hooks, and creating an aggregation pipeline per collection (week, client, order) that computes all the dynamic fields for some given ids, and returns the documents where the value is different, plus some additional ids to check in the next pass. </p>
+<p>It's not yet in production, but after this rewrite, my e2e tests are passing. </p>
+<p>Meteor uses mongodb 4.2 in development server. I didn't feel like forcing an update to 4.4, which brings in two very useful features for my use case (the<a href="https://docs.mongodb.com/manual/reference/operator/aggregation/function/"> $function</a> operator and the ability to <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/merge/#output-to-the-same-collection-that-is-being-aggregated">$merge</a> to the collection that you are aggregating on).</p>
+<p>So I've been $writing:{ $some: {$nested: {$queries:'It's a pain''}}} . I'm back to junior level of mastery in this new paradigm, where "It works" comes as a surprise. I'm sure i'll rewrite those ugly aggregations at some point, but for now they seem to do the job. </p>
+<p>One nice approach to using aggregation pipelines in meteor is to declare them in a separate js file, and then have a simple, non-meteor script that runs the aggregation and logs the results. </p>
+<p>I use nodemon to watch the files, and get a very fast feedback loop, without the need to wait for the meteor server to recompile. Great when you're learning as you go. </p>
+<p>I start the script like this (-r esm allows me to use modern imports) </p>
+<pre>nodemon -e js  -r esm tests/scripts/mongofun.js</pre>
+<p> And the script itself is very simple. It just runs the query </p>
+<p>tests/scripts/mongofun.js :</p>
+<pre>const mongoUrl='mongodb://127.0.0.1:3001/meteor'<br><br>async function actual_aggregation(db) {<br>  const result = await db<br>    .collection('Orders')<br>    .aggregate([<br>      {<br>        $match: {_id:'&lt;some test id&gt;'}<br>      }, <br>      ...the_pipeline_imported_from_the_meteor_source<br>    ])<br>    .toArray();<br>  console.log(result);<br>}<br><br>const mongodb = require('mongodb');<br>const client = new mongodb.MongoClient(mongoUrl, {<br>  useUnifiedTopology: true<br>});<br><br>client.connect().then(<br>  async () =&gt; {<br>    const start = Date.now();<br>    await author_aggregation(client.db());<br>    console.log('took ' + (Date.now() - start) + ' ms');<br>  },<br>  e =&gt; console.error(e)<br>);</pre>
+<p>Anyway, that's all for today :)</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Basic i3blocks controls for ubuntu rhythmbox</title>
         <author>
@@ -17,7 +56,7 @@
         <link href="https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html"/>
         <id>https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html</id>
 
-        <updated>2021-03-25T10:21:45+01:00</updated>
+        <updated>2021-03-26T21:57:05+01:00</updated>
             <summary>
                 <![CDATA[
                     I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists. I'm back to the good old "music" folder with files of long forgotten origins. The default ubuntu music player, rhythmbox, seems&hellip;
@@ -355,39 +394,6 @@
 <h2>How to restore such backup</h2>
 <p>Having backup is nice, but knowing out to restore them is better. </p>
 <pre>#!/bin/sh<br><br># folder with the dumps<br>DUMPFOLDER="<strong>/home/renan/cl/app/dump</strong>"<br># IP of your digital ocean droplet<br>DO_INSTANCE_IP="<strong>46.101.232.182</strong>"<br><br># Let it quit when it crash<br>set -e<br><br># find the latest backup file<br>LATEST_FILE=$(ls -t1 "$DUMPFOLDER/" |  head -n 1)<br>LATEST_DUMP="$DUMPFOLDER/$LATEST_FILE"<br>echo "Restoring to production from $LATEST_DUMP"<br>read -p "Press enter to continue .."<br><br># pipe file to the mongorestore inside the mongodb docker container inside the droplet <br>cat "${LATEST_DUMP}" | ssh "root@$DO_INSTANCE_IP" "cat | docker exec -i mongodb mongorestore --archive --gzip --drop"</pre>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Mermaid Gdocs</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/mermaid-gdocs.html"/>
-        <id>https://lecaro.me/mermaid-gdocs.html</id>
-            <category term="Blog post"/>
-
-        <updated>2021-03-23T14:18:05+01:00</updated>
-            <summary>
-                <![CDATA[
-                    Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. To avoid such disappointing outcome, I tried to make more&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>Working at virtualQ, it happened a few times that I'd start a project with unclear requirements, then presented it to the rest of the team just to see everything needing to be changed or canceled. </p>
-<p>To avoid such disappointing outcome, I tried to make more design docs. A design doc is roughly said a document that will detail all the possible solutions to a problem, and serve as a support for debate, ideas and discussions. After a design doc is accepted by the team, you can go ahead with the development with less risk of requirements being inadequate. </p>
-<p>Most features would include some back end and front end elements, and some user flows. Trying to make the documents more readable, I added as many sequence diagrams as possible. Sequence diagrams are excellent at communicating a process. Their layout forces you to be succinct  as there's not much space for walls of texts and unnecessary details.</p>
-<p>I first edited the diagrams in the excellent <a href="https://www.websequencediagrams.com/">websequencediagrams.com</a> and pasted a screenshot in the google documents, but that was a bit of a pain to maintain. This tool keeps a copy of the source code, so i'd just need to edit it and update the resulting picture in the google document, but no one else had access to said source code. I thought i could just save the source code in the image description field in google docs, to make it easier to update the diagram for anyone in the team.</p>
-<p>This is when I realized i could use this "trick" to create a <a href="https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en">google docs add-on</a>. In a classic case of "putting off writing documentation by focusing on the tools used in documenting", I followed the (super confusing) tutorials on the google documentation website for G Suite add-ons. </p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://lecaro.me/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xs.png 300w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-sm.png 480w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-md.png 768w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-lg.png 1024w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-xl.png 1360w ,https://lecaro.me/media/posts/8/responsive/Screenshot-from-2020-06-05-08-52-21-2xl.png 1600w"  alt="Screenshot of the mermaid add-on in the g-suite marketplace" width="989" height="731">
-<figcaption >The mermaid add-on listed in the g-suite marketplace </figcaption>
-</figure>
-<p> </p>
-<p>The project has evolved a bit with time but stays relatively simple in terms of code. It has gathered quite a lot of users (10K) despite me not putting any efforts in marketing it. I guess we have a product-market fit here, but no business plan at all. This is really just a few lines of JavaScript to make the power of the mermaid JS library available in google docs. I don't think it makes sense to charge for it, and it costs nothing to keep it running. </p>
-<p>I've made it open source, with the code hosted on github, feel free to have a look there : <a href="https://github.com/renanlecaro/mermaid-gdocs">https://github.com/renanlecaro/mermaid-gdocs</a></p>
-<p><a href="https://gsuite.google.com/marketplace/app/mermaid/636321283856?pann=cwsdp&amp;hl=en"> The mermaid add-on listed in the g-suite marketplace </a></p>
-<p> </p>
             ]]>
         </content>
     </entry>

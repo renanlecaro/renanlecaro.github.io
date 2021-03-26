@@ -3,12 +3,40 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-03-26T22:21:33+01:00</updated>
+    <updated>2021-03-26T22:30:45+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>Using Trello for feature requests / priorisation </title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/using-trello-for-feature-requests-priorisation.html"/>
+        <id>https://lecaro.me/using-trello-for-feature-requests-priorisation.html</id>
+
+        <updated>2021-03-26T22:30:45+01:00</updated>
+            <summary>
+                <![CDATA[
+                    I have a few users for my app, and 1000's of ideas on how to improve it. I've been tracking my work in trello, on a public board (my app is still closed source, but i'm as open as possible about the processes of my&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I have a few users for my app, and 1000's of ideas on how to improve it. </p>
+<p>I've been tracking my work in trello, on a public board (my app is still closed source, but i'm as open as possible about the processes of my work). </p>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/19/Screenshot-from-2021-03-26-22-25-06.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-xs.png 300w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-sm.png 480w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-md.png 768w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-lg.png 1024w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-xl.png 1360w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-2xl.png 1600w"  alt="The development board" width="1913" height="925"></figure>
+<p class="align-center">The <a href="https://trello.com/b/GaZSJzzq/planning-de-d%C3%A9veloppement-de-ciboulettenet">development board</a> (in French)</p>
+<p>I'm the only one doing development work here, but I've invited my clients to join the board. I instructed them to just "join" any card that seems like it would be useful to them. I only invited paying customers. </p>
+<p>It's a great way to focus on what's really needed. But i tend to work on some technical stuffs that don't really matter to them right now (like the <a href="https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html">last post</a> about aggregation suggests) so I can't always prioritise what's asked. </p>
+<p>And I get some Trello gold after every signup, but I'm not sure why I should care. </p>
+<p>Ideally, I'd like something similar but integrated in my app, to let users voice their opinions and needs without friction, but I thought i'd postpone that to the time where all the cards with a person on it are already done. </p>
+<p>And services like this already exist I guess, so it's not really worth investing much effort in creating a custom solution.  </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Meteor lags ? Aggregates to the rescue !</title>
         <author>
@@ -56,7 +84,7 @@
         <link href="https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html"/>
         <id>https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html</id>
 
-        <updated>2021-03-26T21:57:05+01:00</updated>
+        <updated>2021-03-26T22:22:27+01:00</updated>
             <summary>
                 <![CDATA[
                     I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists. I'm back to the good old "music" folder with files of long forgotten origins. The default ubuntu music player, rhythmbox, seems&hellip;
@@ -83,7 +111,7 @@
 </ul>
 <p>I also added a little regexp to remove anything in parenthesis in the track name, to remove "(Original mix)" mentions and such. </p>
 <p>.config/i3/i3blocks.conf :</p>
-<pre>[music]<br>command=node ~/.config/i3/rhythmbox.js $button<br>interval=5</pre>
+<pre>[music]<br>command=node ~/.config/i3/rhythmbox.js<br>interval=5</pre>
 <p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">The actual node script (I suck at bash, that's why i'm using node for this)</span></p>
 <p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">~/.config/i3/rhythmbox.js</span></p>
 <pre><br>const {execSync}=require('child_process')<br><br>// apply click actions<br>switch(process.env.BLOCK_BUTTON){<br>  case  '1': execSync('rhythmbox-client --play-pause');<br>    break; <br>  case  '3': execSync('rhythmbox-client --next');<br>    break;<br>}<br><br>// get track name<br>const playing=(execSync('rhythmbox-client --print-playing').toString())||'';<br><br>// clean track name<br>const formatted=playing.replace(/\([^\)]+\)/gi,'')<br><br>// output it<br>console.log(formatted);</pre>
@@ -355,45 +383,6 @@
 <p>Then, my currently favored plan is to set myself up in Odessa, Ukraine, to enjoy the good weather, Russian speaking opportunities and affordable cost of living. French citizen get 6 months visa free there, which should be enough for me to know if I want to stay here longer or not. </p>
 <p> </p>
 <p>  </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Automating local backups of DO MUP on Ubuntu</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html"/>
-        <id>https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</id>
-            <category term="Blog post"/>
-
-        <updated>2021-03-23T14:17:58+01:00</updated>
-            <summary>
-                <![CDATA[
-                    DO + MUP = 💙 I've migrated my main project, https://ciboulette.net, from Heroku to digital ocean, with the help of the awesome meteor up tool that's still actively maintained. I wanted a way to automate the backups of production to my own computer. In meteor,&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <h2>DO + MUP = 💙</h2>
-<p>I've migrated my main project, <a href="https://www.digitalocean.com/">https://ciboulette.net</a>, from Heroku to <a href="https://www.digitalocean.com/">digital ocean</a>, with the help of the awesome <a href="https://meteor-up.com/">meteor up</a> tool that's still actively maintained.</p>
-<p>I wanted a way to automate the backups of production to my own computer. In meteor, the only thing really worth backing up is the content of the mongoDB.</p>
-<p><strong>We need two things : a script</strong> that does the backup, <strong>and a cron job</strong> to run regularly</p>
-<h2>Backup script</h2>
-<p>You just need to configure the two environment variables at the top (in bold)</p>
-<p><strong>daily_backup.sh</strong></p>
-<pre>#!/bin/sh<br><br># folder where to store the last 7 daily backups, without trailing slash<br>DUMPFOLDER="<strong>/home/renan/cl/app/dump</strong>"<br><br># IP of your digital ocean droplet<br>DO_INSTANCE_IP="<strong>46.101.232.182</strong>"<br><br># so that notifications know on which display to show when called from the cron tab<br>export DISPLAY=:0<br><br># Let it quit when it crash<br>set -e<br><br>DUMPFILE="$DUMPFOLDER/daily_$(date +"%y-%m-%d").backup.gzip"<br><br>if [ ! -f $DUMPFILE ];<br>then<br>  continue<br>else<br>  echo "Already done today" &amp;&amp; exit 0<br>fi<br><br>notify-send "Backing up ..."<br><br># ssh to the instance, then ask the mongodb container to output an archive of all dbs, then stream that back to your machine. <br>ssh "root@$DO_INSTANCE_IP" "docker exec mongodb mongodump --archive --gzip" &gt; "${DUMPFILE}"<br><br># Only keep the last 7 dumps <br>ls -tp $DUMPFOLDER/ | grep -v '/$' | tail -n +8 | xargs -I {} rm -- $DUMPFOLDER/{}<br><br>notify-send "... backup done."</pre>
-<p>Make sure the script is executable with <code>chmod +x daily_backup.sh</code></p>
-<h2>CRON setup</h2>
-<p>We will run this script every hour. The first time it runs it will do the backup, and the next time it will see the file exists already and just exit. The next day the filename will be different and therefore a new backup will be run. </p>
-<p>Open the cron editor : <code>crontab -e</code> </p>
-<p>Add the following line, modifying the path in bold to point to your script.  </p>
-<p><code>1 * * * * /<strong>home/renan/cl/app/.production/daily_backup.sh</strong> &gt;/dev/null 2&gt;&amp;1</code></p>
-<p>This will run the script every hour when minutes are equal to 1, so if you start your computer at 8:30 it will first run at 9:01</p>
-<p>The redirect after the command are to avoid having errors show up in the logs. Ubuntu is a bit confused when cron jobs generate outputs.  </p>
-<h2>How to restore such backup</h2>
-<p>Having backup is nice, but knowing out to restore them is better. </p>
-<pre>#!/bin/sh<br><br># folder with the dumps<br>DUMPFOLDER="<strong>/home/renan/cl/app/dump</strong>"<br># IP of your digital ocean droplet<br>DO_INSTANCE_IP="<strong>46.101.232.182</strong>"<br><br># Let it quit when it crash<br>set -e<br><br># find the latest backup file<br>LATEST_FILE=$(ls -t1 "$DUMPFOLDER/" |  head -n 1)<br>LATEST_DUMP="$DUMPFOLDER/$LATEST_FILE"<br>echo "Restoring to production from $LATEST_DUMP"<br>read -p "Press enter to continue .."<br><br># pipe file to the mongorestore inside the mongodb docker container inside the droplet <br>cat "${LATEST_DUMP}" | ssh "root@$DO_INSTANCE_IP" "cat | docker exec -i mongodb mongorestore --archive --gzip --drop"</pre>
             ]]>
         </content>
     </entry>

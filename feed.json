@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://lecaro.me/configuring-i3-for-headful-e2e-tests.html",
+            "url": "https://lecaro.me/configuring-i3-for-headful-e2e-tests.html",
+            "title": "Configuring i3 for headful e2e tests",
+            "summary": "i3 is nice. End to end tests are nice. Chromium is nice. But they don't get along so well by default. When you run you e2e script with nodemon, each run opens and closes the test browser window. By default, that window appears right by&hellip;",
+            "content_html": "<p>i3 is nice. End to end tests are nice. Chromium is nice. But they don't get along so well by default.</p>\n<p>When you run you e2e script with nodemon, <strong>each run opens and closes the test browser</strong> window. By default, that window appears <strong>right by your editor</strong>, messing the layout.</p>\n<p>It's easy to fix though : you just need to <strong>tell i3 what to do with that test browser window</strong>.</p>\n<p>To make every new chromium window appear in the workspace $ws5, add this in ~/.config/i3/config</p>\n<p><code>assign [class=\"Chromium-browser\"] → $ws5</code></p>\n<p>The workspace name is a variable here, but you can put anything. I assign that window to a rarely used workspace. </p>\n<p>Chromium has a different class from Google Chrome, so this has no impact on where the \"real\" browser is started.</p>\n<p>To get the class infos for other browsers, run <code>xprop</code> in a terminal and then click on a window.  </p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+            ],
+            "date_published": "2021-03-27T11:52:52+01:00",
+            "date_modified": "2021-03-27T11:52:52+01:00"
+        },
+        {
             "id": "https://lecaro.me/using-trello-for-feature-requests-priorisation.html",
             "url": "https://lecaro.me/using-trello-for-feature-requests-priorisation.html",
             "title": "Using Trello for feature requests / priorisation ",
@@ -137,21 +151,6 @@
             ],
             "date_published": "2020-08-05T05:37:44+02:00",
             "date_modified": "2021-03-23T14:17:46+01:00"
-        },
-        {
-            "id": "https://lecaro.me/life-in-vladivostok.html",
-            "url": "https://lecaro.me/life-in-vladivostok.html",
-            "title": "Life in Владивосток",
-            "summary": "I've been living in Vladivostok, Russia, since the end of February 2020. I'm a student here, learning the Russian language. I'm a bit older than the average student but my life is still very student-like anyway. I really enjoy the energy of younger friends and&hellip;",
-            "content_html": "<p>I've been living in Vladivostok, Russia, since the end of February 2020. </p>\n<p>I'm a student here, learning the Russian language. I'm a bit older than the average student but my life is still very student-like anyway. I really enjoy the energy of younger friends and the large amount of free time we have.</p>\n<h2>Life is cheap </h2>\n<p>I'm renting a room on the DVFU campus, it costs barely 40€/month, but it's only possible to rent it as a student, the study itself costing around 140€/month. As a student, I can benefit from the very cheap student health insurance that costs about 50€/year. </p>\n<p>Overall, I'm spending less than 500€/month here to live quite comfortably. I'm happy to have found this opportunity. </p>\n<h2>Life is good</h2>\n<p>The Russian class starts at 10am every day. It lasts 2 hours, and is currently happening via Skype. That means I don't have to spend 3 hours in transport every day. When the confinement will be over though, we'll have to go back to physical classes, that happen in the city. Traffic is usually quite bad in the morning, and the trip without traffic from the FEFU campus to the city is about 1 hour without traffic, so it's not unusual to have to spend one hour thirty in transports to go to class. I really hope we'll have the option to keep our classes online, I find it way more convenient. </p>\n<p>We live near the sea and near nature, it's great. We've done countless barbecues, trekking trips and swimming sessions. </p>\n<p>The only scholarly thing I'm required to do to keep my student status is to be present in class. Doing the homework is recommended, but kind of optional. I don't do them anymore so that I can focus all my energy on the programming of <a href=\"https://ciboulette.net\">ciboulette.net</a>  </p>\n<h2>This too, shall pass</h2>\n<p>I won't stay eternally here, my motivation to learn Russian is lower than when I arrived, and my fascination for the country is now back to simple curiosity. </p>\n<p>I'll head back to Europe in December, to focus on the sales process of ciboulette. I'm thinking about moving to France first, to help my sister for a while with her setup in a new house. I'll do calling and development work when I have free time, and keep an eye on my niece at the same time. </p>\n<p>Then, my currently favored plan is to set myself up in Odessa, Ukraine, to enjoy the good weather, Russian speaking opportunities and affordable cost of living. French citizen get 6 months visa free there, which should be enough for me to know if I want to stay here longer or not. </p>\n<p> </p>\n<p>  </p>",
-            "author": {
-                "name": "Renan LE CARO"
-            },
-            "tags": [
-                   "Blog post"
-            ],
-            "date_published": "2020-08-04T04:27:56+02:00",
-            "date_modified": "2021-03-23T14:17:52+01:00"
         }
     ]
 }

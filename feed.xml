@@ -3,12 +3,36 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-03-27T11:52:52+01:00</updated>
+    <updated>2021-03-27T13:24:50+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>Github action to check for TODOs and FIXMEs</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html"/>
+        <id>https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html</id>
+
+        <updated>2021-03-27T13:24:50+01:00</updated>
+            <summary>
+                <![CDATA[
+                    Here's a very simple check that fails if there are any TODOs and FIXMEs in your code. Save it in .github/workflows/check_todos.yml name: Look for TODOs and FIXMEs on: - push jobs: build: runs-on: ubuntu-latest steps: - uses: actions/checkout@v2 - run: | MATCHES=$(grep -rE "TODO|FIXME") if&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Here's a very simple check that fails if there are any TODOs and FIXMEs in your code.</p>
+<p>Save it in .github/workflows/check_todos.yml</p>
+<pre>name: Look for TODOs and FIXMEs<br>on:<br>  - push<br>jobs:<br>  build:<br>    runs-on: ubuntu-latest<br>    steps:<br>      - uses: actions/checkout@v2<br>      - run: |<br>         MATCHES=$(grep -rE "TODO|FIXME")<br>         if [[ $MATCHES ]]<br>         then<br>           echo $MATCHES<br>           exit 1<br>         fi</pre>
+<p>You get the results really quickly, and because only the source is checked out ,all the generated files/packages should be excluded from the search.</p>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/21/Screenshot-from-2021-03-27-13-23-36.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-xs.png 300w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-sm.png 480w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-md.png 768w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-lg.png 1024w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-xl.png 1360w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-2xl.png 1600w"  alt="Screenshot of github output" width="1000" height="492"></figure>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Configuring i3 for headful e2e tests</title>
         <author>
@@ -347,34 +371,6 @@
 <li><a href="https://open.spotify.com/playlist/69gyd1SXiVhvfsyYS078f0?si=MnvGO1LTRhOy11neMwBHaQ">Psychedelic trance</a> when I need a motivation surge for a tough bit of code. It can get tiring after a few hours</li>
 <li><a href="https://open.spotify.com/playlist/2BAkAh0GWqDwuSFEJsH1wJ?si=2y98meZORqaFBCfni2iwng">Low volume funk</a> for events which involve people I don't know the music taste of, and music is not the focus of  the event. It's selected so that the tracks don't overpower the soundscape and sound good even at a low volume. </li>
 </ul>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Customizing the look of Publii</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/customizing-the-look-of-publii.html"/>
-        <id>https://lecaro.me/customizing-the-look-of-publii.html</id>
-            <category term="Blog post"/>
-
-        <updated>2021-03-23T14:17:46+01:00</updated>
-            <summary>
-                <![CDATA[
-                    I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp;&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>I really like the look of the default Publii theme, however some modifications weren't quite working using the in-app options. I wanted this website to have a very low level of interactivity, i don't need a mobile hamburger menu for 2 short entries (code &amp; life). </p>
-<p>So I started looking for a different theme but I couldn't find what I was looking for, that is, a minimalist theme. I resolved to just strip things away from the default theme to make it lighter and JS free. </p>
-<p>Opening the default theme gave me the same feeling that I got when trying to customize the code of a 40$ admin panel. Lots of code, neatly organized, most of it unused.</p>
-<blockquote>
-<p>What is all this code, what is it for ? Oh, i can get rid of it.  </p>
-</blockquote>
-<p>I managed to strip down the source by removing the parts I wasn't interested in. I think now the design looks clean, and I got rid of most useless css and js I could find. I'm not sure that this is the right approach, as those changes definitely won't survive a theme update (but why would I want to update it ?) and are a bit hacky. I'm pretty sure those changes are only stored on my machine, so if I try to edit the website from somewhere else it will revert back to it's default look. </p>
-<p>However, i'm not too worried about this. This personal website is a playground for experimentation after all.</p>
             ]]>
         </content>
     </entry>

@@ -3,7 +3,7 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-03-27T13:24:50+01:00</updated>
+    <updated>2021-03-28T16:54:27+02:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
@@ -17,17 +17,22 @@
         <link href="https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html"/>
         <id>https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html</id>
 
-        <updated>2021-03-27T13:24:50+01:00</updated>
+        <updated>2021-03-28T16:54:27+02:00</updated>
             <summary>
                 <![CDATA[
-                    Here's a very simple check that fails if there are any TODOs and FIXMEs in your code. Save it in .github/workflows/check_todos.yml name: Look for TODOs and FIXMEs on: - push jobs: build: runs-on: ubuntu-latest steps: - uses: actions/checkout@v2 - run: | MATCHES=$(grep -rE "TODO|FIXME") if&hellip;
+                    I had some TODO and FIXME instructions in random locations in my code that served no purpose, as I was never looking for them. I decided to now only use them as a "do this before deploying" kind of instruction. So i made a very&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Here's a very simple check that fails if there are any TODOs and FIXMEs in your code.</p>
+                <p>I had some TODO and FIXME instructions in random locations in my code that served no purpose, as I was never looking for them. </p>
+<p>I decided to now only use them as a "do this before deploying" kind of instruction.</p>
+<p>So i made a very simple script that fails if there are any TODOs and FIXMEs in your code.</p>
 <p>Save it in .github/workflows/check_todos.yml</p>
-<pre>name: Look for TODOs and FIXMEs<br>on:<br>  - push<br>jobs:<br>  build:<br>    runs-on: ubuntu-latest<br>    steps:<br>      - uses: actions/checkout@v2<br>      - run: |<br>         MATCHES=$(grep -rE "TODO|FIXME")<br>         if [[ $MATCHES ]]<br>         then<br>           echo $MATCHES<br>           exit 1<br>         fi</pre>
+<pre>name: Look for TODOs and FIXMEs<br>on:<br>  pull_request:<br>    # only prevent merging to the production branch, todos in tests are fine<br>    branches:<br>      - master<br>jobs:<br>  build:<br>    runs-on: ubuntu-latest<br>    steps:<br>      - uses: actions/checkout@v2<br>      - run: |<br>         MATCHES=$(grep -rE "T[O]DO|F[I]XME")<br>         if [[ $MATCHES ]]<br>         then<br>           echo $MATCHES<br>           exit 1<br>         fi</pre>
+<p>The weird T[O]DO and F[I]XME syntax is to avoid the script source triggering itself.</p>
+<p>There's also a way to exclude .yml files from the search, but this lets you use the syntax everywhere as a "don't deploy this".  </p>
+<p>The search is case sensitive, so it will only trip for clear TODOs and not some random method names.</p>
 <p>You get the results really quickly, and because only the source is checked out ,all the generated files/packages should be excluded from the search.</p>
 <figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/21/Screenshot-from-2021-03-27-13-23-36.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-xs.png 300w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-sm.png 480w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-md.png 768w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-lg.png 1024w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-xl.png 1360w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-2xl.png 1600w"  alt="Screenshot of github output" width="1000" height="492"></figure>
             ]]>

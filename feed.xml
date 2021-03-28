@@ -3,7 +3,7 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-03-29T01:10:01+02:00</updated>
+    <updated>2021-03-29T01:16:37+02:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
@@ -17,24 +17,23 @@
         <link href="https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html"/>
         <id>https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html</id>
 
-        <updated>2021-03-29T01:10:01+02:00</updated>
+        <updated>2021-03-29T01:16:37+02:00</updated>
             <summary>
                 <![CDATA[
-                    I had some TODO and FIXME instructions in random locations in my code that served no purpose, as I was never looking for them. I decided to now only use them as a "do this before deploying" kind of instruction. So i made a very&hellip;
+                    I had some TODO and FIXME instructions in random locations in my code that served no purpose, as I was never looking for them. I also use "console.log" for temporary debug logs that should be removed in production. I sometimes forget some console.log statements, and&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>I had some TODO and FIXME instructions in random locations in my code that served no purpose, as I was never looking for them. </p>
-<p>I decided to now only use them as a "do this before deploying" kind of instruction.</p>
-<p>So i made a very simple script that fails if there are any TODOs and FIXMEs in your code.</p>
+                <p>I had some TODO and FIXME instructions in random locations in my code that served no purpose, as I was never looking for them. I also use "console.log" for temporary debug logs that should be removed in production. </p>
+<p>I sometimes forget some console.log statements, and basically always ignore the TODO/FIXME comments. </p>
+<p>So i made a very simple script that fails if there are TODOs, FIXMEs or console.log in your code. This way the PR won't look like it's passing if it's missing an important part.</p>
 <p>Save it in .github/workflows/check_todos.yml</p>
-<pre>name: Look for todos and fixmes<br>on:<br>  pull_request:<br>    branches:<br>      - master<br>jobs:<br>  build:<br>    runs-on: ubuntu-latest<br>    steps:<br>      - uses: actions/checkout@v2<br>      - run: |<br>         if grep --exclude-dir={node_modules,.git,.meteor,.github} -rE "T[O]DO|F[I]XME|console\.log"; then<br>              exit 1<br>         else<br>             echo "All good"<br>         fi<br><br></pre>
-<p>The weird T[O]DO and F[I]XME syntax is to avoid the script source triggering itself.</p>
-<p>There's also a way to exclude .yml files from the search, but this lets you use the syntax everywhere as a "don't deploy this".  </p>
+<pre>name: Look for todos and fixmes<br>on:<br>  pull_request:<br>    branches:<br>      - master<br>jobs:<br>  build:<br>    runs-on: ubuntu-latest<br>    steps:<br>      - uses: actions/checkout@v2<br>      - run: |<br>         if grep --exclude-dir={.git,.github} -rE "TODO|FIXME|console\.log"; then<br>              exit 1<br>         else<br>             echo "All good"<br>         fi<br><br></pre>
+<p>I exclude .git because it could contain the text. And I exclude .github so that the regex doesn't match itself. Package files should not be a problem as the script doesn't pull any external dependencies (no npm install)  </p>
 <p>The search is case sensitive, so it will only trip for clear TODOs and not some random method names.</p>
 <p>You get the results really quickly, and because only the source is checked out ,all the generated files/packages should be excluded from the search.</p>
-<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/21/Screenshot-from-2021-03-27-13-23-36.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-xs.png 300w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-sm.png 480w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-md.png 768w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-lg.png 1024w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-xl.png 1360w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-27-13-23-36-2xl.png 1600w"  alt="Screenshot of github output" width="1000" height="492"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/21/Screenshot-from-2021-03-29-01-16-12.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-xs.png 300w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-sm.png 480w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-md.png 768w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-lg.png 1024w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-xl.png 1360w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-2xl.png 1600w"  alt="Screenshot of a failed build" width="989" height="386"></figure>
             ]]>
         </content>
     </entry>

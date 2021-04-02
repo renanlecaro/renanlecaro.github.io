@@ -3,12 +3,100 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-03-29T01:16:37+02:00</updated>
+    <updated>2021-04-02T14:26:48+02:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>How to start an Ubuntu &quot;SMS farm&quot;</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/how-to-start-an-ubuntu-sms-farm.html"/>
+        <id>https://lecaro.me/how-to-start-an-ubuntu-sms-farm.html</id>
+
+        <updated>2021-04-02T14:26:48+02:00</updated>
+            <summary>
+                <![CDATA[
+                    Why start an SMS "farm" ? SMS messages are super expensive in France. 0.06€ / message on Twilio, Vonage, etc... So I've resorted to sending SMSs using private phone plans. They are super cheap in france, 2€/month for unlimited SMSs. I'm using one such plan&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2>Why start an SMS "farm" ? </h2>
+<p>SMS messages are super expensive in France.</p>
+<p><strong> 0.06€ / message</strong> on Twilio, Vonage, etc...</p>
+<p>So I've resorted to sending SMSs using private phone plans. They are super cheap in france, 2€/month for unlimited SMSs.</p>
+<p>I'm using one such plan to send SMSs today, with an old android phone and an SMS gateway app that's not very reliable. I'm sending low volumes of SMS, so it's doing ok, but i'm getting ready to send way more SMSs for many additional users.</p>
+<p>I could try to send all the sms from one phone, but the "unlimited SMS" plans actually have an undisclosed hard limit on how much you can send. </p>
+<p>So i'm planning to pool a bunch of SIM cards, SMS farm style, to send the SMSs of ciboulette.net</p>
+<h2>Picking a modem (95€)</h2>
+<table style="border-collapse: collapse; width: 100%; height: 416px;" border="0">
+<tbody>
+<tr style="height: 416px;">
+<td style="width: 50%; height: 416px;"><figure class="post__image"><img loading="lazy"  style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: 18.4px; font-weight: var(--font-weight-normal); outline: 3px solid rgba(var(--primary-color-rgb), 0.55)  !important;" src="https://lecaro.me/media/posts/22/Screenshot-from-2021-04-02-12-28-31.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-xs.png 300w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-sm.png 480w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-md.png 768w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-lg.png 1024w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-xl.png 1360w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-2xl.png 1600w"  alt="Picture of the modem" width="432" height="449"></figure></td>
+<td style="width: 50%; height: 416px;">
+<p>The first step was buying a modem pool, i got this one on aliexpress : <a href="https://www.aliexpress.com/item/32477370996.html">FIMT 1/8/16/32/64 ports USB modem pool/GSM sms modem /gsm modem pool edge gprs modem driver</a></p>
+<p>It took about 10 days to arrive in France.</p>
+<p>The ad only talked about how it would work on Windows, so it was a bit of a gamble to try to use it on an Ubuntu server.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The modem looks alright, the only problem that i see is that the USB and power adaptor look like cheap stuffs, and easily get disconnected. That's in contrast with the very "pro" looking gadget itself.</p>
+<h2>Sending your first SMS with Ubuntu</h2>
+<p>It took me forever to understand that this modem didn't need any extra drivers, I was just doing it wrong.</p>
+<p>I'm only using one sim card for now, i'll buy more as the needs arise.</p>
+<p>First, make sure you disable the SIM PIN code, using any compatible phone.</p>
+<p>Then insert the sim in any of the bays, make sure the switch for that bay is on,and turn all the empty slots off.</p>
+<p>Connect the antenna because it looks cool (not sure if it does anything really). </p>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/22/IMG_20210402_122254.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-xs.jpg 300w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-sm.jpg 480w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-md.jpg 768w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-lg.jpg 1024w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-xl.jpg 1360w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-2xl.jpg 1600w"  alt="The glorious modem with its sim card" width="696" height="928"></figure>
+<p class="align-center">The modem</p>
+<p> </p>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/22/IMG_20210402_122302.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-xs.jpg 300w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-sm.jpg 480w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-md.jpg 768w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-lg.jpg 1024w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-xl.jpg 1360w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-2xl.jpg 1600w"  alt="Close up to show the direction of the sim card" width="696" height="928"></figure>
+<p class="align-center">Close up of the sim bay, with the sim card half out to show in which direction to insert it.</p>
+<p>Connect the power adapter, the usb cable, turn the device on. The blue led next to the sim should blink shortly every ~5 seconds. </p>
+<p>Turn on your Ubuntu computer.</p>
+<p>Let's first install our tools </p>
+<pre>sudo apt-get install wvdial screen</pre>
+<p>Type yes when/if needed</p>
+<p>Next, we need to find out modem, run </p>
+<pre>sudo wvdialconf</pre>
+<p>It will scan the various ports to try to find a modem that answers to its requests, and then try to detect the best transfer rate to use.</p>
+<p>It might fail on the first try, then run it again, until you get something like this</p>
+<pre>Found an USB modem on <strong>/dev/ttyACM6</strong>.<br>Modem configuration written to /etc/wvdial.conf.<br>ttyACM6&lt;Info&gt;: Speed <strong>38400</strong>; init "ATQ0 V1 E1 S0=0 &amp;C1 &amp;D2"</pre>
+<p>We found our modem. Next we'll need to talk directly to it with AT commande, to send our first message. </p>
+<p>The difficulty is that AT commands are a super old standard, and require at some point to send the control character "ctrl+z". If you do that in a normal prompt, it will be recognised as a keyboard shortcut and not be sent as a character.</p>
+<p>So we have to connect to the modem using a very low level interface.</p>
+<pre>sudo screen <strong>/dev/ttyACM6 38400</strong></pre>
+<p>You need to replace the arguments with the corresponding values returned at the last step.</p>
+<p>This opens a blank screen, type <strong>AT</strong> then press enter, the screen should display an "OK" answer from the modem. </p>
+<p>To go to sms mode, type <strong>AT+CMGF=1</strong> and validate with enter. It should reply "OK"</p>
+<p>To start an sms, type <strong>AT+CMGS="+3362XXXXXXX" (</strong>replace the XXX with your actual phone number) and press enter. It should go to the next line and show a "&gt;" character. </p>
+<p>Type the content of your message (possibly on multiple lines) then <strong>validate with ctrl+Z</strong></p>
+<p>It should lag for a second or two then display something like "+CMGS: 6 OK"</p>
+<p>You should then receive the sms on your phone. </p>
+<p>Exit the "screen" command by pressing "ctrl+A" followed by pressing "d".</p>
+<p>Summary of the commands :</p>
+<pre>AT<br>OK<br>AT+CMGF=1<br>OK<br>AT+CMGS="+3362XXXXXXX"<br>  &gt; Hey there<br>+CMGS: 6<br><br>OK</pre>
+<p>Once this works, you can investigate SMS servers like <a href="http://smstools3.kekekasvi.com/">smstools</a> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Github action to check for TODOs and FIXMEs</title>
         <author>
@@ -349,32 +437,6 @@
 <p> </p>
 <p>Extract of my package.json scripts :</p>
 <pre>"e2e:server": "METEOR_LOCAL_DIR=.meteor/e2e  meteor --port 4000 --settings settings.e2e.json",<br>"e2e:cli:showImages": "eog tests/e2e/last-test-state.png",<br>"e2e:cli:nodemon": "SNAPALL=true nodemon  --watch tests/e2e/01_signup.js tests/e2e/01_signup.js",<br>"e2e:cli": "run-p e2e:cli:* ",<br>"e2e:ci:node": "node tests/e2e/01_signup.js ",<br>"e2e:ci": "start-server-and-test e2e:server http://localhost:4000 e2e:ci:node"</pre>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>My 3 favorite playlists : house, trance and funk</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/my-3-favorite-playlists.html"/>
-        <id>https://lecaro.me/my-3-favorite-playlists.html</id>
-            <category term="Blog post"/>
-
-        <updated>2021-03-23T14:54:09+01:00</updated>
-            <summary>
-                <![CDATA[
-                    I have 3 playlists on Spotify I always come back to , thought i'd share them here Deep house as a background music for lightweight tasks, and as a loud playlist for festive events. Psychedelic trance when I need a motivation surge for a tough&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>I have 3 playlists on Spotify I always come back to , thought i'd share them here</p>
-<ul>
-<li><a href="https://open.spotify.com/playlist/4U1xZfxO1AsNbqWYKbfUnM?si=dTcARomPSLqMRaNHPvoWRw">Deep house</a> as a background music for lightweight tasks, and as a loud playlist for festive events.</li>
-<li><a href="https://open.spotify.com/playlist/69gyd1SXiVhvfsyYS078f0?si=MnvGO1LTRhOy11neMwBHaQ">Psychedelic trance</a> when I need a motivation surge for a tough bit of code. It can get tiring after a few hours</li>
-<li><a href="https://open.spotify.com/playlist/2BAkAh0GWqDwuSFEJsH1wJ?si=2y98meZORqaFBCfni2iwng">Low volume funk</a> for events which involve people I don't know the music taste of, and music is not the focus of  the event. It's selected so that the tracks don't overpower the soundscape and sound good even at a low volume. </li>
-</ul>
             ]]>
         </content>
     </entry>

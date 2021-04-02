@@ -3,12 +3,48 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-04-02T14:26:48+02:00</updated>
+    <updated>2021-04-02T16:33:12+02:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>Github action to deploy a meteor app to digital ocean </title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/github-action-to-deploy-a-meteor-app-to-digital-ocean.html"/>
+        <id>https://lecaro.me/github-action-to-deploy-a-meteor-app-to-digital-ocean.html</id>
+
+        <updated>2021-04-02T16:33:12+02:00</updated>
+            <summary>
+                <![CDATA[
+                    Why no galaxy ? My main app (https://ciboulette.net) is a meteor app. I love meteor, and I'm glad it's recently received some new funding and new updates. However, the official way to host a meteor app, meteor galaxy, is super expensive for a small indie&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2>Why no galaxy ? </h2>
+<p>My main app (<a href="https://ciboulette.net">https://ciboulette.net</a>) is a meteor app. I love meteor, and I'm glad it's recently received some new funding and new updates. </p>
+<p>However, the official way to host a meteor app, meteor galaxy, is super expensive for a small indie project. I can understand that server costs are usually not significant, but if i can get away with 15$ a month instead of 115$ well rather do that.</p>
+<p>Of course if I had to pay someone 100$/hour to manage my servers, it would be a different story.</p>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/23/comparison.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/23/responsive/comparison-xs.png 300w ,https://lecaro.me/media/posts/23/responsive/comparison-sm.png 480w ,https://lecaro.me/media/posts/23/responsive/comparison-md.png 768w ,https://lecaro.me/media/posts/23/responsive/comparison-lg.png 1024w ,https://lecaro.me/media/posts/23/responsive/comparison-xl.png 1360w ,https://lecaro.me/media/posts/23/responsive/comparison-2xl.png 1600w"  alt="Meteor and digital ocean pricing side by side" width="1910" height="795"></figure>
+<p>Anyway, i'm really happy with my meteor up + digital ocean setup, but the deploys take forever when you have a bad DSL connection (0.8 MB/s upload, whoo) so I looked for a way to get my deploys to happen in the cloud.</p>
+<p>The cheapest (free) and simplest solution I found was github actions.</p>
+<p>Here's the github action for one of my open source repositories : <a href="https://github.com/renanlecaro/simpletextnet/blob/master/.github/workflows/main.yml">https://github.com/renanlecaro/simpletextnet/blob/master/.github/workflows/main.yml</a></p>
+<p>The idea is :</p>
+<ul>
+<li>Get "mup deploy" working locally</li>
+<li>Add the required ssh keys to the github action runner as secrets</li>
+<li> Run mup deploy from the runner</li>
+</ul>
+<p>It's not rocket science, really, it was just not as straighforward as I hoped it would be. </p>
+<p>Below, the main action code</p>
+<pre>name: Deploy meteor app to digital ocean with meteor up<br>on:<br>  push:<br>    branches: [ master ]<br>  workflow_dispatch:<br><br>jobs:<br>  build:<br>    runs-on: ubuntu-latest<br>    steps:<br><br>      # we setup ssh first as it is quick, so the action will fail <br>      # fast during the installation on a new repository<br>      - name: Install SSH key<br>        uses: shimataro/ssh-key-action@v2<br>        with:<br>          key: ${{ secrets.SSH_KEY }}<br>          known_hosts: ${{ secrets.KNOWN_HOSTS }}<br><br>      # just a dummy request to check the communication with the server<br>      # is ok, we'll upload after building<br>      - name: Test ssh key to fail fast<br>        run: ssh root@188.166.160.106 -t "pwd"<br><br>      # get the source<br>      - uses: actions/checkout@v2<br><br>      # install only the production dependencies<br>      - name: get production dependencies only<br>        run: npm install --production<br><br>      # install mup without the -g flag <br>      - name: install mup locally<br>        run: npm install mup<br><br>      # install meteor to be able to build the app as a bundle<br>      - name: install meteor<br>        run: curl https://install.meteor.com/ | sh<br><br>      # upload the bundle. Here, the .production folder is app specific.<br>      # You need to get to the folder with your mup.js file.<br>      - name: Bundle the app and upload to Digital Ocean<br>        run: cd ./.production &amp;&amp; npx mup deploy</pre>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>How to start an Ubuntu &quot;SMS farm&quot;</title>
         <author>
@@ -385,58 +421,6 @@
 <p>So, all that was left was to dump that data, load the dump in meteor and all was fine.</p>
 <p>I added a migration to clean that field in production too.  It will run on the next deploy. </p>
 <p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Oh, the joy of Meteor e2e testing !</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/oh-the-joy-of-e2e-testing.html"/>
-        <id>https://lecaro.me/oh-the-joy-of-e2e-testing.html</id>
-            <category term="Blog post"/>
-
-        <updated>2021-03-23T14:54:14+01:00</updated>
-            <summary>
-                <![CDATA[
-                    I'm setting up e2e testing on my Meteor app, ciboulette.net. I had done it in the past but after large UI changes i just removed the tests as they were completely stale and generally painful to work with : I'm trying again, this time using&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>I'm setting up e2e testing on my Meteor app, ciboulette.net.</p>
-<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">I had done it in the past but after large UI changes i just removed the tests as they were completely stale and generally painful to work with : </span></p>
-<ul>
-<li>they were <strong>brittle and/or slow</strong></li>
-<li>they were a <strong>pain to edit</strong>. </li>
-<li>they didn't run in <strong>CI</strong></li>
-</ul>
-<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">I'm trying again, this time using <strong>playwright.</strong></span></p>
-<p>To <strong>make the tests less brittle</strong>, i <span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">had to disable some of the "smarts" of the app to make the tests work at high speed  : </span></p>
-<ul>
-<li><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">Instead of deferring heavy workloads, I run them synchronously before returning from a method.</span></li>
-<li><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">My modal windows wait for the method result to come back from the server (no optimistic UI magic)</span></li>
-<li><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">I had some logic to ignore double clicks that I had to disable in e2e mode</span></li>
-<li>I completely mocked external services (google maps, google image, emails, sms, etc..)</li>
-</ul>
-<p>To <strong>make editing easier</strong>, I had to fix a few things :</p>
-<ul>
-<li>I start the e2e server with a different meteor local file, on a different port, with dedicated settings</li>
-<li><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">I don't use the headful mode because it always start in the wrong place.</span></li>
-<li>I take screenshots at every step, outputting the screenshot to one file that refreshes automatically when viewed with eog (eye of gnome) </li>
-<li>I use nodemon to restart the tests when i change them (but not when I change any other file) </li>
-<li>I start both my headless tests and eog with <strong><strong>npm-run-all</strong></strong></li>
-</ul>
-<p>Running the tests in <strong>github ci</strong></p>
-<ul>
-<li>The CI scrip uses <strong>start-server-and-test</strong> to start the meteor server in e2e mode and run the headless tests against it</li>
-<li>The e2e Ci script runs<strong> npm install</strong>, but all other scripts run <strong>npm install --production</strong>. Playwright is heavy and is not required to build the app so i've added it as a devDependency. The unit tests are lightweight so i've added jest as a normal dependency.</li>
-</ul>
-<p>The <strong>remaining challenge</strong> I have is to create snapshots at different stages of the test (page url, db content, cookies) so that i can skip most of the e2e tests suite when editing a small part of it. It's tricky, involves hardcoded mongo urls, some mongorestore and mongodump run with execSync .. and not working yet. </p>
-<p> </p>
-<p>Extract of my package.json scripts :</p>
-<pre>"e2e:server": "METEOR_LOCAL_DIR=.meteor/e2e  meteor --port 4000 --settings settings.e2e.json",<br>"e2e:cli:showImages": "eog tests/e2e/last-test-state.png",<br>"e2e:cli:nodemon": "SNAPALL=true nodemon  --watch tests/e2e/01_signup.js tests/e2e/01_signup.js",<br>"e2e:cli": "run-p e2e:cli:* ",<br>"e2e:ci:node": "node tests/e2e/01_signup.js ",<br>"e2e:ci": "start-server-and-test e2e:server http://localhost:4000 e2e:ci:node"</pre>
             ]]>
         </content>
     </entry>

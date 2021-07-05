@@ -121,6 +121,14 @@
 <lastmod>2021-03-23T14:54:14+01:00</lastmod>
 </url>
 <url>
+<loc>https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html</loc>
+<lastmod>2021-07-05T17:39:41+02:00</lastmod>
+<image:image>
+<image:loc>https://lecaro.me/media/posts/25/inotify-result.png</image:loc>
+<image:title><![CDATA[Screenshot of the result, it will refresh whenever files change]]></image:title>
+</image:image>
+</url>
+<url>
 <loc>https://lecaro.me/the-fefu-campus.html</loc>
 <lastmod>2021-03-23T14:18:26+01:00</lastmod>
 <image:image>

@@ -3,12 +3,40 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-05-18T12:58:59+02:00</updated>
+    <updated>2021-07-05T17:39:41+02:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>One liner to watch the current folder and tree its structure</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html"/>
+        <id>https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html</id>
+
+        <updated>2021-07-05T17:39:41+02:00</updated>
+            <summary>
+                <![CDATA[
+                    I've been working with smstools3 which uses a folder and its subfolder as its state store. Instead of running "tree" manually in the /var/spool/sms folder, i'd rather have it be done automagically whenever the files change. I've used inotifywait for that, which needs to be&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I've been working with smstools3 which uses a folder and its subfolder as its state store. </p>
+<p>Instead of running "tree" manually in the /var/spool/sms folder, i'd rather have it be done automagically whenever the files change.</p>
+<p>I've used <strong>inotifywait </strong>for that, which needs to be installed on ubuntu with <strong>sudo apt install inotify-tools</strong> .</p>
+<p>Then it's just a matter of cd-ing to the proper directory and running :</p>
+<p><strong>clear &amp;&amp; tree &amp;&amp; inotifywait --monitor --quiet --recursive --event modify . | while read; do clear; tree; done</strong></p>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://lecaro.me/media/posts/25/inotify-result.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/25/responsive/inotify-result-xs.png 300w ,https://lecaro.me/media/posts/25/responsive/inotify-result-sm.png 480w ,https://lecaro.me/media/posts/25/responsive/inotify-result-md.png 768w ,https://lecaro.me/media/posts/25/responsive/inotify-result-lg.png 1024w ,https://lecaro.me/media/posts/25/responsive/inotify-result-xl.png 1360w ,https://lecaro.me/media/posts/25/responsive/inotify-result-2xl.png 1600w"  alt="Screenshot of the result, it will refresh whenever files change" width="409" height="348">
+<figcaption >Result</figcaption>
+</figure>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Youtube music is Meh</title>
         <author>
@@ -374,36 +402,6 @@
 </tr>
 </tbody>
 </table>
-<p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Javascript minification with sed</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/javascript-minification-with-sed.html"/>
-        <id>https://lecaro.me/javascript-minification-with-sed.html</id>
-
-        <updated>2021-03-24T22:41:32+01:00</updated>
-            <summary>
-                <![CDATA[
-                    I added a few of my projects to those "Pages under 1MB" websites. I'm not sure what for, but eh, it's free link estate ! Anyway, while most of those lists are comprised of boring, barely formatted text pages, i stumbled upon a nice one,&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>I added a few of my projects to those "<a href="https://1mb.club/">Pages under 1MB</a>" websites. I'm not sure what for, but eh, it's free link estate !</p>
-<p>Anyway, while most of those lists are comprised of <a href="https://jakob.kaivo.net/">boring</a>, barely formatted text pages,  i stumbled upon a nice one, this <a href="https://tutor.0b.ee/">touch type trainer</a> in 2 KB of js. The best thing about it  is not really the tool (it's limited, obviously) but the absurd way the author got down to that 2kb size, in particular this little gem. </p>
-<p><a href="https://github.com/KaarelP2rtel/keyboard-tutor/blob/master/minify.sh">minify.sh</a> </p>
-<pre>sed -i 's/tutor-window/tw/g' "$target"<br>sed -i 's/tutor-container/tc/g' "$target"<br>sed -i 's/tutor-completed/tm/g' "$target"<br>sed -i 's/tutor-cursor/tr/g' "$target"<br>sed -i 's/tutor-uncompleted/tu/g' "$target"<br>sed -i 's/tutor-result/te/g' "$target"<br>sed -i 's/tutor-status/ts/g' "$target"<br>sed -i 's/current-layout/cl/g' "$target"</pre>
-<p>I have no words, it's beautiful :) </p>
-<p>I remember going to similar extremes on <a href="https://github.com/renanlecaro/importabular/blob/master/src/index.js#L50">importabular</a>. </p>
-<p>All the private methods had names prefixed by an underscore, and then i had some instructions for the minifying tool to not keep names with that prefix. </p>
-<p>It shaved a few kilobytes from the already tiny lib, but i reverted it after to make it easier to subclass the Importabular class. </p>
-<p> That period with the lower bars on <a href="https://bundlephobia.com/result?p=importabular@0.2.9">bundlephobia</a> is where this behavior was installed</p>
-<p>Anyway, gzipped code golf is always a lot of fun. </p>
 <p> </p>
             ]]>
         </content>

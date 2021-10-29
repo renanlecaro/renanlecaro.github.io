@@ -3,7 +3,7 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-10-29T18:02:13+03:00</updated>
+    <updated>2021-10-29T18:07:35+03:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
@@ -18,7 +18,7 @@
         <id>https://lecaro.me/i3-three-finger-workspace-swipe-on-ubuntu.html</id>
             <category term="Blog post"/>
 
-        <updated>2021-10-29T18:02:13+03:00</updated>
+        <updated>2021-10-29T18:07:35+03:00</updated>
             <summary>
                 <![CDATA[
                     I travel a lot and try to carry as little stuff as possible. However, having a second screen is a productivity booster when programming, so i'm carrying a small no-name 15" screen with me. I was looking for a way to get the productivity boost&hellip;
@@ -36,7 +36,7 @@
 <p>Then install the gesture detection script</p>
 <pre>sudo apt-get install wmctrl xdotool libinput-tools<br>git clone https://github.com/bulletmark/libinput-gestures.git<br>cd libinput-gestures<br>sudo make install</pre>
 <p>Configure the swipe gestures : </p>
-<pre>echo "gesture swipe left 3 i3-msg workspace prev\n gesture swipe right 3  i3-msg workspace next\n" &gt; ~/.config/libinput-gestures.conf</pre>
+<pre>printf "gesture swipe left 3 i3-msg workspace prev\ngesture swipe right 3  i3-msg workspace next\n" &gt; ~/.config/libinput-gestures.conf</pre>
 <p>Start the script </p>
 <pre>libinput-gestures-setup autostart start</pre>
 <p>Try swiping left / right on your touchpad with tree fingers, it should switch workspaces. </p>

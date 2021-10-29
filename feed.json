@@ -10,6 +10,21 @@
     },
     "items": [
         {
+            "id": "https://lecaro.me/i3-three-finger-workspace-swipe-on-ubuntu.html",
+            "url": "https://lecaro.me/i3-three-finger-workspace-swipe-on-ubuntu.html",
+            "title": "i3 three finger workspace swipe on Ubuntu  ",
+            "summary": "I travel a lot and try to carry as little stuff as possible. However, having a second screen is a productivity booster when programming, so i'm carrying a small no-name 15\" screen with me. I was looking for a way to get the productivity boost&hellip;",
+            "content_html": "<p>I travel a lot and try to carry as little stuff as possible. However, having a second screen is a productivity booster when programming, so i'm carrying a <a href=\"https://fr.aliexpress.com/item/1005002090199185.html\" target=\"_blank\" rel=\"noopener noreferrer\">small no-name 15\" screen</a> with me. </p>\n<p>I was looking for a way to get the productivity boost of a second screen without the extra bulk. I first thought of getting a<a href=\"https://fr.aliexpress.com/item/32972011831.html\" target=\"_blank\" rel=\"noopener noreferrer\"> foot pedal</a> to switch i3 workspaces \"without thinking\".</p>\n<p>However, after discussing with a friend that's on a mac, I realised that a good first step would be to set up <strong>touchpad swipe gestures</strong> for<strong> workspace swiping</strong>.</p>\n<p>Here's how I got it working on Ubuntu 20.04:</p>\n<p>Add yourself to the \"input\" group </p>\n<pre><code>sudo gpasswd -a $USER input</code></pre>\n<p><strong>Reboot your computer</strong> (required)</p>\n<p>Then install the gesture detection script</p>\n<pre>sudo apt-get install wmctrl xdotool libinput-tools<br>git clone https://github.com/bulletmark/libinput-gestures.git<br>cd libinput-gestures<br>sudo make install</pre>\n<p>Configure the swipe gestures : </p>\n<pre>echo \"gesture swipe left 3 i3-msg workspace prev\\n gesture swipe right 3  i3-msg workspace next\\n\" &gt; ~/.config/libinput-gestures.conf</pre>\n<p>Start the script </p>\n<pre>libinput-gestures-setup autostart start</pre>\n<p>Try swiping left / right on your touchpad with tree fingers, it should switch workspaces. </p>\n<p>For mode details, see the script documentation here (not my own) : <a href=\"https://github.com/bulletmark/libinput-gestures\" target=\"_blank\" rel=\"noopener noreferrer\">https://github.com/bulletmark/libinput-gestures</a></p>\n<p> </p>\n<p> </p>\n<p> </p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+                   "Blog post"
+            ],
+            "date_published": "2021-10-29T18:02:13+03:00",
+            "date_modified": "2021-10-29T18:02:13+03:00"
+        },
+        {
             "id": "https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html",
             "url": "https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html",
             "title": "One liner to watch the current folder and tree its structure",
@@ -20,8 +35,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-07-05T17:39:41+02:00",
-            "date_modified": "2021-07-05T17:39:41+02:00"
+            "date_published": "2021-07-05T18:39:41+03:00",
+            "date_modified": "2021-07-05T18:39:41+03:00"
         },
         {
             "id": "https://lecaro.me/youtube-music-is-terrible.html",
@@ -34,8 +49,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-05-07T12:08:50+02:00",
-            "date_modified": "2021-07-06T09:55:20+02:00"
+            "date_published": "2021-05-07T13:08:50+03:00",
+            "date_modified": "2021-07-06T10:55:20+03:00"
         },
         {
             "id": "https://lecaro.me/github-action-to-deploy-a-meteor-app-to-digital-ocean.html",
@@ -48,8 +63,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-04-02T16:33:12+02:00",
-            "date_modified": "2021-04-02T16:33:12+02:00"
+            "date_published": "2021-04-02T17:33:12+03:00",
+            "date_modified": "2021-04-02T17:33:12+03:00"
         },
         {
             "id": "https://lecaro.me/how-to-start-an-ubuntu-sms-farm.html",
@@ -62,8 +77,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-04-02T14:18:36+02:00",
-            "date_modified": "2021-05-18T12:58:59+02:00"
+            "date_published": "2021-04-02T15:18:36+03:00",
+            "date_modified": "2021-05-18T13:58:59+03:00"
         },
         {
             "id": "https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html",
@@ -76,8 +91,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-27T13:24:50+01:00",
-            "date_modified": "2021-03-29T01:16:37+02:00"
+            "date_published": "2021-03-27T14:24:50+02:00",
+            "date_modified": "2021-03-29T02:16:37+03:00"
         },
         {
             "id": "https://lecaro.me/configuring-i3-for-headful-e2e-tests.html",
@@ -90,8 +105,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-27T11:52:52+01:00",
-            "date_modified": "2021-03-27T11:52:52+01:00"
+            "date_published": "2021-03-27T12:52:52+02:00",
+            "date_modified": "2021-03-27T12:52:52+02:00"
         },
         {
             "id": "https://lecaro.me/using-trello-for-feature-requests-priorisation.html",
@@ -104,8 +119,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-26T22:30:45+01:00",
-            "date_modified": "2021-03-26T22:30:45+01:00"
+            "date_published": "2021-03-26T23:30:45+02:00",
+            "date_modified": "2021-03-26T23:30:45+02:00"
         },
         {
             "id": "https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html",
@@ -118,8 +133,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-26T22:16:01+01:00",
-            "date_modified": "2021-03-26T22:21:33+01:00"
+            "date_published": "2021-03-26T23:16:01+02:00",
+            "date_modified": "2021-03-26T23:21:33+02:00"
         },
         {
             "id": "https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html",
@@ -132,22 +147,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-25T10:21:45+01:00",
-            "date_modified": "2021-03-26T22:22:27+01:00"
-        },
-        {
-            "id": "https://lecaro.me/3-video-games-ive-spend-100-hours-on.html",
-            "url": "https://lecaro.me/3-video-games-ive-spend-100-hours-on.html",
-            "title": "3 video games I&#x27;ve spent 100+ hours on",
-            "summary": "I don't really play much those days, but I've had some great gaming experiences I felt like sharing today. This strategy game is free, ad free, and has an amazing replay-ability thanks to the user generated levels. It's easy to learn, and not too hard&hellip;",
-            "content_html": "<p>I don't really play much those days, but I've had some great gaming experiences I felt like sharing today.</p>\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td style=\"width: 50%;\"><figure class=\"post__image align-center\"><img loading=\"lazy\"  src=\"https://lecaro.me/media/posts/16/antiyoy.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://lecaro.me/media/posts/16/responsive/antiyoy-xs.png 300w ,https://lecaro.me/media/posts/16/responsive/antiyoy-sm.png 480w ,https://lecaro.me/media/posts/16/responsive/antiyoy-md.png 768w ,https://lecaro.me/media/posts/16/responsive/antiyoy-lg.png 1024w ,https://lecaro.me/media/posts/16/responsive/antiyoy-xl.png 1360w ,https://lecaro.me/media/posts/16/responsive/antiyoy-2xl.png 1600w\"  alt=\"\" width=\"240\" height=\"400\"></figure></td>\n<td style=\"width: 50%;\">\n<h2>Antiyoy - Android</h2>\n<p> This <strong>strategy</strong> game is free, ad free, and has an amazing replay-ability thanks to the user generated levels.  </p>\n<p>It's <strong>easy to learn</strong>, and not too hard to master, after a while most levels are trivial. </p>\n<p>Some get tough though, and I had to look at the solutions from random Russian Youtube videos at times. </p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 50%;\"><figure class=\"n3VNCb\"><img loading=\"lazy\"  src=\"https://i.ytimg.com/vi/J8SBp4SyvLc/maxresdefault.jpg\" data-is-external-image=\"true\"  alt=\"Factorio - Trailer 2020 - YouTube\" data-noaft=\"1\"></figure></td>\n<td style=\"width: 50%;\">\n<h2>Factorio - Linux</h2>\n<p>It's one of those game that's programmer's heaven. Or hell. It's very similar to <strong>programming</strong> (design, debugging, automating, constantly learning) <strong>but with guns</strong>.</p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 50%;\"><figure class=\"n3VNCb\"><img loading=\"lazy\"  src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Nuclear_Throne_screenshot_10.png/1200px-Nuclear_Throne_screenshot_10.png\" data-is-external-image=\"true\"  alt=\"Nuclear Throne — Wikipédia\" data-noaft=\"1\"></figure></td>\n<td style=\"width: 50%;\">\n<h2>Nuclear throne - Linux</h2>\n<p>This is one of the <strong>roguelikes</strong> I sicked to, and after a while i got pretty good at it. <strong>Runs are short</strong>, so it's perfect to spend a few minutes before starting a complicated topic. It's frustrating enough that you don't end up playing 2 hours without realising it.  </p>\n</td>\n</tr>\n</tbody>\n</table>\n<p> </p>",
-            "author": {
-                "name": "Renan LE CARO"
-            },
-            "tags": [
-            ],
-            "date_published": "2021-03-25T00:45:38+01:00",
-            "date_modified": "2021-03-25T10:06:17+01:00"
+            "date_published": "2021-03-25T11:21:45+02:00",
+            "date_modified": "2021-03-26T23:22:27+02:00"
         }
     ]
 }

@@ -3,12 +3,50 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-07-06T09:55:20+02:00</updated>
+    <updated>2021-10-29T18:02:13+03:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>i3 three finger workspace swipe on Ubuntu  </title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/i3-three-finger-workspace-swipe-on-ubuntu.html"/>
+        <id>https://lecaro.me/i3-three-finger-workspace-swipe-on-ubuntu.html</id>
+            <category term="Blog post"/>
+
+        <updated>2021-10-29T18:02:13+03:00</updated>
+            <summary>
+                <![CDATA[
+                    I travel a lot and try to carry as little stuff as possible. However, having a second screen is a productivity booster when programming, so i'm carrying a small no-name 15" screen with me. I was looking for a way to get the productivity boost&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I travel a lot and try to carry as little stuff as possible. However, having a second screen is a productivity booster when programming, so i'm carrying a <a href="https://fr.aliexpress.com/item/1005002090199185.html" target="_blank" rel="noopener noreferrer">small no-name 15" screen</a> with me. </p>
+<p>I was looking for a way to get the productivity boost of a second screen without the extra bulk. I first thought of getting a<a href="https://fr.aliexpress.com/item/32972011831.html" target="_blank" rel="noopener noreferrer"> foot pedal</a> to switch i3 workspaces "without thinking".</p>
+<p>However, after discussing with a friend that's on a mac, I realised that a good first step would be to set up <strong>touchpad swipe gestures</strong> for<strong> workspace swiping</strong>.</p>
+<p>Here's how I got it working on Ubuntu 20.04:</p>
+<p>Add yourself to the "input" group </p>
+<pre><code>sudo gpasswd -a $USER input</code></pre>
+<p><strong>Reboot your computer</strong> (required)</p>
+<p>Then install the gesture detection script</p>
+<pre>sudo apt-get install wmctrl xdotool libinput-tools<br>git clone https://github.com/bulletmark/libinput-gestures.git<br>cd libinput-gestures<br>sudo make install</pre>
+<p>Configure the swipe gestures : </p>
+<pre>echo "gesture swipe left 3 i3-msg workspace prev\n gesture swipe right 3  i3-msg workspace next\n" &gt; ~/.config/libinput-gestures.conf</pre>
+<p>Start the script </p>
+<pre>libinput-gestures-setup autostart start</pre>
+<p>Try swiping left / right on your touchpad with tree fingers, it should switch workspaces. </p>
+<p>For mode details, see the script documentation here (not my own) : <a href="https://github.com/bulletmark/libinput-gestures" target="_blank" rel="noopener noreferrer">https://github.com/bulletmark/libinput-gestures</a></p>
+<p> </p>
+<p> </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>One liner to watch the current folder and tree its structure</title>
         <author>
@@ -17,7 +55,7 @@
         <link href="https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html"/>
         <id>https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html</id>
 
-        <updated>2021-07-05T17:39:41+02:00</updated>
+        <updated>2021-07-05T18:39:41+03:00</updated>
             <summary>
                 <![CDATA[
                     I've been working with smstools3 which uses a folder and its subfolder as its state store. Instead of running "tree" manually in the /var/spool/sms folder, i'd rather have it be done automagically whenever the files change. I've used inotifywait for that, which needs to be&hellip;
@@ -45,7 +83,7 @@
         <link href="https://lecaro.me/youtube-music-is-terrible.html"/>
         <id>https://lecaro.me/youtube-music-is-terrible.html</id>
 
-        <updated>2021-07-06T09:55:20+02:00</updated>
+        <updated>2021-07-06T10:55:20+03:00</updated>
             <summary>
                 <![CDATA[
                     Spotify was a bit buggy on my laptop a while ago so I stopped my premium plan. I used the excellent soundiiz to transfer my playlists over to youtube (in small 200 tracks batches), where I had a premium account. The thing is, youtube music&hellip;
@@ -72,7 +110,7 @@
         <link href="https://lecaro.me/github-action-to-deploy-a-meteor-app-to-digital-ocean.html"/>
         <id>https://lecaro.me/github-action-to-deploy-a-meteor-app-to-digital-ocean.html</id>
 
-        <updated>2021-04-02T16:33:12+02:00</updated>
+        <updated>2021-04-02T17:33:12+03:00</updated>
             <summary>
                 <![CDATA[
                     Why no galaxy ? My main app (https://ciboulette.net) is a meteor app. I love meteor, and I'm glad it's recently received some new funding and new updates. However, the official way to host a meteor app, meteor galaxy, is super expensive for a small indie&hellip;
@@ -108,7 +146,7 @@
         <link href="https://lecaro.me/how-to-start-an-ubuntu-sms-farm.html"/>
         <id>https://lecaro.me/how-to-start-an-ubuntu-sms-farm.html</id>
 
-        <updated>2021-05-18T12:58:59+02:00</updated>
+        <updated>2021-05-18T13:58:59+03:00</updated>
             <summary>
                 <![CDATA[
                     Why start an SMS "farm" ? SMS messages are super expensive in France. 0.06€ / message on Twilio, Vonage, etc... So I've resorted to sending SMSs using private phone plans. They are super cheap in france, 2€/month for unlimited SMSs. I'm using one such plan&hellip;
@@ -202,7 +240,7 @@
         <link href="https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html"/>
         <id>https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html</id>
 
-        <updated>2021-03-29T01:16:37+02:00</updated>
+        <updated>2021-03-29T02:16:37+03:00</updated>
             <summary>
                 <![CDATA[
                     I had some TODO and FIXME instructions in random locations in my code that served no purpose, as I was never looking for them. I also use "console.log" for temporary debug logs that should be removed in production. I sometimes forget some console.log statements, and&hellip;
@@ -230,7 +268,7 @@
         <link href="https://lecaro.me/configuring-i3-for-headful-e2e-tests.html"/>
         <id>https://lecaro.me/configuring-i3-for-headful-e2e-tests.html</id>
 
-        <updated>2021-03-27T11:52:52+01:00</updated>
+        <updated>2021-03-27T12:52:52+02:00</updated>
             <summary>
                 <![CDATA[
                     i3 is nice. End to end tests are nice. Chromium is nice. But they don't get along so well by default. When you run you e2e script with nodemon, each run opens and closes the test browser window. By default, that window appears right by&hellip;
@@ -257,7 +295,7 @@
         <link href="https://lecaro.me/using-trello-for-feature-requests-priorisation.html"/>
         <id>https://lecaro.me/using-trello-for-feature-requests-priorisation.html</id>
 
-        <updated>2021-03-26T22:30:45+01:00</updated>
+        <updated>2021-03-26T23:30:45+02:00</updated>
             <summary>
                 <![CDATA[
                     I have a few users for my app, and 1000's of ideas on how to improve it. I've been tracking my work in trello, on a public board (my app is still closed source, but i'm as open as possible about the processes of my&hellip;
@@ -285,7 +323,7 @@
         <link href="https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html"/>
         <id>https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html</id>
 
-        <updated>2021-03-26T22:21:33+01:00</updated>
+        <updated>2021-03-26T23:21:33+02:00</updated>
             <summary>
                 <![CDATA[
                     My app has 4 main collections in mongo : - A user has many weeks and clients - Each week has many orders, one per client, where the order content is stored (can be empty if the client didn't order that week). Initially, my documents&hellip;
@@ -324,7 +362,7 @@
         <link href="https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html"/>
         <id>https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html</id>
 
-        <updated>2021-03-26T22:22:27+01:00</updated>
+        <updated>2021-03-26T23:22:27+02:00</updated>
             <summary>
                 <![CDATA[
                     I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists. I'm back to the good old "music" folder with files of long forgotten origins. The default ubuntu music player, rhythmbox, seems&hellip;
@@ -355,54 +393,6 @@
 <p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">The actual node script (I suck at bash, that's why i'm using node for this)</span></p>
 <p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">~/.config/i3/rhythmbox.js</span></p>
 <pre><br>const {execSync}=require('child_process')<br><br>// apply click actions<br>switch(process.env.BLOCK_BUTTON){<br>  case  '1': execSync('rhythmbox-client --play-pause');<br>    break; <br>  case  '3': execSync('rhythmbox-client --next');<br>    break;<br>}<br><br>// get track name<br>const playing=(execSync('rhythmbox-client --print-playing').toString())||'';<br><br>// clean track name<br>const formatted=playing.replace(/\([^\)]+\)/gi,'')<br><br>// output it<br>console.log(formatted);</pre>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>3 video games I&#x27;ve spent 100+ hours on</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/3-video-games-ive-spend-100-hours-on.html"/>
-        <id>https://lecaro.me/3-video-games-ive-spend-100-hours-on.html</id>
-
-        <updated>2021-03-25T10:06:17+01:00</updated>
-            <summary>
-                <![CDATA[
-                    I don't really play much those days, but I've had some great gaming experiences I felt like sharing today. This strategy game is free, ad free, and has an amazing replay-ability thanks to the user generated levels. It's easy to learn, and not too hard&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>I don't really play much those days, but I've had some great gaming experiences I felt like sharing today.</p>
-<table style="border-collapse: collapse; width: 100%;" border="0">
-<tbody>
-<tr>
-<td style="width: 50%;"><figure class="post__image align-center"><img loading="lazy"  src="https://lecaro.me/media/posts/16/antiyoy.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/16/responsive/antiyoy-xs.png 300w ,https://lecaro.me/media/posts/16/responsive/antiyoy-sm.png 480w ,https://lecaro.me/media/posts/16/responsive/antiyoy-md.png 768w ,https://lecaro.me/media/posts/16/responsive/antiyoy-lg.png 1024w ,https://lecaro.me/media/posts/16/responsive/antiyoy-xl.png 1360w ,https://lecaro.me/media/posts/16/responsive/antiyoy-2xl.png 1600w"  alt="" width="240" height="400"></figure></td>
-<td style="width: 50%;">
-<h2>Antiyoy - Android</h2>
-<p> This <strong>strategy</strong> game is free, ad free, and has an amazing replay-ability thanks to the user generated levels.  </p>
-<p>It's <strong>easy to learn</strong>, and not too hard to master, after a while most levels are trivial. </p>
-<p>Some get tough though, and I had to look at the solutions from random Russian Youtube videos at times. </p>
-</td>
-</tr>
-<tr>
-<td style="width: 50%;"><figure class="n3VNCb"><img loading="lazy"  src="https://i.ytimg.com/vi/J8SBp4SyvLc/maxresdefault.jpg" data-is-external-image="true"  alt="Factorio - Trailer 2020 - YouTube" data-noaft="1"></figure></td>
-<td style="width: 50%;">
-<h2>Factorio - Linux</h2>
-<p>It's one of those game that's programmer's heaven. Or hell. It's very similar to <strong>programming</strong> (design, debugging, automating, constantly learning) <strong>but with guns</strong>.</p>
-</td>
-</tr>
-<tr>
-<td style="width: 50%;"><figure class="n3VNCb"><img loading="lazy"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Nuclear_Throne_screenshot_10.png/1200px-Nuclear_Throne_screenshot_10.png" data-is-external-image="true"  alt="Nuclear Throne — Wikipédia" data-noaft="1"></figure></td>
-<td style="width: 50%;">
-<h2>Nuclear throne - Linux</h2>
-<p>This is one of the <strong>roguelikes</strong> I sicked to, and after a while i got pretty good at it. <strong>Runs are short</strong>, so it's perfect to spend a few minutes before starting a complicated topic. It's frustrating enough that you don't end up playing 2 hours without realising it.  </p>
-</td>
-</tr>
-</tbody>
-</table>
-<p> </p>
             ]]>
         </content>
     </entry>

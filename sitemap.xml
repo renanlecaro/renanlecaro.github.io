@@ -6,7 +6,7 @@
 </url>
 <url>
 <loc>https://lecaro.me/3-video-games-ive-spend-100-hours-on.html</loc>
-<lastmod>2021-03-25T10:06:17+01:00</lastmod>
+<lastmod>2021-03-25T11:06:17+02:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/16/antiyoy.png</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -14,11 +14,11 @@
 </url>
 <url>
 <loc>https://lecaro.me/automating-backups-of-digital-ocean-meteor-up-install-to-your-ubuntu-workstation.html</loc>
-<lastmod>2021-03-23T14:17:58+01:00</lastmod>
+<lastmod>2021-03-23T15:17:58+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html</loc>
-<lastmod>2021-03-26T22:22:27+01:00</lastmod>
+<lastmod>2021-03-26T23:22:27+02:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/17/i3script</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -26,7 +26,7 @@
 </url>
 <url>
 <loc>https://lecaro.me/be-careful-what-you-ping-for.html</loc>
-<lastmod>2021-03-24T15:49:39+01:00</lastmod>
+<lastmod>2021-03-24T16:49:39+02:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/14/Screenshot-from-2021-03-24-15-23-56.png</image:loc>
 <image:title><![CDATA[Screenshot of statuscake]]></image:title>
@@ -34,23 +34,23 @@
 </url>
 <url>
 <loc>https://lecaro.me/ciboulettenet-a-web-platform-for-vegetable-farmers.html</loc>
-<lastmod>2021-03-23T14:18:18+01:00</lastmod>
+<lastmod>2021-03-23T15:18:18+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/configuring-i3-for-headful-e2e-tests.html</loc>
-<lastmod>2021-03-27T11:52:52+01:00</lastmod>
+<lastmod>2021-03-27T12:52:52+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/customizing-the-look-of-publii.html</loc>
-<lastmod>2021-03-23T14:17:46+01:00</lastmod>
+<lastmod>2021-03-23T15:17:46+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/documenting-systems.html</loc>
-<lastmod>2021-03-23T14:18:11+01:00</lastmod>
+<lastmod>2021-03-23T15:18:11+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html</loc>
-<lastmod>2021-03-29T01:16:37+02:00</lastmod>
+<lastmod>2021-03-29T02:16:37+03:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/21/Screenshot-from-2021-03-29-01-16-12.png</image:loc>
 <image:title><![CDATA[Screenshot of a failed build]]></image:title>
@@ -58,7 +58,7 @@
 </url>
 <url>
 <loc>https://lecaro.me/github-action-to-deploy-a-meteor-app-to-digital-ocean.html</loc>
-<lastmod>2021-04-02T16:33:12+02:00</lastmod>
+<lastmod>2021-04-02T17:33:12+03:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/23/comparison.png</image:loc>
 <image:title><![CDATA[Meteor and digital ocean pricing side by side]]></image:title>
@@ -66,11 +66,11 @@
 </url>
 <url>
 <loc>https://lecaro.me/giving-publii-a-try.html</loc>
-<lastmod>2021-03-23T14:18:33+01:00</lastmod>
+<lastmod>2021-03-23T15:18:33+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/how-to-start-an-ubuntu-sms-farm.html</loc>
-<lastmod>2021-05-18T12:58:59+02:00</lastmod>
+<lastmod>2021-05-18T13:58:59+03:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/22/Screenshot-from-2021-04-02-12-28-31.png</image:loc>
 <image:title><![CDATA[Picture of the modem]]></image:title>
@@ -85,16 +85,20 @@
 </image:image>
 </url>
 <url>
+<loc>https://lecaro.me/i3-three-finger-workspace-swipe-on-ubuntu.html</loc>
+<lastmod>2021-10-29T18:02:13+03:00</lastmod>
+</url>
+<url>
 <loc>https://lecaro.me/javascript-minification-with-sed.html</loc>
-<lastmod>2021-03-24T22:41:32+01:00</lastmod>
+<lastmod>2021-03-24T23:41:32+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/life-in-vladivostok.html</loc>
-<lastmod>2021-03-23T14:17:52+01:00</lastmod>
+<lastmod>2021-03-23T15:17:52+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/mermaid-gdocs.html</loc>
-<lastmod>2021-03-23T14:18:05+01:00</lastmod>
+<lastmod>2021-03-23T15:18:05+02:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/8/Screenshot-from-2020-06-05-08-52-21.png</image:loc>
 <image:title><![CDATA[Screenshot of the mermaid add-on in the g-suite marketplace]]></image:title>
@@ -102,11 +106,11 @@
 </url>
 <url>
 <loc>https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html</loc>
-<lastmod>2021-03-26T22:21:33+01:00</lastmod>
+<lastmod>2021-03-26T23:21:33+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/minimage-minimal-image-editor.html</loc>
-<lastmod>2021-03-23T14:18:40+01:00</lastmod>
+<lastmod>2021-03-23T15:18:40+02:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/3/minimage-2.png</image:loc>
 <image:title><![CDATA[Screenshot of minimage]]></image:title>
@@ -114,15 +118,15 @@
 </url>
 <url>
 <loc>https://lecaro.me/my-3-favorite-playlists.html</loc>
-<lastmod>2021-03-23T14:54:09+01:00</lastmod>
+<lastmod>2021-03-23T15:54:09+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/oh-the-joy-of-e2e-testing.html</loc>
-<lastmod>2021-03-23T14:54:14+01:00</lastmod>
+<lastmod>2021-03-23T15:54:14+02:00</lastmod>
 </url>
 <url>
 <loc>https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html</loc>
-<lastmod>2021-07-05T17:39:41+02:00</lastmod>
+<lastmod>2021-07-05T18:39:41+03:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/25/inotify-result.png</image:loc>
 <image:title><![CDATA[Screenshot of the result, it will refresh whenever files change]]></image:title>
@@ -130,7 +134,7 @@
 </url>
 <url>
 <loc>https://lecaro.me/the-fefu-campus.html</loc>
-<lastmod>2021-03-23T14:18:26+01:00</lastmod>
+<lastmod>2021-03-23T15:18:26+02:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/5/gallery/DSC_3034-1-thumbnail.jpg</image:loc>
 <image:title><![CDATA[The bridge to the island]]></image:title>
@@ -154,7 +158,7 @@
 </url>
 <url>
 <loc>https://lecaro.me/using-trello-for-feature-requests-priorisation.html</loc>
-<lastmod>2021-03-26T22:30:45+01:00</lastmod>
+<lastmod>2021-03-26T23:30:45+02:00</lastmod>
 <image:image>
 <image:loc>https://lecaro.me/media/posts/19/Screenshot-from-2021-03-26-22-25-06.png</image:loc>
 <image:title><![CDATA[The development board]]></image:title>
@@ -162,6 +166,6 @@
 </url>
 <url>
 <loc>https://lecaro.me/youtube-music-is-terrible.html</loc>
-<lastmod>2021-07-06T09:55:20+02:00</lastmod>
+<lastmod>2021-07-06T10:55:20+03:00</lastmod>
 </url>
 </urlset>

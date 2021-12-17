@@ -21,8 +21,8 @@
             "tags": [
                    "Blog post"
             ],
-            "date_published": "2021-10-29T18:02:13+03:00",
-            "date_modified": "2021-10-29T18:07:35+03:00"
+            "date_published": "2021-10-29T17:02:13+02:00",
+            "date_modified": "2021-10-29T17:07:35+02:00"
         },
         {
             "id": "https://lecaro.me/one-liner-to-watch-the-current-folder-and-tree-its-structure.html",
@@ -35,8 +35,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-07-05T18:39:41+03:00",
-            "date_modified": "2021-07-05T18:39:41+03:00"
+            "date_published": "2021-07-05T17:39:41+02:00",
+            "date_modified": "2021-07-05T17:39:41+02:00"
         },
         {
             "id": "https://lecaro.me/youtube-music-is-terrible.html",
@@ -49,8 +49,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-05-07T13:08:50+03:00",
-            "date_modified": "2021-07-06T10:55:20+03:00"
+            "date_published": "2021-05-07T12:08:50+02:00",
+            "date_modified": "2021-07-06T09:55:20+02:00"
         },
         {
             "id": "https://lecaro.me/github-action-to-deploy-a-meteor-app-to-digital-ocean.html",
@@ -63,8 +63,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-04-02T17:33:12+03:00",
-            "date_modified": "2021-04-02T17:33:12+03:00"
+            "date_published": "2021-04-02T16:33:12+02:00",
+            "date_modified": "2021-04-02T16:33:12+02:00"
         },
         {
             "id": "https://lecaro.me/how-to-start-an-ubuntu-sms-farm.html",
@@ -77,8 +77,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-04-02T15:18:36+03:00",
-            "date_modified": "2021-05-18T13:58:59+03:00"
+            "date_published": "2021-04-02T14:18:36+02:00",
+            "date_modified": "2021-05-18T12:58:59+02:00"
         },
         {
             "id": "https://lecaro.me/github-action-to-check-for-todos-and-fixmes.html",
@@ -91,8 +91,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-27T14:24:50+02:00",
-            "date_modified": "2021-03-29T02:16:37+03:00"
+            "date_published": "2021-03-27T13:24:50+01:00",
+            "date_modified": "2021-03-29T01:16:37+02:00"
         },
         {
             "id": "https://lecaro.me/configuring-i3-for-headful-e2e-tests.html",
@@ -105,8 +105,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-27T12:52:52+02:00",
-            "date_modified": "2021-03-27T12:52:52+02:00"
+            "date_published": "2021-03-27T11:52:52+01:00",
+            "date_modified": "2021-03-27T11:52:52+01:00"
         },
         {
             "id": "https://lecaro.me/using-trello-for-feature-requests-priorisation.html",
@@ -119,8 +119,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-26T23:30:45+02:00",
-            "date_modified": "2021-03-26T23:30:45+02:00"
+            "date_published": "2021-03-26T22:30:45+01:00",
+            "date_modified": "2021-03-26T22:30:45+01:00"
         },
         {
             "id": "https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html",
@@ -133,8 +133,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-26T23:16:01+02:00",
-            "date_modified": "2021-03-26T23:21:33+02:00"
+            "date_published": "2021-03-26T22:16:01+01:00",
+            "date_modified": "2021-03-26T22:21:33+01:00"
         },
         {
             "id": "https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html",
@@ -147,8 +147,8 @@
             },
             "tags": [
             ],
-            "date_published": "2021-03-25T11:21:45+02:00",
-            "date_modified": "2021-03-26T23:22:27+02:00"
+            "date_published": "2021-03-25T10:21:45+01:00",
+            "date_modified": "2021-03-26T22:22:27+01:00"
         }
     ]
 }

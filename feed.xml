@@ -3,21 +3,21 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2022-01-10T23:27:39+01:00</updated>
+    <updated>2022-01-10T23:31:26+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
     <entry>
-        <title>Picnic: end to end encrypted collaborative text editor</title>
+        <title>Picnic: end-to-end encrypted collaborative text editor</title>
         <author>
             <name>Renan LE CARO</name>
         </author>
         <link href="https://lecaro.me/picnic-end-to-end-encrypted-collaborative-text-editor.html"/>
         <id>https://lecaro.me/picnic-end-to-end-encrypted-collaborative-text-editor.html</id>
 
-        <updated>2022-01-10T23:27:39+01:00</updated>
+        <updated>2022-01-10T23:31:26+01:00</updated>
             <summary>
                 <![CDATA[
                     I felt like having a small break from my main project this month, so I'm giving myself some weeks to try out other ideas I've been putting off. Just happy coding of open source MVPs for various ideas I've had for a while. I'm giving&hellip;
@@ -28,14 +28,12 @@
                 <p>I felt like having a small break from <a href="https://ciboulette.net/">my main project</a> this month, so I'm giving myself <strong>some weeks to try out other ideas</strong> I've been putting off. Just happy coding of open source MVPs for various ideas I've had for a while. I'm giving myself a <strong>max of 7 days per app</strong> to make sure the scope stays reasonable.</p>
 <p>The first one is pretty close to done now, and it's called <a href="https://picnic.lecaro.me/">picnic</a>.</p>
 <p>It's a simple web app that lets you <strong>create a plain text document and edit it with friends in real time</strong> (on PC and smartphone).</p>
-<p>It's <strong>end to end encrypted</strong>, so the client side does the encryption with window.crypto (despite not really adding much security) and sends that to my node server over websockets. The server saves that document and forwards it to the other clients that can decode it thanks to the key stored in the URL. "<strong>Rolling your own crypto</strong>" is generally a bad idea, but I think here i'm "using pre-made crypto" which is alright, despite a very strong feeling on "I have no idea what I'm doing".</p>
-<p>Speaking of <span data-dobid="hdw">haphazardly reaching a decent solution <strong>: syncing edits is hard</strong>. When you type some words in the text, the full value of that text is sent over to the server, who forwards it to everyone as-is. </span><span data-dobid="hdw">So <strong>each client receives the latest version</strong>, but might have done its own edits that are not yet sent for syncing (two people typing at the same time).</span></p>
-<p>I end up doing a <strong>three way merge of full text</strong>, using a homemade quite naive approach. It works  most of the time, though it quite easily gets confused. Initially, just typing alone on the document would get super messy when the updates from the server would conflict with your local edits.</p>
-<p>My 3 way merge algorithm <strong>performs well when the edits are far form each other</strong>, but it <strong>perform terribly when two users are adding thing at the same spot</strong> in the doc. Luckily, this only really happen when a user tries to apply his own edits. So I just made the editor ignore any edits that came from itself (using a session id that only lasts for the duration of the web page). </p>
+<p>It's <strong>end-to-end encrypted</strong>, so the client side does the encryption with window.crypto (despite not really adding much security) and sends that to my node server over web sockets. The server saves that document and forwards it to the other clients that can decode it thanks to the key stored in the URL. "<strong>Rolling your own crypto</strong>" is generally a bad idea, but I think here i'm "using pre-made crypto" which is alright, despite a very strong feeling on "I have no idea what I'm doing".</p>
+<p>Speaking of haphazardly reaching a decent solution <strong>: syncing edits is hard</strong>. When you type some words in the text, the full value of that text is sent over to the server, who forwards it to everyone as-is. So <strong>each client receives the latest version</strong>, but might have done its own edits that are not yet sent for syncing (two people typing at the same time).</p>
+<p>I end up doing a <strong>three-way merge of full text</strong>, using a homemade, quite naive approach. It works  most of the time, though it quite easily gets confused. Initially, just typing alone on the document would get super messy when the updates from the server would conflict with your local edits.</p>
+<p>My 3 way merge algorithm <strong>performs well when the edits are far from each other</strong>, but it <strong>performs terribly when two users are adding a thing at the same spot</strong> in the doc. Luckily, this only really happen when a user tries to apply his own edits. So I just made the editor ignore any edits that came from itself (using a session ID that only lasts for the duration of the web page). </p>
 <p>Furthermore, some <strong>edits would</strong> <strong>arrive in the wrong order</strong>, and my algorithm would consider a <strong>reversed addition as a deletion</strong>. I could solve that quite easily too, by just <strong>adding a version number to each document</strong>, incrementing it at each edit, and ignoring stale edits. The server keeps the authoritative value for the current version number and blocks any stale edit form propagating. </p>
-<p>Finally, the app <strong>reconnects</strong> with exponential back-off and <strong>retries</strong> to send user's edits whenever the sync fails for any reason, until it's up to date with the server. Overall, i'm <strong>quite pleased with the result</strong>, it's usable, loads fast and more reliable than <a href="https://txt.lecaro.me/">my previous attempt</a> at solving the same project. It's also quite easy to self host as the DB is simply the local file system.</p>
-<p> </p>
-<p> </p>
+<p>Finally, the app <strong>reconnects</strong> with exponential back-off and <strong>retries</strong> to send user's edits whenever the sync fails for any reason, until it's up-to-date with the server. Overall, I'm <strong>quite pleased with the result</strong>, it's usable, loads fast and more reliable than <a href="https://txt.lecaro.me/">my previous attempt</a> at solving the same project. It's also quite easy to self-host as the DB is simply the local file system.</p>
 <p> </p>
             ]]>
         </content>

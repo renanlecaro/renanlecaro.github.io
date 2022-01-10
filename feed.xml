@@ -3,12 +3,43 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2021-10-29T17:07:35+02:00</updated>
+    <updated>2022-01-10T23:27:39+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>Picnic: end to end encrypted collaborative text editor</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/picnic-end-to-end-encrypted-collaborative-text-editor.html"/>
+        <id>https://lecaro.me/picnic-end-to-end-encrypted-collaborative-text-editor.html</id>
+
+        <updated>2022-01-10T23:27:39+01:00</updated>
+            <summary>
+                <![CDATA[
+                    I felt like having a small break from my main project this month, so I'm giving myself some weeks to try out other ideas I've been putting off. Just happy coding of open source MVPs for various ideas I've had for a while. I'm giving&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I felt like having a small break from <a href="https://ciboulette.net/">my main project</a> this month, so I'm giving myself <strong>some weeks to try out other ideas</strong> I've been putting off. Just happy coding of open source MVPs for various ideas I've had for a while. I'm giving myself a <strong>max of 7 days per app</strong> to make sure the scope stays reasonable.</p>
+<p>The first one is pretty close to done now, and it's called <a href="https://picnic.lecaro.me/">picnic</a>.</p>
+<p>It's a simple web app that lets you <strong>create a plain text document and edit it with friends in real time</strong> (on PC and smartphone).</p>
+<p>It's <strong>end to end encrypted</strong>, so the client side does the encryption with window.crypto (despite not really adding much security) and sends that to my node server over websockets. The server saves that document and forwards it to the other clients that can decode it thanks to the key stored in the URL. "<strong>Rolling your own crypto</strong>" is generally a bad idea, but I think here i'm "using pre-made crypto" which is alright, despite a very strong feeling on "I have no idea what I'm doing".</p>
+<p>Speaking of <span data-dobid="hdw">haphazardly reaching a decent solution <strong>: syncing edits is hard</strong>. When you type some words in the text, the full value of that text is sent over to the server, who forwards it to everyone as-is. </span><span data-dobid="hdw">So <strong>each client receives the latest version</strong>, but might have done its own edits that are not yet sent for syncing (two people typing at the same time).</span></p>
+<p>I end up doing a <strong>three way merge of full text</strong>, using a homemade quite naive approach. It works  most of the time, though it quite easily gets confused. Initially, just typing alone on the document would get super messy when the updates from the server would conflict with your local edits.</p>
+<p>My 3 way merge algorithm <strong>performs well when the edits are far form each other</strong>, but it <strong>perform terribly when two users are adding thing at the same spot</strong> in the doc. Luckily, this only really happen when a user tries to apply his own edits. So I just made the editor ignore any edits that came from itself (using a session id that only lasts for the duration of the web page). </p>
+<p>Furthermore, some <strong>edits would</strong> <strong>arrive in the wrong order</strong>, and my algorithm would consider a <strong>reversed addition as a deletion</strong>. I could solve that quite easily too, by just <strong>adding a version number to each document</strong>, incrementing it at each edit, and ignoring stale edits. The server keeps the authoritative value for the current version number and blocks any stale edit form propagating. </p>
+<p>Finally, the app <strong>reconnects</strong> with exponential back-off and <strong>retries</strong> to send user's edits whenever the sync fails for any reason, until it's up to date with the server. Overall, i'm <strong>quite pleased with the result</strong>, it's usable, loads fast and more reliable than <a href="https://txt.lecaro.me/">my previous attempt</a> at solving the same project. It's also quite easy to self host as the DB is simply the local file system.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>i3 three finger workspace swipe on Ubuntu  </title>
         <author>
@@ -351,48 +382,6 @@
 <p>tests/scripts/mongofun.js :</p>
 <pre>const mongoUrl='mongodb://127.0.0.1:3001/meteor'<br><br>async function actual_aggregation(db) {<br>  const result = await db<br>    .collection('Orders')<br>    .aggregate([<br>      {<br>        $match: {_id:'&lt;some test id&gt;'}<br>      }, <br>      ...the_pipeline_imported_from_the_meteor_source<br>    ])<br>    .toArray();<br>  console.log(result);<br>}<br><br>const mongodb = require('mongodb');<br>const client = new mongodb.MongoClient(mongoUrl, {<br>  useUnifiedTopology: true<br>});<br><br>client.connect().then(<br>  async () =&gt; {<br>    const start = Date.now();<br>    await author_aggregation(client.db());<br>    console.log('took ' + (Date.now() - start) + ' ms');<br>  },<br>  e =&gt; console.error(e)<br>);</pre>
 <p>Anyway, that's all for today :)</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Basic i3blocks controls for ubuntu rhythmbox</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html"/>
-        <id>https://lecaro.me/basic-i3blocks-controls-for-ubuntu-rhythmbox.html</id>
-
-        <updated>2021-03-26T22:22:27+01:00</updated>
-            <summary>
-                <![CDATA[
-                    I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists. I'm back to the good old "music" folder with files of long forgotten origins. The default ubuntu music player, rhythmbox, seems&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>I've switched over from Spotify to Rhythmbox today. Spotify was a bit unstable on my system, it sometimes even struggled to playback offline playlists.</p>
-<p>I'm back to the good old "music" folder with files of long forgotten origins.  </p>
-<p>The default ubuntu music player, rhythmbox,  seems not too bad, i don't need it to do much anyway. </p>
-<p>I just had to port my i3 bar script to : </p>
-<ul>
-<li>show the track currently playing</li>
-<li>go to next track on right click</li>
-<li>play/pause on left click<br><br></li>
-</ul>
-<p> </p>
-<figure class="post__image align-center"><img loading="lazy"  src="https://lecaro.me/media/posts/17/i3script" alt="" width="478" height="53"></figure>
-<p>The look of the "widget", pretty basic. </p>
-<p>I wanted to add a play/pause icon but </p>
-<ul>
-<li>i didn't find a way to ask rhythmbox-client if the  music is played or paused</li>
-<li>my ears are usually enough to know if anything i s playing </li>
-</ul>
-<p>I also added a little regexp to remove anything in parenthesis in the track name, to remove "(Original mix)" mentions and such. </p>
-<p>.config/i3/i3blocks.conf :</p>
-<pre>[music]<br>command=node ~/.config/i3/rhythmbox.js<br>interval=5</pre>
-<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">The actual node script (I suck at bash, that's why i'm using node for this)</span></p>
-<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">~/.config/i3/rhythmbox.js</span></p>
-<pre><br>const {execSync}=require('child_process')<br><br>// apply click actions<br>switch(process.env.BLOCK_BUTTON){<br>  case  '1': execSync('rhythmbox-client --play-pause');<br>    break; <br>  case  '3': execSync('rhythmbox-client --next');<br>    break;<br>}<br><br>// get track name<br>const playing=(execSync('rhythmbox-client --print-playing').toString())||'';<br><br>// clean track name<br>const formatted=playing.replace(/\([^\)]+\)/gi,'')<br><br>// output it<br>console.log(formatted);</pre>
             ]]>
         </content>
     </entry>

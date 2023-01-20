@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2022-01-10T23:31:26+01:00</updated>
+    <updated>2023-01-20T19:55:26+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>A small collaborative city builder</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/summary-of-2022.html"/>
+        <id>https://lecaro.me/summary-of-2022.html</id>
+
+        <updated>2023-01-20T19:55:26+01:00</updated>
+            <summary>
+                <![CDATA[
+                    In 2022 in got a new job at Della AI and moved to Nantes. I focused less on ciboulette.net than before, and had less time for side project. Working at Della has been interesting. I took over a React fronted (with Redux that i'm slowly&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>In 2022 in got a new job at <a href="https://dellalegal.com">Della AI</a> and moved to Nantes. I focused less on ciboulette.net than before, and had less time for side project. </p>
+<p>Working at Della has been interesting. I took over a React fronted (with Redux that i'm slowly getting rid of). I had to learn typescript, but in the end I don't fully exploit it. It helps avoid mistakes, but also forces you to write code that looks more like java than proper Javascript. I had never seen so many enums in a codebase. </p>
+<p>Anyway, I'm quite happy with the way things are going, and our company has been bought out by a bigger one, Legisway. I visited their offices and they are neat !</p>
+<p>One the hacking side, over the Christmas/New year vacations I started a small game project. It's a chilled out city builder, made in web tech. You can have a look at it here : <a href="https://drmp.lecaro.me/">https://drmp.lecaro.me/</a> (there's no good name for it yet). </p>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/29/drmp-screenshot" alt="screenshot of the game" width="1918" height="916"></figure>
+<p>That's all for today, I had to dig up this website from an old save to publish something new on my new computer. </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Picnic: end-to-end encrypted collaborative text editor</title>
         <author>
@@ -97,7 +123,7 @@
 <p>I've used <strong>inotifywait </strong>for that, which needs to be installed on ubuntu with <strong>sudo apt install inotify-tools</strong> .</p>
 <p>Then it's just a matter of cd-ing to the proper directory and running :</p>
 <p><strong>clear &amp;&amp; tree &amp;&amp; inotifywait --monitor --quiet --recursive --event modify . | while read; do clear; tree; done</strong></p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://lecaro.me/media/posts/25/inotify-result.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/25/responsive/inotify-result-xs.png 300w ,https://lecaro.me/media/posts/25/responsive/inotify-result-sm.png 480w ,https://lecaro.me/media/posts/25/responsive/inotify-result-md.png 768w ,https://lecaro.me/media/posts/25/responsive/inotify-result-lg.png 1024w ,https://lecaro.me/media/posts/25/responsive/inotify-result-xl.png 1360w ,https://lecaro.me/media/posts/25/responsive/inotify-result-2xl.png 1600w"  alt="Screenshot of the result, it will refresh whenever files change" width="409" height="348">
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://lecaro.me/media/posts/25/inotify-result.png" alt="Screenshot of the result, it will refresh whenever files change" width="409" height="348" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/25/responsive/inotify-result-xs.png 300w ,https://lecaro.me/media/posts/25/responsive/inotify-result-sm.png 480w ,https://lecaro.me/media/posts/25/responsive/inotify-result-md.png 768w ,https://lecaro.me/media/posts/25/responsive/inotify-result-lg.png 1024w ,https://lecaro.me/media/posts/25/responsive/inotify-result-xl.png 1360w ,https://lecaro.me/media/posts/25/responsive/inotify-result-2xl.png 1600w">
 <figcaption >Result</figcaption>
 </figure>
 <p> </p>
@@ -151,7 +177,7 @@
 <p>My main app (<a href="https://ciboulette.net">https://ciboulette.net</a>) is a meteor app. I love meteor, and I'm glad it's recently received some new funding and new updates. </p>
 <p>However, the official way to host a meteor app, meteor galaxy, is super expensive for a small indie project. I can understand that server costs are usually not significant, but if i can get away with 15$ a month instead of 115$ well rather do that.</p>
 <p>Of course if I had to pay someone 100$/hour to manage my servers, it would be a different story.</p>
-<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/23/comparison.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/23/responsive/comparison-xs.png 300w ,https://lecaro.me/media/posts/23/responsive/comparison-sm.png 480w ,https://lecaro.me/media/posts/23/responsive/comparison-md.png 768w ,https://lecaro.me/media/posts/23/responsive/comparison-lg.png 1024w ,https://lecaro.me/media/posts/23/responsive/comparison-xl.png 1360w ,https://lecaro.me/media/posts/23/responsive/comparison-2xl.png 1600w"  alt="Meteor and digital ocean pricing side by side" width="1910" height="795"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/23/comparison.png" alt="Meteor and digital ocean pricing side by side" width="1910" height="795" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/23/responsive/comparison-xs.png 300w ,https://lecaro.me/media/posts/23/responsive/comparison-sm.png 480w ,https://lecaro.me/media/posts/23/responsive/comparison-md.png 768w ,https://lecaro.me/media/posts/23/responsive/comparison-lg.png 1024w ,https://lecaro.me/media/posts/23/responsive/comparison-xl.png 1360w ,https://lecaro.me/media/posts/23/responsive/comparison-2xl.png 1600w"></figure>
 <p>Anyway, i'm really happy with my meteor up + digital ocean setup, but the deploys take forever when you have a bad DSL connection (0.8 MB/s upload, whoo) so I looked for a way to get my deploys to happen in the cloud.</p>
 <p>The cheapest (free) and simplest solution I found was github actions.</p>
 <p>Here's the github action for one of my open source repositories : <a href="https://github.com/renanlecaro/simpletextnet/blob/master/.github/workflows/main.yml">https://github.com/renanlecaro/simpletextnet/blob/master/.github/workflows/main.yml</a></p>
@@ -194,7 +220,7 @@
 <table style="border-collapse: collapse; width: 100%; height: 416px;" border="0">
 <tbody>
 <tr style="height: 416px;">
-<td style="width: 50%; height: 416px;"><figure class="post__image"><img loading="lazy"  style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: 18.4px; font-weight: var(--font-weight-normal); outline: 3px solid rgba(var(--primary-color-rgb), 0.55)  !important;" src="https://lecaro.me/media/posts/22/Screenshot-from-2021-04-02-12-28-31.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-xs.png 300w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-sm.png 480w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-md.png 768w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-lg.png 1024w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-xl.png 1360w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-2xl.png 1600w"  alt="Picture of the modem" width="432" height="449"></figure></td>
+<td style="width: 50%; height: 416px;"><figure class="post__image"><img loading="lazy"  style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: 18.4px; font-weight: var(--font-weight-normal); outline: 3px solid rgba(var(--primary-color-rgb), 0.55)  !important;" src="https://lecaro.me/media/posts/22/Screenshot-from-2021-04-02-12-28-31.png" alt="Picture of the modem" width="432" height="449" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-xs.png 300w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-sm.png 480w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-md.png 768w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-lg.png 1024w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-xl.png 1360w ,https://lecaro.me/media/posts/22/responsive/Screenshot-from-2021-04-02-12-28-31-2xl.png 1600w"></figure></td>
 <td style="width: 50%; height: 416px;">
 <p>The first step was buying a modem pool, i got this one on aliexpress : <a href="https://www.aliexpress.com/item/32477370996.html">FIMT 1/8/16/32/64 ports USB modem pool/GSM sms modem /gsm modem pool edge gprs modem driver</a></p>
 <p>It took about 10 days to arrive in France.</p>
@@ -210,10 +236,10 @@
 <p>First, make sure you disable the SIM PIN code, using any compatible phone.</p>
 <p>Then insert the sim in any of the bays, make sure the switch for that bay is on,and turn all the empty slots off.</p>
 <p>Connect the antenna because it looks cool (not sure if it does anything really). </p>
-<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/22/IMG_20210402_122254.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-xs.jpg 300w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-sm.jpg 480w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-md.jpg 768w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-lg.jpg 1024w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-xl.jpg 1360w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-2xl.jpg 1600w"  alt="The glorious modem with its sim card" width="696" height="928"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/22/IMG_20210402_122254.jpg" alt="The glorious modem with its sim card" width="696" height="928" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-xs.jpg 300w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-sm.jpg 480w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-md.jpg 768w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-lg.jpg 1024w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-xl.jpg 1360w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122254-2xl.jpg 1600w"></figure>
 <p class="align-center">The modem</p>
 <p> </p>
-<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/22/IMG_20210402_122302.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-xs.jpg 300w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-sm.jpg 480w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-md.jpg 768w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-lg.jpg 1024w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-xl.jpg 1360w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-2xl.jpg 1600w"  alt="Close up to show the direction of the sim card" width="696" height="928"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/22/IMG_20210402_122302.jpg" alt="Close up to show the direction of the sim card" width="696" height="928" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-xs.jpg 300w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-sm.jpg 480w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-md.jpg 768w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-lg.jpg 1024w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-xl.jpg 1360w ,https://lecaro.me/media/posts/22/responsive/IMG_20210402_122302-2xl.jpg 1600w"></figure>
 <p class="align-center">Close up of the sim bay, with the sim card half out to show in which direction to insert it.</p>
 <p>Connect the power adapter, the usb cable, turn the device on. The blue led next to the sim should blink shortly every ~5 seconds. </p>
 <p>Turn on your Ubuntu computer.</p>
@@ -285,7 +311,7 @@
 <p>I exclude .git because it could contain the text. And I exclude .github so that the regex doesn't match itself. Package files should not be a problem as the script doesn't pull any external dependencies (no npm install)  </p>
 <p>The search is case sensitive, so it will only trip for clear TODOs and not some random method names.</p>
 <p>You get the results really quickly, and because only the source is checked out ,all the generated files/packages should be excluded from the search.</p>
-<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/21/Screenshot-from-2021-03-29-01-16-12.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-xs.png 300w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-sm.png 480w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-md.png 768w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-lg.png 1024w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-xl.png 1360w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-2xl.png 1600w"  alt="Screenshot of a failed build" width="989" height="386"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/21/Screenshot-from-2021-03-29-01-16-12.png" alt="Screenshot of a failed build" width="989" height="386" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-xs.png 300w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-sm.png 480w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-md.png 768w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-lg.png 1024w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-xl.png 1360w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-2xl.png 1600w"></figure>
             ]]>
         </content>
     </entry>
@@ -334,52 +360,13 @@
             <![CDATA[
                 <p>I have a few users for my app, and 1000's of ideas on how to improve it. </p>
 <p>I've been tracking my work in trello, on a public board (my app is still closed source, but i'm as open as possible about the processes of my work). </p>
-<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/19/Screenshot-from-2021-03-26-22-25-06.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-xs.png 300w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-sm.png 480w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-md.png 768w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-lg.png 1024w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-xl.png 1360w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-2xl.png 1600w"  alt="The development board" width="1913" height="925"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/19/Screenshot-from-2021-03-26-22-25-06.png" alt="The development board" width="1913" height="925" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-xs.png 300w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-sm.png 480w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-md.png 768w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-lg.png 1024w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-xl.png 1360w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-2xl.png 1600w"></figure>
 <p class="align-center">The <a href="https://trello.com/b/GaZSJzzq/planning-de-d%C3%A9veloppement-de-ciboulettenet">development board</a> (in French)</p>
 <p>I'm the only one doing development work here, but I've invited my clients to join the board. I instructed them to just "join" any card that seems like it would be useful to them. I only invited paying customers. </p>
 <p>It's a great way to focus on what's really needed. But i tend to work on some technical stuffs that don't really matter to them right now (like the <a href="https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html">last post</a> about aggregation suggests) so I can't always prioritise what's asked. </p>
 <p>And I get some Trello gold after every signup, but I'm not sure why I should care. </p>
 <p>Ideally, I'd like something similar but integrated in my app, to let users voice their opinions and needs without friction, but I thought i'd postpone that to the time where all the cards with a person on it are already done. </p>
 <p>And services like this already exist I guess, so it's not really worth investing much effort in creating a custom solution.  </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Meteor lags ? Aggregates to the rescue !</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html"/>
-        <id>https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html</id>
-
-        <updated>2021-03-26T22:21:33+01:00</updated>
-            <summary>
-                <![CDATA[
-                    My app has 4 main collections in mongo : - A user has many weeks and clients - Each week has many orders, one per client, where the order content is stored (can be empty if the client didn't order that week). Initially, my documents&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>My app has 4 main collections in mongo : </p>
-<p>- A <strong>user </strong>has many <strong>weeks </strong>and <strong>clients</strong></p>
-<p>- Each week has many <strong>orders</strong>, one per client, where the order content is stored (can be empty if the client didn't order that week). </p>
-<p>Initially, my documents were quite dry, I was doing the "joins" work on the client. It got laggy though, so I moved the joins logic to the meteor server, with <strong>hooks</strong> (<strong>matb33:collection-hooks) </strong>in every directions to keep denormalized fields in sync. </p>
-<figure class="post__image"><img loading="lazy"  src="https://trello-attachments.s3.amazonaws.com/605b848835c8f765d6d4626e/1025x564/5235adb0e560fb8de807e8488b2e67ec/image.png" data-is-external-image="true"  alt="My mess of hooks, simplified, visualized" width="718" height="395"></figure>
-<p>It was a pain though, really hard to follow what was going on and to debug. </p>
-<p>There's also potential for chain reactions and never ending hooks loops. </p>
-<p>But mostly, it was <strong>buggy in edge cases</strong>. </p>
-<p>So I'm migrating away from those hooks, and creating an aggregation pipeline per collection (week, client, order) that computes all the dynamic fields for some given ids, and returns the documents where the value is different, plus some additional ids to check in the next pass. </p>
-<p>It's not yet in production, but after this rewrite, my e2e tests are passing. </p>
-<p>Meteor uses mongodb 4.2 in development server. I didn't feel like forcing an update to 4.4, which brings in two very useful features for my use case (the<a href="https://docs.mongodb.com/manual/reference/operator/aggregation/function/"> $function</a> operator and the ability to <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/merge/#output-to-the-same-collection-that-is-being-aggregated">$merge</a> to the collection that you are aggregating on).</p>
-<p>So I've been $writing:{ $some: {$nested: {$queries:'It's a pain''}}} . I'm back to junior level of mastery in this new paradigm, where "It works" comes as a surprise. I'm sure i'll rewrite those ugly aggregations at some point, but for now they seem to do the job. </p>
-<p>One nice approach to using aggregation pipelines in meteor is to declare them in a separate js file, and then have a simple, non-meteor script that runs the aggregation and logs the results. </p>
-<p>I use nodemon to watch the files, and get a very fast feedback loop, without the need to wait for the meteor server to recompile. Great when you're learning as you go. </p>
-<p>I start the script like this (-r esm allows me to use modern imports) </p>
-<pre>nodemon -e js  -r esm tests/scripts/mongofun.js</pre>
-<p> And the script itself is very simple. It just runs the query </p>
-<p>tests/scripts/mongofun.js :</p>
-<pre>const mongoUrl='mongodb://127.0.0.1:3001/meteor'<br><br>async function actual_aggregation(db) {<br>  const result = await db<br>    .collection('Orders')<br>    .aggregate([<br>      {<br>        $match: {_id:'&lt;some test id&gt;'}<br>      }, <br>      ...the_pipeline_imported_from_the_meteor_source<br>    ])<br>    .toArray();<br>  console.log(result);<br>}<br><br>const mongodb = require('mongodb');<br>const client = new mongodb.MongoClient(mongoUrl, {<br>  useUnifiedTopology: true<br>});<br><br>client.connect().then(<br>  async () =&gt; {<br>    const start = Date.now();<br>    await author_aggregation(client.db());<br>    console.log('took ' + (Date.now() - start) + ' ms');<br>  },<br>  e =&gt; console.error(e)<br>);</pre>
-<p>Anyway, that's all for today :)</p>
             ]]>
         </content>
     </entry>

@@ -3,12 +3,34 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2023-01-20T20:02:21+01:00</updated>
+    <updated>2023-01-23T16:05:06+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>Android and my grandma</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/android-and-my-grandma.html"/>
+        <id>https://lecaro.me/android-and-my-grandma.html</id>
+
+        <updated>2023-01-23T16:05:06+01:00</updated>
+            <summary>
+                <![CDATA[
+                    I've seen my grandma last weekend and it was yet another reminder of how non intuitive technology can be. Whats-app asked her to rate a call she just had, and she was confused by it. She tried to read the message i sent her, but&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I've seen my grandma last weekend and it was yet another reminder of how non intuitive technology can be. Whats-app asked her to rate a call she just had, and she was confused by it. She tried to read the message i sent her, but clicked my photo instead of my name, and therefore ended up on my profile instead of our conversations.</p>
+<p>Our modern UIs really assume that the user will guess so many things. It's a bit of a shame. I think many grandma should be employed as usability testers for apps. We'd all get better software. </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>A small collaborative city builder</title>
         <author>
@@ -339,34 +361,6 @@
 <p>The workspace name is a variable here, but you can put anything. I assign that window to a rarely used workspace. </p>
 <p>Chromium has a different class from Google Chrome, so this has no impact on where the "real" browser is started.</p>
 <p>To get the class infos for other browsers, run <code>xprop</code> in a terminal and then click on a window.  </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Using Trello for feature requests / priorisation </title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/using-trello-for-feature-requests-priorisation.html"/>
-        <id>https://lecaro.me/using-trello-for-feature-requests-priorisation.html</id>
-
-        <updated>2021-03-26T22:30:45+01:00</updated>
-            <summary>
-                <![CDATA[
-                    I have a few users for my app, and 1000's of ideas on how to improve it. I've been tracking my work in trello, on a public board (my app is still closed source, but i'm as open as possible about the processes of my&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>I have a few users for my app, and 1000's of ideas on how to improve it. </p>
-<p>I've been tracking my work in trello, on a public board (my app is still closed source, but i'm as open as possible about the processes of my work). </p>
-<figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/19/Screenshot-from-2021-03-26-22-25-06.png" alt="The development board" width="1913" height="925" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-xs.png 300w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-sm.png 480w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-md.png 768w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-lg.png 1024w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-xl.png 1360w ,https://lecaro.me/media/posts/19/responsive/Screenshot-from-2021-03-26-22-25-06-2xl.png 1600w"></figure>
-<p class="align-center">The <a href="https://trello.com/b/GaZSJzzq/planning-de-d%C3%A9veloppement-de-ciboulettenet">development board</a> (in French)</p>
-<p>I'm the only one doing development work here, but I've invited my clients to join the board. I instructed them to just "join" any card that seems like it would be useful to them. I only invited paying customers. </p>
-<p>It's a great way to focus on what's really needed. But i tend to work on some technical stuffs that don't really matter to them right now (like the <a href="https://lecaro.me/meteor-lags-aggregates-to-the-rescue.html">last post</a> about aggregation suggests) so I can't always prioritise what's asked. </p>
-<p>And I get some Trello gold after every signup, but I'm not sure why I should care. </p>
-<p>Ideally, I'd like something similar but integrated in my app, to let users voice their opinions and needs without friction, but I thought i'd postpone that to the time where all the cards with a person on it are already done. </p>
-<p>And services like this already exist I guess, so it's not really worth investing much effort in creating a custom solution.  </p>
             ]]>
         </content>
     </entry>

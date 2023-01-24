@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://lecaro.me/integrating-remote-services-in-e2e-tests.html",
+            "url": "https://lecaro.me/integrating-remote-services-in-e2e-tests.html",
+            "title": "Integrating remote services in e2e tests",
+            "summary": "Ciboulette.net has a large battery of tests that ensure I don't break too many things when doing a deployment. The app also connects together many services, like google maps, google custom search, Stripe and Sumup. I wanted to make sure those integrations would keep working,&hellip;",
+            "content_html": "<p>Ciboulette.net has a large battery of tests that ensure I don't break too many things when doing a deployment. The app also connects together many services, like google maps, google custom search, Stripe and Sumup.</p>\n<p>I wanted to make sure those integrations would keep working, so i embedded the real services in my test. For example, playwright would attempt to connect to a test account at sumup when running the e2e test.</p>\n<p>Recently, sumup changed their login flow, and added a captcha. I don't see how I can work around this. The tests are a bit flaky for a few other reasons anyway, so i think i'll just run them by hand and complete the captcha every time.</p>\n<p>Still, i'm sure there's a better way. I tried to just copy the result of the authentication request but this only worked for a single run of the tests. During the next run Sumup would refuse them for some reason.  </p>",
+            "author": {
+                "name": "Renan LE CARO"
+            },
+            "tags": [
+            ],
+            "date_published": "2023-01-24T08:47:38+01:00",
+            "date_modified": "2023-01-24T08:47:38+01:00"
+        },
+        {
             "id": "https://lecaro.me/android-and-my-grandma.html",
             "url": "https://lecaro.me/android-and-my-grandma.html",
             "title": "Android and my grandma",
@@ -135,20 +149,6 @@
             ],
             "date_published": "2021-03-27T13:24:50+01:00",
             "date_modified": "2021-03-29T01:16:37+02:00"
-        },
-        {
-            "id": "https://lecaro.me/configuring-i3-for-headful-e2e-tests.html",
-            "url": "https://lecaro.me/configuring-i3-for-headful-e2e-tests.html",
-            "title": "Configuring i3 for headful e2e tests",
-            "summary": "i3 is nice. End to end tests are nice. Chromium is nice. But they don't get along so well by default. When you run you e2e script with nodemon, each run opens and closes the test browser window. By default, that window appears right by&hellip;",
-            "content_html": "<p>i3 is nice. End to end tests are nice. Chromium is nice. But they don't get along so well by default.</p>\n<p>When you run you e2e script with nodemon, <strong>each run opens and closes the test browser</strong> window. By default, that window appears <strong>right by your editor</strong>, messing the layout.</p>\n<p>It's easy to fix though : you just need to <strong>tell i3 what to do with that test browser window</strong>.</p>\n<p>To make every new chromium window appear in the workspace $ws5, add this in ~/.config/i3/config</p>\n<p><code>assign [class=\"Chromium-browser\"] → $ws5</code></p>\n<p>The workspace name is a variable here, but you can put anything. I assign that window to a rarely used workspace. </p>\n<p>Chromium has a different class from Google Chrome, so this has no impact on where the \"real\" browser is started.</p>\n<p>To get the class infos for other browsers, run <code>xprop</code> in a terminal and then click on a window.  </p>",
-            "author": {
-                "name": "Renan LE CARO"
-            },
-            "tags": [
-            ],
-            "date_published": "2021-03-27T11:52:52+01:00",
-            "date_modified": "2021-03-27T11:52:52+01:00"
         }
     ]
 }

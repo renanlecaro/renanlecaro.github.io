@@ -3,12 +3,35 @@
     <title>Renan LE CARO</title>
     <link href="https://lecaro.me/feed.xml" rel="self" />
     <link href="https://lecaro.me" />
-    <updated>2023-01-23T16:05:06+01:00</updated>
+    <updated>2023-01-24T08:47:38+01:00</updated>
     <author>
         <name>Renan LE CARO</name>
     </author>
     <id>https://lecaro.me</id>
 
+    <entry>
+        <title>Integrating remote services in e2e tests</title>
+        <author>
+            <name>Renan LE CARO</name>
+        </author>
+        <link href="https://lecaro.me/integrating-remote-services-in-e2e-tests.html"/>
+        <id>https://lecaro.me/integrating-remote-services-in-e2e-tests.html</id>
+
+        <updated>2023-01-24T08:47:38+01:00</updated>
+            <summary>
+                <![CDATA[
+                    Ciboulette.net has a large battery of tests that ensure I don't break too many things when doing a deployment. The app also connects together many services, like google maps, google custom search, Stripe and Sumup. I wanted to make sure those integrations would keep working,&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Ciboulette.net has a large battery of tests that ensure I don't break too many things when doing a deployment. The app also connects together many services, like google maps, google custom search, Stripe and Sumup.</p>
+<p>I wanted to make sure those integrations would keep working, so i embedded the real services in my test. For example, playwright would attempt to connect to a test account at sumup when running the e2e test.</p>
+<p>Recently, sumup changed their login flow, and added a captcha. I don't see how I can work around this. The tests are a bit flaky for a few other reasons anyway, so i think i'll just run them by hand and complete the captcha every time.</p>
+<p>Still, i'm sure there's a better way. I tried to just copy the result of the authentication request but this only worked for a single run of the tests. During the next run Sumup would refuse them for some reason.  </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Android and my grandma</title>
         <author>
@@ -334,33 +357,6 @@
 <p>The search is case sensitive, so it will only trip for clear TODOs and not some random method names.</p>
 <p>You get the results really quickly, and because only the source is checked out ,all the generated files/packages should be excluded from the search.</p>
 <figure class="post__image"><img loading="lazy"  src="https://lecaro.me/media/posts/21/Screenshot-from-2021-03-29-01-16-12.png" alt="Screenshot of a failed build" width="989" height="386" sizes="(max-width: 48em) 100vw, 768px" srcset="https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-xs.png 300w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-sm.png 480w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-md.png 768w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-lg.png 1024w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-xl.png 1360w ,https://lecaro.me/media/posts/21/responsive/Screenshot-from-2021-03-29-01-16-12-2xl.png 1600w"></figure>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Configuring i3 for headful e2e tests</title>
-        <author>
-            <name>Renan LE CARO</name>
-        </author>
-        <link href="https://lecaro.me/configuring-i3-for-headful-e2e-tests.html"/>
-        <id>https://lecaro.me/configuring-i3-for-headful-e2e-tests.html</id>
-
-        <updated>2021-03-27T11:52:52+01:00</updated>
-            <summary>
-                <![CDATA[
-                    i3 is nice. End to end tests are nice. Chromium is nice. But they don't get along so well by default. When you run you e2e script with nodemon, each run opens and closes the test browser window. By default, that window appears right by&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>i3 is nice. End to end tests are nice. Chromium is nice. But they don't get along so well by default.</p>
-<p>When you run you e2e script with nodemon, <strong>each run opens and closes the test browser</strong> window. By default, that window appears <strong>right by your editor</strong>, messing the layout.</p>
-<p>It's easy to fix though : you just need to <strong>tell i3 what to do with that test browser window</strong>.</p>
-<p>To make every new chromium window appear in the workspace $ws5, add this in ~/.config/i3/config</p>
-<p><code>assign [class="Chromium-browser"] → $ws5</code></p>
-<p>The workspace name is a variable here, but you can put anything. I assign that window to a rarely used workspace. </p>
-<p>Chromium has a different class from Google Chrome, so this has no impact on where the "real" browser is started.</p>
-<p>To get the class infos for other browsers, run <code>xprop</code> in a terminal and then click on a window.  </p>
             ]]>
         </content>
     </entry>
